@@ -25,10 +25,10 @@ class Exploit:
    dc = hex(dc & (2**32-1)).replace('0x','')
   if len(dc) > 8:
    while len(dc) < 16:
-    dc = '0' + dc
+     dc = '0' + dc
   if len(dc) < 8:
    while len(dc) < 8:
-    dc = '0' + dc
+     dc = '0' + dc
   return dc
  def PLAT(self,aob:str):
   if type(aob) == bytes:
@@ -40,9 +40,9 @@ class Exploit:
    PLATlist.append(aob[i:i+2])
   for i in PLATlist:
    if "?" in i:
-    trueB.extend(b'.')
+     trueB.extend(b'.')
    if "?" not in i:
-    trueB.extend(re.escape(bytes.fromhex(i)))
+     trueB.extend(re.escape(bytes.fromhex(i)))
   return bytes(trueB)
  def AOBSCANALL(self,AOB_Sig,xreturn_multiple=False):
   return pymem.pattern.pattern_scan_all(self.Program.process_handle,self.PLAT(AOB_Sig),return_multiple=xreturn_multiple)
@@ -63,7 +63,7 @@ class Exploit:
    reniL = len(lelist) - 4
    zqSij = zqSij + '0'
    for i in range(0,reniL):
-    zqSij = zqSij + '00'
+     zqSij = zqSij + '00'
   lelist.insert(0,zqSij)
   if len(''.join(lelist)) != 8:
    lelist.insert(0,"0")
@@ -90,7 +90,7 @@ class Exploit:
  def isValidPointer(self,Address:int) -> bool:
   try:
    if type(Address) == str:
-    Address = self.h2d(Address)
+     Address = self.h2d(Address)
    self.Program.read_bytes(self.DRP(Address),1)
    return True
   except:
@@ -119,8 +119,8 @@ class Exploit:
   looped = 0
   while self.Program.read_int(AAP) == 0:
    if looped > bounds:
-    print("Outside maximum loop allowed.")
-    return False
+     print("Outside maximum loop allowed.")
+     return False
    time.sleep(amount)
    looped += 1
   return True
@@ -133,10 +133,10 @@ class Exploit:
   AddressOffset = 0
   for i in self.GetModules():
    if i.name in Address:
-    AddressBase = i.lpBaseOfDll
-    AddressOffset = self.h2d(Address.replace(i.name + '+',''))
-    AddressNamed = AddressBase + AddressOffset
-    return AddressNamed
+     AddressBase = i.lpBaseOfDll
+     AddressOffset = self.h2d(Address.replace(i.name + '+',''))
+     AddressNamed = AddressBase + AddressOffset
+     return AddressNamed
   print("Unable to find Address: " + Address)
   return Address
  def getNameFromAddress(self,Address:int) -> str:
@@ -146,9 +146,9 @@ class Exploit:
   AddressOffset = 0
   for i in self.GetModules():
    if i.lpBaseOfDll == AllocationBase:
-    NameOfDLL = i.name
-    AddressOffset = Address - AllocationBase
-    break
+     NameOfDLL = i.name
+     AddressOffset = Address - AllocationBase
+     break
   if NameOfDLL == '':
    return Address
   NameOfAddress = NameOfDLL + '+' + self.d2h(AddressOffset)
@@ -172,11 +172,11 @@ class Exploit:
    ProcessesList = self.SimpleGetProcesses()
    for i in ProcessesList:
     if i['Name'] == programName:
-     print("Found " + programName + " with Process ID: " + str(i['ProcessId']))
-     if AutoOpen:
-      self.Program.open_process_from_id(i['ProcessId'])
-      print("Successfully attached to Process.")
-     return True
+      print("Found " + programName + " with Process ID: " + str(i['ProcessId']))
+      if AutoOpen:
+        self.Program.open_process_from_id(i['ProcessId'])
+        print("Successfully attached to Process.")
+        return True
    print("Waiting for the Program...")
    time.sleep(1)
    Count += 1
@@ -185,12 +185,75 @@ class Exploit:
    for process in self.SimpleGetProcesses():
     if process["Name"] == Name:
      result.append(process)
-     
+def GetProcessIdByNameWithBiggestSize(NameOfProgram:str):
+ x = Exploit()
+ x.GetProcessesByName(NameOfProgram)
+ y = x.SimpleGetProcesses()
+ dictionaryOfData = {}
+ for i in y:
+  if i['Name'] == NameOfProgram:
+   x.Program.open_process_from_id(i['ProcessId'])
+   Size = x.Program.process_base.SizeOfImage
+   dictionaryOfData.update({Size:i['ProcessId']})
+ tempVa = 0
+ for i in dictionaryOfData.keys():
+  if i > tempVa:
+   tempVa = i
+ return dictionaryOfData.get(tempVa)
+def ReadStringUntilEnd(Program, Address:int) -> str:
+ if type(Address) == str:
+  Address = h2d(Address)
+ CurrentAddress = Address
+ StringData = []
+ LoopedTimes = 0
+ while LoopedTimes < 15000:
+  if Program.read_bytes(CurrentAddress,1) == b'\x00':
+   break
+  StringData.append(Program.read_bytes(CurrentAddress,1))
+  CurrentAddress += 1
+  LoopedTimes += 1
+ String = bytes()
+ for i in StringData:
+  String = String + i
+ return str(String)[2:-1]
 
-x = Exploit()
 
-for i in x.SimpleGetProcesses():
- if (i["Name"] == "RobloxPlayerBeta.exe"):
-    print(i)
-    print(pymem.Pymem(i["ProcessId"]).process_base.SizeOfImage)
+roblox = Exploit(GetProcessIdByNameWithBiggestSize('RobloxPlayerBeta.exe'))
+
+class Instance:
+ def __init__(self, Address = 0) -> None:
+  self.addr = Address
+ def getAddress(self):
+  return self.addr
+ def GetName(self) -> str:
+  length = roblox.Program.read_int(roblox.DRP(self.addr + 0x28) + 0x10)
+  if (length < 16 and length > 0):
+   return ReadStringUntilEnd(roblox.Program,roblox.DRP(self.addr + 0x28))
+  else:
+   return ReadStringUntilEnd(roblox.Program, roblox.DRP(roblox.DRP(self.addr + 0x28)))
+ def GetChildren(self) -> list:
+  child_list = roblox.DRP(self.addr + 0x2C)
+  child_begin = roblox.DRP(child_list)
+  end_child = roblox.DRP(child_list + 0x4)
+  children = []
+  while child_begin != end_child:
+   current_instance = roblox.DRP(child_begin)
+   if current_instance !=0:
+    children.append(Instance(current_instance))
+    child_begin = child_begin + 8
+  return children
    
+
+
+print("Starting DataModel scan !")
+guiroot_pattern = b"\\x47\\x75\\x69\\x52\\x6F\\x6F\\x74\\x00\\x47\\x75\\x69\\x49\\x74\\x65\\x6D"
+guiroot_address = roblox.Program.pattern_scan_all(guiroot_pattern)
+print(roblox.d2h(guiroot_address))
+RawDataModel = roblox.DRP(guiroot_address + 0x28) 
+DataModel = RawDataModel+0xC
+DModel = Instance(DataModel)
+for i in DModel.GetChildren():
+ print(i.GetName())
+    
+
+print(roblox.d2h(DataModel))
