@@ -79,7 +79,7 @@ class IndexedTreeWidgetItem(QTreeWidgetItem):
 
 def GetDescendants(apple_item, instance):
     # Add the current instance to the tree widget
-    instance_item = IndexedTreeWidgetItem(instance.getAddress(),[instance.GetName()])
+    instance_item = IndexedTreeWidgetItem(instance.getAddress(),[instance.GetNameOld()])
     apple_item.addChild(instance_item)
     
     # Recursively add the descendants of the current instance to the tree widget
@@ -120,7 +120,7 @@ class FormWidget(QWidget):
         print(item.index)
         if item.index != 0:
             local_instance = Instance(item.index)
-            self.NameView.setValue(local_instance.GetName())
+            self.NameView.setValue(local_instance.GetNameOld())
             self.ClassView.setValue(GetClassName(local_instance))
         else:
             self.NameView.setValue("None")
@@ -164,4 +164,4 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     win = MainWindow()
     win.show()
-    ret = app.exec_()
+    app.exec_()

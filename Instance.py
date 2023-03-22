@@ -112,9 +112,13 @@ class Instance:
 		print(roblox.d2h(NewMemAddress))
 		roblox.Program.start_thread(NewMemAddress)
 		if type == float:
-			return roblox.Program.read_float(NewMemAddress + 0x30)
+			ez = roblox.Program.read_float(NewMemAddress + 0x30)
+			roblox.Program.free(NewMemAddress)
+			return ez
 		if type == int:
-			return roblox.Program.read_int(NewMemAddress + 0x30)
+			ez = roblox.Program.read_int(NewMemAddress + 0x30)
+			roblox.Program.free(NewMemAddress)
+			return ez
 	def SetProperty(self,name, float_arg):
 		NewMemoryRegion = roblox.allocate(100)
 		NewMemAddress = NewMemoryRegion
