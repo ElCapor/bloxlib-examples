@@ -24,7 +24,21 @@ shared_prop = [
 
 ]
 
+supported_returntypes = [
+	"float",
+	"int",
+	"double",
+	"string",
+	"bool"
+]
 
+disabled_props = [
+	"Attributes",
+	"AttributesReplicate",
+	"AttributesSerialize",
+	"CollisionGroups",
+	"DataCost"
+]
 
 class Instance:
 	def __init__(self, Address = 0) -> None:
@@ -32,7 +46,7 @@ class Instance:
 	def getAddress(self):
 		return self.addr
 	def GetName(self) -> str:
-		return roblox.ReadNormalString(self.GetProperty("Name",int))
+		return self.GetProperty("Name")
 	def GetNameOld(self) -> str:
 		addr = self.getAddress()
 		return roblox.ReadInstaceString(addr + 0x28)
@@ -94,31 +108,68 @@ class Instance:
 		return 0
 	def GetClassName(self):
 		return roblox.ReadNormalString(roblox.DRP(self.GetClassDescriptor()) + 0xC)
-	def GetProperty(self,name, type):
-		NewMemoryRegion = roblox.Program.allocate(100)
-		NewMemAddress = NewMemoryRegion
-		
-		InstanceAddress = self.addr #Change This
-		FunctionAddress = self.GetPropertyDescriptor(name).GetSet().Get()
-		HexArray = ''
-		MovIntoEcxOp = 'B9' + roblox.hex2le(roblox.d2h(InstanceAddress))
-		CallOp = 'E8' + roblox.hex2le(roblox.calcjmpop(roblox.d2h(FunctionAddress),roblox.d2h(NewMemAddress + 5)))
-		StoreOp = 'A3' + roblox.hex2le(roblox.d2h(NewMemAddress + 0x30))
-		RetOp = 'C3'
-		HexArray = MovIntoEcxOp + CallOp + StoreOp + RetOp
-		#print(StoreOp)
-		roblox.Program.write_bytes(NewMemAddress,bytes.fromhex(HexArray),roblox.gethexc(HexArray))
-		#print(len(bytes.fromhex(HexArray)))
-		print(roblox.d2h(NewMemAddress))
-		roblox.Program.start_thread(NewMemAddress)
-		if type == float:
-			ez = roblox.Program.read_float(NewMemAddress + 0x30)
-			roblox.Program.free(NewMemAddress)
-			return ez
-		if type == int:
-			ez = roblox.Program.read_int(NewMemAddress + 0x30)
-			roblox.Program.free(NewMemAddress)
-			return ez
+	def GetProperty(self,name):
+		ReturnType = roblox.ReadInstaceString(roblox.DRP(self.GetPropertyDescriptor(name).GetAddress() + 0x24)+0x4)
+		if ReturnType in supported_returntypes and name not in disabled_props:
+			NewMemoryRegion = roblox.Program.allocate(100)
+			NewMemAddress = NewMemoryRegion
+			
+			InstanceAddress = self.addr #Change This
+			FunctionAddress = self.GetPropertyDescriptor(name).GetSet().Get()
+			
+			HexArray = ''
+			MovIntoEcxOp = 'B9' + roblox.hex2le(roblox.d2h(InstanceAddress))
+			CallOp = 'E8' + roblox.hex2le(roblox.calcjmpop(roblox.d2h(FunctionAddress),roblox.d2h(NewMemAddress + 5)))
+			StoreOp = 'A3' + roblox.hex2le(roblox.d2h(NewMemAddress + 0x30))
+			RetOp = 'C3'
+			HexArray = MovIntoEcxOp + CallOp + StoreOp + RetOp
+			#print(StoreOp)
+			roblox.Program.write_bytes(NewMemAddress,bytes.fromhex(HexArray),roblox.gethexc(HexArray))
+			#print(len(bytes.fromhex(HexArray)))
+			print(roblox.d2h(NewMemAddress))
+			roblox.Program.start_thread(NewMemAddress)
+			if ReturnType == "float":
+				print(ReturnType)
+				print(roblox.d2h(NewMemAddress))
+				ez = roblox.Program.read_float(NewMemAddress + 0x30)
+				#roblox.Program.free(NewMemAddress)
+				return ez
+			if ReturnType == "int":
+				print(ReturnType)
+				ez = roblox.Program.read_int(NewMemAddress + 0x30)
+				roblox.Program.free(NewMemAddress)
+				return ez
+			if ReturnType == "double":
+				print(ReturnType)
+				ez = roblox.Program.read_double(NewMemAddress + 0x30)
+				roblox.Program.free(NewMemAddress)
+				return ez
+			if ReturnType == "bool":
+				print(ReturnType)
+				ez = roblox.Program.read_bool(NewMemAddress + 0x30)
+				roblox.Program.free(NewMemAddress)
+				return ez
+			if ReturnType == "string":
+				print(ReturnType)
+				print("huh")
+				if roblox.isValidPointer(NewMemAddress + 0x30) != False:
+					ez = roblox.ReadNormalString(roblox.DRP(NewMemAddress + 0x30))
+				else:
+					ez = ""
+				roblox.Program.free(NewMemAddress)
+				return ez
+			if ReturnType == "Object":
+				print(ReturnType)
+				ez = Instance(roblox.DRP(NewMemAddress + 0x30))
+				roblox.Program.free(NewMemAddress)
+				return ez
+			else:
+				print(ReturnType)
+				return "Not Implemented"
+		else:
+			print(ReturnType)
+			return "Not Implemented"
+
 	def SetProperty(self,name, float_arg):
 		NewMemoryRegion = roblox.allocate(100)
 		NewMemAddress = NewMemoryRegion

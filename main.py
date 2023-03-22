@@ -10,9 +10,5 @@ DataModel = Instance(GetDataModel())
 print(roblox.d2h(DataModel.getAddress()))
 
 print(roblox.d2h(DataModel.GetPropertyDescriptor("Name").GetAddress()))
-addressname = DataModel.GetProperty("Name", int)
-print(roblox.d2h(addressname))
-print(DataModel.GetName())
+print(DataModel.GetChildren()[0].GetProperty("Gravity"))
 
-for i in DataModel.GetChildren():
-    print(i.GetName())
