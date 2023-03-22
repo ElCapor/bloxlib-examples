@@ -32,6 +32,8 @@ class Instance:
 	def getAddress(self):
 		return self.addr
 	def GetName(self) -> str:
+		return roblox.ReadNormalString(self.GetProperty("Name",int))
+	def GetNameOld(self) -> str:
 		addr = self.getAddress()
 		return roblox.ReadInstaceString(addr + 0x28)
 	def GetChildren(self) -> list:
@@ -93,7 +95,7 @@ class Instance:
 	def GetClassName(self):
 		return roblox.ReadNormalString(roblox.DRP(self.GetClassDescriptor()) + 0xC)
 	def GetProperty(self,name, type):
-		NewMemoryRegion = roblox.allocate(100)
+		NewMemoryRegion = roblox.Program.allocate(100)
 		NewMemAddress = NewMemoryRegion
 		
 		InstanceAddress = self.addr #Change This
@@ -139,3 +141,5 @@ class Instance:
 			descendants += child.GetDescendants()
 		return descendants
 		
+def GetClassName(instance) -> str:
+	return roblox.ReadInstaceString(instance.GetClassDescriptor() + 0x4)
