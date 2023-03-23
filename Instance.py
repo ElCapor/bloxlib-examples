@@ -33,7 +33,6 @@ supported_returntypes = [
 ]
 
 disabled_props = [
-	"Attributes",
 	"AttributesReplicate",
 	"AttributesSerialize",
 	"CollisionGroups",
@@ -152,10 +151,7 @@ class Instance:
 			if ReturnType == "string":
 				print(ReturnType)
 				print("huh")
-				if roblox.isValidPointer(NewMemAddress + 0x30) != False:
-					ez = roblox.ReadNormalString(roblox.DRP(NewMemAddress + 0x30))
-				else:
-					ez = ""
+				ez = roblox.Program.read_int(NewMemAddress + 0x30)
 				roblox.Program.free(NewMemAddress)
 				return ez
 			if ReturnType == "Object":
