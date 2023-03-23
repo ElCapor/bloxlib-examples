@@ -126,12 +126,13 @@ class FormWidget(QWidget):
             local_instance = Instance(item.index)
             self.NameView.setValue(local_instance.GetNameOld())
             self.ClassView.setValue(GetClassName(local_instance))
+            self.AddressView.setValue(roblox.d2h(local_instance.getAddress()))
             self.propDescriptorEnumList.clear()
             for prop in local_instance.GetPropertyDescriptors():
                 self.propDescriptorEnumList.append(prop.GetName())
                 new_item = self.variantManager.addProperty(QVariant.String, prop.GetName())
                 new_item.setAttribute("readOnly", True)
-                new_item.setValue(str(local_instance.GetProperty(prop.GetName())))
+                new_item.setValue("Not Implemented Yet")
                 self.addedPropList.append(new_item)
             for added in self.addedPropList:
                 self.topItem.addSubProperty(added)
@@ -141,6 +142,8 @@ class FormWidget(QWidget):
         else:
             self.NameView.setValue("None")
             self.ClassView.setValue("None")
+            self.AddressView.setValue("None")
+
             self.propDescriptorEnumList.clear()
             self.propDescriptorEnum.setAttribute("enumNames", self.propDescriptorEnumList)
             for added in self.addedPropList:
@@ -161,6 +164,8 @@ class FormWidget(QWidget):
         self.NameView.setAttribute("readOnly", True)
         self.ClassView = self.variantManager.addProperty(QVariant.String, "Class")
         self.ClassView.setAttribute("readOnly", True)
+        self.AddressView = self.variantManager.addProperty(QVariant.String, "Address")
+        self.AddressView.setAttribute("readOnly", True)
         self.propDescriptorEnum = self.variantManager.addProperty(QtVariantPropertyManager.enumTypeId(), "Property Descriptors : ")
         self.propDescriptorEnumList = QList()
         self.propDescriptorEnumList.append("Enum0")
@@ -169,6 +174,8 @@ class FormWidget(QWidget):
         self.addedPropList = []
         self.topItem.addSubProperty(self.NameView)
         self.topItem.addSubProperty(self.ClassView)
+        self.topItem.addSubProperty(self.AddressView)
+
         self.topItem.addSubProperty(self.propDescriptorEnum)
 
         self.variantFactory = QtVariantEditorFactory()

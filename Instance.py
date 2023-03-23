@@ -1,7 +1,8 @@
 from Exploit import roblox
 from PropertyDescriptor import PropertyDescriptor
 from BoundedFunc import BoundedFunc
-
+from EventDesc import EventDesc
+from Memory import float_to_hex
 shared_prop = [
 	"Archivable",
 	"Attributes",
@@ -29,7 +30,8 @@ supported_returntypes = [
 	"int",
 	"double",
 	"string",
-	"bool"
+	"bool",
+	"Vector3"
 ]
 
 disabled_props = [
@@ -65,7 +67,7 @@ class Instance:
 		return children
 	def FindFirstChild(self, name):
 		for child in self.GetChildren():
-			if child.GetName() == name:
+			if child.GetNameOld() == name:
 				return child
 		return 0
 	def GetClassDescriptor(self) -> int:
@@ -83,6 +85,23 @@ class Instance:
 				children.append(PropertyDescriptor(current_prop))
 			prop_begin += 4
 		return children
+	def GetEventDescs(self) -> list:
+		prop_begin = roblox.DRP(self.GetClassDescriptor() + 0x78)
+		prop_end = roblox.DRP(self.GetClassDescriptor() + 0x78 + 0x4)
+		children = []
+		if prop_begin == 0 or prop_end == 0:
+			return []
+		while prop_begin != prop_end:
+			current_prop = roblox.DRP(prop_begin)
+			if (current_prop != 0):
+				children.append(EventDesc(current_prop))
+			prop_begin += 4
+		return children
+	def GetEventDesc(self, name:str) -> PropertyDescriptor:
+		for prop in self.GetEventDescs():
+			if prop.GetName() == name:
+				return prop
+		return 0
 	def GetPropertyDescriptor(self, name:str) -> PropertyDescriptor:
 		for prop in self.GetPropertyDescriptors():
 			if prop.GetName() == name:
@@ -159,6 +178,11 @@ class Instance:
 				ez = Instance(roblox.DRP(NewMemAddress + 0x30))
 				roblox.Program.free(NewMemAddress)
 				return ez
+			if ReturnType == "Vector3":
+				print(ReturnType)
+				ez = roblox.Program.read_int(NewMemAddress + 0x30)
+				roblox.Program.free(NewMemAddress)
+				return ez
 			else:
 				print(ReturnType)
 				return "Not Implemented"
@@ -166,20 +190,22 @@ class Instance:
 			print(ReturnType)
 			return "Not Implemented"
 
-	def SetProperty(self,name, float_arg):
-		NewMemoryRegion = roblox.allocate(100)
+	def SetProperty(self,name, arg):
+		NewMemoryRegion = roblox.Program.allocate(100)
 		NewMemAddress = NewMemoryRegion
-		roblox.Program.write_float(NewMemAddress + 0x50, float_arg)
+		if type(arg) ==float:
+			arg = float_to_hex(arg)
+		else:
+			return 0
 		InstanceAddress = self.addr #Change This
 		FunctionAddress = self.GetPropertyDescriptor(name).GetSet().Set()
 		HexArray = ''
 		MovIntoEcxOp = 'B9' + roblox.hex2le(roblox.d2h(InstanceAddress))
-		LoadFloatOp = 'D9 05' + roblox.hex2le(roblox.d2h(NewMemAddress + 0x50))
-		PushFloatOp = 'D9 1C 24'
-		CallOp = 'E8' + roblox.hex2le(roblox.calcjmpop(roblox.d2h(FunctionAddress),roblox.d2h(NewMemAddress + 14)))
+		PushOP = '68' + roblox.hex2le(roblox.d2h(int(arg, 16)))
+		CallOp = 'E8' + roblox.hex2le(roblox.calcjmpop(roblox.d2h(FunctionAddress),roblox.d2h(NewMemAddress + 10)))
 		StoreOp = 'A3' + roblox.hex2le(roblox.d2h(NewMemAddress + 0x40))
 		RetOp = 'C3'
-		HexArray = MovIntoEcxOp  + LoadFloatOp +  PushFloatOp + CallOp + StoreOp + RetOp
+		HexArray = MovIntoEcxOp  + PushOP  + CallOp + StoreOp + RetOp
 		#print(StoreOp)
 		roblox.Program.write_bytes(NewMemAddress,bytes.fromhex(HexArray),roblox.gethexc(HexArray))
 		#print(len(bytes.fromhex(HexArray)))

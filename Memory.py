@@ -1,5 +1,5 @@
 from Exploit import roblox
-
+import struct
 
 def GetDataModel() -> int:
     print(">>>>> Starting DataModel scan ! <<<<<")
@@ -12,6 +12,8 @@ def GetDataModel() -> int:
     else:
         return 0
     
+def float_to_hex(f):
+    return hex(struct.unpack('<I', struct.pack('<f', f))[0])
 """
 shell code that allows to spoof GetWalkspeed & bypassing small anticheats
 #shellcode = b"\x55\x89\xE5\x51\x8B\x81\x24\x02\x00\x00\x2B\x00\xC7\x45\xFC\x00\x00\x80\x41\xD9\x45\xFC\x89\xEC\x5D\xC3"
