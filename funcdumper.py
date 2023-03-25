@@ -8,8 +8,8 @@ from Instance import Instance,shared_prop,GetClassName
 from Exploit import roblox
 import pymem
 
-class funcdumper:
-	def dump():
+class dumper:
+	def dumpfuncs():
 		print("Starting to dump functions")
 		DModel = Instance(GetDataModel())
 		f2 = open("funcs_dump.txt", "w+")
