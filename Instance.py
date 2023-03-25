@@ -47,8 +47,6 @@ class Instance:
 	def getAddress(self):
 		return self.addr
 	def GetName(self) -> str:
-		return self.GetProperty("Name")
-	def GetNameOld(self) -> str:
 		addr = self.getAddress()
 		return roblox.ReadInstaceString(addr + 0x28)
 	def GetChildren(self) -> list:
@@ -67,7 +65,7 @@ class Instance:
 		return children
 	def FindFirstChild(self, name):
 		for child in self.GetChildren():
-			if child.GetNameOld() == name:
+			if child.GetName() == name:
 				return child
 		return 0
 	def GetClassDescriptor(self) -> int:
