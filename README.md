@@ -57,6 +57,20 @@ Arguments : Address representing the memory address of the instance
 #### In order to make it easier to use their c++ classes into lua , roblox engineers decided to build a class called PropertyDescriptor that holds all properties of an instance and allows them to be easily called and set
 `PropertyDescriptor(Address)` defines a PropertyDescriptor at the specified address , when no argument is specified it sets it to 0
 
+`PropertyDescriptor.GetAddress()` returns the address of the given property descriptor
+
 `PropertyDescriptor.GetName()` returns the name of the given property descriptor
 
 `PropertyDescriptor.GetSet()` returns a GetSet structure which holds get & set function for that property , check GetSet section to learn more about it
+
+
+## GetSet Class
+### What is GetSet ?
+#### Basically roblox engineers build a simple class that's only 0x30 in size and it just holds the get and set function for a given property descriptor
+`GetSetImpl(Address)` defines a GetSet structure at the specified address , when no argument is specified it sets it to 0
+
+`GetSetImpl.GetAddress()` returns the address of the given property descriptor
+
+`GetSetImpl.Get()` returns the address of the **Get** function for that property
+
+`GetSetImpl.Set()` returns the address of the **Set** function for that property
