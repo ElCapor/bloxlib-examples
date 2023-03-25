@@ -24,3 +24,15 @@
 
 
 ## Instance class
+`Instance(Address : int)` Specifies an instance in memory, returns an instance with address set to 0 when called without arguments.
+Arguments : Address representing the memory address of the instance
+
+`Instance.getAddress() -> int` returns the address of the instance
+
+`Instance.GetName() -> str` returns the name of the instance
+
+`Instance.GetChildren() -> list` returns a list containing child instances of a specified instance
+
+`Instance.FindFirstChild(name : str) -> Instance ` returns the first found instance by a name
+
+`Instance.GetClassDescriptor() ` -> returns the address of class descriptor for the 
