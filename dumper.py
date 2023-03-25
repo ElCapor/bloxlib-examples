@@ -17,7 +17,7 @@ shared_funcs = []
 dumped_classname = []
 for func in DModel.FindFirstChild("GroupService").GetBoundedFuncs():
 	shared_funcs.append(func.GetName())
-for i in DModel.GetDescendants():
+for i in DModel.GetChildren():
 	classname = GetClassName(i)
 	if classname not in dumped_classname:
 		dumped_classname.append(classname)
