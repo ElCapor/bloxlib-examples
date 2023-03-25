@@ -124,3 +124,30 @@ localPlayer = Players.GetChildren()[0]
 print("Hello " + localPlayer.GetName() + " !")
 
 ```
+
+##### Example n°2 - Setting & Getting property
+
+```python
+# use code from previous example
+Character = workspace.FindFirstChild(localPlayer.GetName()) # get player character
+Humanoid = Character.FindFirstChild("Humanoid")
+
+current_walkspeed = Humanoid.GetProperty("WalkSpeed")
+
+print(current_walkspeed) #prints 16
+
+Humanoid.SetProperty("WalkSpeed", 100.0) # make sure 2nd arg is a float
+# Set property is highly instable
+```
+
+##### Example n°3 - Calling BoundedFunction "Destroy"
+Currently there is no universal way to call all functions directly in python , however is possible to call in game functions using assembly , you can check out Camera.py & breakjoints.py for an example
+```python
+from Exploit import roblox
+from Instance import Instance
+from Memory import GetDataModel
+import pymem
+
+
+
+```
