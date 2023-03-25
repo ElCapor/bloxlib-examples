@@ -5,11 +5,13 @@ rbx_sec_enum = {
 	-1:None,
 	0:None,
 	1:"Plugin",
-	2:"RobloxPlace",
-	3:"LocalUser",
-	4:"WritePlayer",
-	5:"RobloxScript",
+	2:"None",
+	3:"RobloxPlace",
+	4:"RobloxScript",
+	5:"LocalUser",
 	6:"Roblox",
+	7:"Roblox (All permission)",
+	8:"WritePlayer"
 }
 
 
@@ -28,5 +30,7 @@ class BoundedFunc:
 	def SetSecurity(self,new_security):
 		if type(new_security) == int:
 			roblox.Program.write_int(self.addr + 0x1C, new_security)
+		else:
+			print("Correct syntax: SetSecurity(int)")
 	def GetSecurityName(self) -> str:
 		return rbx_sec_enum[roblox.Program.read_int(self.addr + 0x1C)]
