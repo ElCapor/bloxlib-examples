@@ -5,11 +5,13 @@ rbx_sec_enum = {
 	-1:None,
 	0:None,
 	1:"Plugin",
-	2:"RobloxPlace",
-	3:"LocalUser",
-	4:"WritePlayer",
-	5:"RobloxScript",
+	2:"None",
+	3:"RobloxPlace",
+	4:"RobloxScript",
+	5:"LocalUser",
 	6:"Roblox",
+	7:"Roblox",
+	8:"WritePlayer"
 }
 
 
