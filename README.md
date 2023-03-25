@@ -74,3 +74,32 @@ Arguments : Address representing the memory address of the instance
 `GetSetImpl.Get()` returns the address of the **Get** function for that property
 
 `GetSetImpl.Set()` returns the address of the **Set** function for that property
+
+## BoundedFunction class
+### What is BoundedFunction ?
+#### Roblox engineers built a simple class to allow them to call Instance methods in game using Lua. It is worth noting that this structure also holds the security for some functions and is the reasons for identity checks
+`BoundedFunc(Address)` defines a BoundedFunction structure at the specified address , when no argument is specified it sets it to 0
+
+`BoundedFunc.GetAddress()` returns the address of the given Bounded Function
+
+`BoundedFunc.GetFunc()` returns the address of the function
+
+`BoundedFunc.GetSecurity()` returns the security level of the function (integer)
+
+`BoundedFunc.SetSecurity(new_security : int)` Sets the security level of the function report below for a table of security numbers
+
+`BoundedFunc.GetSecurityName()` returns the security level of the function (string)
+
+Security Table
+
+| Security     | String     |
+|--------------|------------|
+| 0            |  None      |
+| 1            |  Plugin    |
+| 2            |LocalScript | 
+| 3            |RobloxPlace | 
+| 4            |RobloxScript| 
+| 5            |CoreScript  | 
+| 6            |  Roblox    | 
+| 7            |  Roblox    | 
+| 8            |WritePlayer | 
