@@ -26,10 +26,7 @@ def BreakJoints(character : Instance):
     StoreOp = 'A3' + roblox.hex2le(roblox.d2h(NewMemAddress + 0x30))
     RetOp = 'C3'
     HexArray = MovIntoEcxOp + CallOp + StoreOp + RetOp
-    #print(StoreOp)
     roblox.Program.write_bytes(NewMemAddress,bytes.fromhex(HexArray),roblox.gethexc(HexArray))
-    #print(len(bytes.fromhex(HexArray)))
-    print(roblox.d2h(NewMemAddress))
     roblox.Program.start_thread(NewMemAddress)
+    roblox.Program.free(NewMemAddress)
 
-BreakJoints(playerChar)
