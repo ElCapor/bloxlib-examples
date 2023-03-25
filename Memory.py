@@ -1,6 +1,6 @@
 from Exploit import roblox
 import struct
-
+import pymem
 def GetDataModel() -> int:
     print(">>>>> Starting DataModel scan ! <<<<<")
     guiroot_pattern = b"\\x47\\x75\\x69\\x52\\x6F\\x6F\\x74\\x00\\x47\\x75\\x69\\x49\\x74\\x65\\x6D"
@@ -14,6 +14,27 @@ def GetDataModel() -> int:
     
 def float_to_hex(f):
     return hex(struct.unpack('<I', struct.pack('<f', f))[0])
+
+
+def write_str(text:str, Address:int):
+	current_char = Address
+	lentgh = roblox.Program.read_int(Address + 0x10)
+	mylen = len(text)
+	if mylen < 16:
+		for char in text:
+			roblox.Program.write_char(current_char, char)
+			current_char = current_char + 1
+	else:
+		newmemory = pymem.pymem.memory.allocate_memory(roblox.Program.process_handle, mylen)
+		current_char = newmemory
+		#print(roblox.d2h(newmemory))
+		for char in text:
+			roblox.Program.write_char(current_char, char)
+			current_char = current_char + 1
+		roblox.Program.write_int(Address, newmemory)
+	roblox.Program.write_int(Address + 0x10, mylen)
+	
+
 """
 shell code that allows to spoof GetWalkspeed & bypassing small anticheats
 #shellcode = b"\x55\x89\xE5\x51\x8B\x81\x24\x02\x00\x00\x2B\x00\xC7\x45\xFC\x00\x00\x80\x41\xD9\x45\xFC\x89\xEC\x5D\xC3"
