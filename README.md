@@ -1,5 +1,7 @@
 # lego-exploder
- W.I.P Roblox MultiTool - ESP/AIMBOT - Instance explorer - MultiClient - FPS Unlock  credit or kys
+A work in progress library to interact with the game called Roblox fully written with python.
+<br>
+### Note : this library is note completed, and i think i am only at 10% of the features i want to add , it was made in 1 week to challenge myself and to learn more , as well as helping new people getting started in this and to prove that you can do anything in any language, so the code is not perfect , if you ever want to contribute feel free to send a pull request.
 
 
 # Project Structure
@@ -24,6 +26,9 @@
 
 
 ## Instance class
+### What is an Instance ?
+#### Roblox Engineers made a base class named instance that represents every game object. Every object in game an instance that have properties and functions in common.
+
 `Instance(Address : int)` Specifies an instance in memory, returns an instance with address set to 0 when called without arguments.
 Arguments : Address representing the memory address of the instance
 
@@ -148,6 +153,52 @@ from Instance import Instance
 from Memory import GetDataModel
 import pymem
 
+Game = Instance(GetDataModel())
+Workspace = Game.FindFirstChild("Workspace")
+Players = Game.FindFirstChild("Players")
+localPlayer = Players.GetChildren()[0]
+Character = workspace.FindFirstChild(localPlayer.GetName())
 
+DestroyAddress = Character.GetBoundFunction("Destroy").GetFunc() # address of the destroy function , note that all instance addresses are static so you can dump them using funcdumper.py
+NewMemoryRegion = roblox.Program.allocate(100)
+NewMemAddress = NewMemoryRegion
+# We allocate a new region in memory to inject our assembly code
 
+InstanceAddress = Character.getAddress() #Change This
+FunctionAddress = DestroyAddress
+
+HexArray = ''
+MovIntoEcxOp = 'B9' + roblox.hex2le(roblox.d2h(InstanceAddress))#Destroy follows the __thiscall calling convention like 90% of all instance functions , meaning we have to push the instance address into the ecx register
+# roblox.hex2le functions allows us to reverse the address and get the corresponding bytes since it's assembly
+
+#call the function , we do +5 because we have 5 bytes preceding this instruction , if we had pushed another argument it would be +10 for example
+CallOp = 'E8' + roblox.hex2le(roblox.calcjmpop(roblox.d2h(FunctionAddress),roblox.d2h(NewMemAddress + 5)))
+
+#store the result value in case we get one
+StoreOp = 'A3' + roblox.hex2le(roblox.d2h(NewMemAddress + 0x30))
+#ret = end of function
+RetOp = 'C3'
+HexArray = MovIntoEcxOp + CallOp + StoreOp + RetOp
+#assembly code
+roblox.Program.write_bytes(NewMemAddress,bytes.fromhex(HexArray),roblox.gethexc(HexArray))
+#write that code into memory
+roblox.Program.start_thread(NewMemAddress)
+#execute the code
+roblox.Program.free(NewMemAddress)
+#free the memory and delete our function
 ```
+If you ever need any help or want to correct anything you can add me on discord mogus#2891 or make an issue
+
+### To-Do
+[ ] - Add more examples
+<br>
+[ ] - Make more classes
+<br>
+[ ] - Document Exploit class
+
+# Credits
+ElCapor -> Main Developer
+<br>
+01 -> Helped me a lot and gave me the initial idea of doing this in python
+
+Ficelloo -> Contributed by helping me with rewriting some of the spaghetti code
