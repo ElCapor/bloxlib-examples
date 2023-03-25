@@ -103,3 +103,24 @@ Security Table
 | 6            |  Roblox    | 
 | 7            |  Roblox    | 
 | 8            |WritePlayer | 
+
+
+
+
+# Quick Start
+#### This project is like a plug & play library , you can use it to rapidly develop exploit and/or test some features
+
+##### Example n°1 - Getting local player
+```python
+from Exploit import roblox
+from Instance import Instance
+from Memory import GetDataModel
+
+
+Game = Instance(GetDataModel())
+Workspace = Game.FindFirstChild("Workspace")
+Players = Game.FindFirstChild("Players")
+localPlayer = Players.GetChildren()[0]
+print("Hello " + localPlayer.GetName() + " !")
+
+```
