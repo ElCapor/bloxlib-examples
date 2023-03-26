@@ -4,7 +4,7 @@ you can take that as an exemple file
 """
 
 from Memory import GetDataModel
-from Instance import Instance,shared_prop,GetClassName
+from Instance import Instance
 from Exploit import roblox
 import pymem
 
