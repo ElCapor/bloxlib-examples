@@ -24,6 +24,10 @@ A work in progress library to interact with the game called Roblox fully written
 --> ui.py -> base explorer without any property viewer
 
 
+# Requirements
+PyMem -> Mandatory just run `pip3 install pymem` to install it
+<br>
+PyQt5 -> Optional , used for gui applications, just run `pip3 install pyqt5` to install it
 
 ## Instance class
 ### What is an Instance ?
