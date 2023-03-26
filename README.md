@@ -29,6 +29,19 @@ PyMem -> Mandatory just run `pip3 install pymem` to install it
 <br>
 PyQt5 -> Optional , used for gui applications, just run `pip3 install pyqt5` to install it
 
+# Exploit class
+### Exploit class is just a wrapper around pymem that allow's to easily get processes and operate on them
+#### Members :
+`ProgramName` : string , represents the name of the opened process
+`Program` : pymem.Pymem , pymem structure that represents the process
+#### Functions :
+`Exploit(ProgramName)` takes as a an argument an integer or a string , creates a process based on a name or a string.
+`Exploit.h2d(hex : string) -> int` converts the given string representation of a hexadecimal number into an int
+`Exploit.d2h(decimal : int) -> str` converts the given integer into it's hexadecimal string representation , mostly used to print addresses
+`AOBSCANALL(AOB_Sig,xreturn_multiple)` scans the whole process memory for a specific bytes pattern defined in AOB_Sig , an example can be found in Memory.py
+
+
+
 ## Instance class
 ### What is an Instance ?
 #### Roblox Engineers made a base class named instance that represents every game object. Every object in game an instance that have properties and functions in common.
