@@ -16,11 +16,11 @@ class Players(Instance):
         if type(workspace) != Instance:
             print("nah")
         else:
-            LP = self.GetChildren()[0]
+            LP = self.GetLocalPlayer()
             return workspace.FindFirstChild(LP.GetName())
-    def GetAllPlayers(self) -> Instance:
+    def GetAllPlayers(self) -> list:
         plrs = []
         for players in self.GetChildren():
             plrs.append(players)
-        return plrs #TODO: make getAddress compatible with list 
+        return plrs
     
