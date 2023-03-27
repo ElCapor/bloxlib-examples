@@ -221,7 +221,8 @@ If you ever need any help or want to correct anything you can add me on discord 
 [ ] - Make more classes
 <br>
 [ ] - Document Exploit class
-
+<br>
+[ ] - Optimize Get & Set functions
 # Credits
 ElCapor -> Main Developer
 <br>
