@@ -215,4 +215,6 @@ class Instance:
 			descendants.append(child)
 			descendants += child.GetDescendants()
 		return descendants
-	
+
+def GetClassName(instance) -> str:
+	return roblox.ReadInstaceString(instance.GetClassDescriptor() + 0x4)

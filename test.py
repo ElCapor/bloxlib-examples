@@ -79,7 +79,7 @@ class IndexedTreeWidgetItem(QTreeWidgetItem):
 
 def GetDescendants(apple_item, instance):
     # Add the current instance to the tree widget
-    instance_item = IndexedTreeWidgetItem(instance.getAddress(),[instance.GetNameOld()])
+    instance_item = IndexedTreeWidgetItem(instance.getAddress(),[instance.GetName()])
     apple_item.addChild(instance_item)
     
     # Recursively add the descendants of the current instance to the tree widget
@@ -124,7 +124,7 @@ class FormWidget(QWidget):
                 self.topItem.removeSubProperty(added)
                 self.addedPropList.remove(added)
             local_instance = Instance(item.index)
-            self.NameView.setValue(local_instance.GetNameOld())
+            self.NameView.setValue(local_instance.GetName())
             self.ClassView.setValue(GetClassName(local_instance))
             self.AddressView.setValue(roblox.d2h(local_instance.getAddress()))
             self.propDescriptorEnumList.clear()
