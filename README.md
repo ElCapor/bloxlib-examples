@@ -43,7 +43,13 @@ PyQt5 -> Optional , used for gui applications, just run `pip3 install pyqt5` to 
 
 `AOBSCANALL(AOB_Sig,xreturn_multiple)` scans the whole process memory for a specific bytes pattern defined in AOB_Sig , an example can be found in Memory.py
 
+`Exploit.gethxc(hex_string)`  Get Hex Count, counts the amount of Hex in the Hex String. returns the length of the hex instructions.
 
+`Exploit.hex2le(hex_array)` converts hexadecimal values to little endian, for use with assembly shell code.
+
+`Exploit.calcjmpop(des,cur)`  Calculates the Jump or Call using the two arguments. Mainly used for assembly instructions
+
+`Exploit.DRP(address)` Reads a pointer in memory.
 
 ## Instance class
 ### What is an Instance ?
