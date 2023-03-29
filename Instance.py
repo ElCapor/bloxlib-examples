@@ -163,6 +163,20 @@ class Instance:
 			descendants.append(child)
 			descendants += child.GetDescendants()
 		return descendants
+	def Destroy(self):
+		NewMemoryRegion = roblox.Program.allocate(100)
+		NewMemAddress = NewMemoryRegion
+		InstanceAddress = self.getAddress() #Change This
+		FunctionAddress = self.GetBoundFunction("Destroy").GetFunc()
+		HexArray = ''
+		MovIntoEcxOp = 'B9' + roblox.hex2le(roblox.d2h(InstanceAddress))
+		CallOp = 'E8' + roblox.hex2le(roblox.calcjmpop(roblox.d2h(FunctionAddress),roblox.d2h(NewMemAddress + 5)))
+		StoreOp = 'A3' + roblox.hex2le(roblox.d2h(NewMemAddress + 0x30))
+		RetOp = 'C3'
+		HexArray = MovIntoEcxOp + CallOp + StoreOp + RetOp
+		roblox.Program.write_bytes(NewMemAddress,bytes.fromhex(HexArray),roblox.gethexc(HexArray))
+		roblox.Program.start_thread(NewMemAddress)
+		roblox.Program.free(NewMemAddress)
 
 def GetClassName(instance) -> str:
 	return roblox.ReadInstaceString(instance.GetClassDescriptor() + 0x4)

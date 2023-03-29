@@ -62,7 +62,7 @@ from PyQt5.QtCore import (
     )
 
 from PyQt5.QtGui import QKeySequence
-from PyQt5.QtWidgets import QMenu, QApplication, QTreeWidget, QTreeWidgetItem, QMainWindow, QWidget, QVBoxLayout,QLabel, QLineEdit, QHBoxLayout, QComboBox
+from PyQt5.QtWidgets import QAction,QMenu, QApplication, QTreeWidget, QTreeWidgetItem, QMainWindow, QWidget, QVBoxLayout,QLabel, QLineEdit, QHBoxLayout, QComboBox
 
 from pyqtcore import QList
 from qtvariantproperty import QtVariantEditorFactory, QtVariantPropertyManager
@@ -133,18 +133,32 @@ class FormWidget(QWidget):
 
         item = self.tree_widget.itemAt(point)
         name = item.text(0)  # The text of the node.
-
+        self.contextItem = item
         # We build the menu.
         menu = QMenu()
-        action = menu.addAction("Souris au-dessus de")
-        action = menu.addAction(name)
+        action = menu.addAction("Selected : " + name)
         menu.addSeparator()
-        action_1 = menu.addAction("Choix 1")
-        action_2 = menu.addAction("Choix 2")
-        action_3 = menu.addAction("Choix 3")
-
-
+        copy_path_action = menu.addAction("Copy Path")
+        clone_action = menu.addAction("Clone")
+        destroy_action = menu.addAction("Destroy")
+        copy_path_action.triggered.connect(self.triggerlmao)
         menu.exec_(self.tree_widget.mapToGlobal(point))
+    def triggerlmao(self, s):
+        local_instance = Instance(self.contextItem.index)
+        texts = []
+        current_item = self.contextItem
+        while current_item is not None:
+            texts.append(current_item.text(0))
+            current_item = current_item.parent()
+        texts.pop() # remove root
+        texts.pop() # remove root
+        texts.reverse()
+        path = ""
+        path = "Game"
+        for elem in texts:
+            path += f'.FindFirstChild("{elem}")'
+        print(path)
+        
 
     @pyqtSlot(QTreeWidgetItem, int)
     def on_item_clicked(self, item, column):
