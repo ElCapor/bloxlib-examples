@@ -71,6 +71,11 @@ from Instance import Instance, GetClassName
 from Exploit import roblox
 from Memory import GetDataModel
 from PyQt5.QtCore import pyqtSlot, Qt
+import os
+def addToClipBoard(text):
+    command = 'echo | set /p nul=' + text.strip() + '| clip'
+    os.system(command)
+
 class IndexedTreeWidgetItem(QTreeWidgetItem):
     def __init__(self, index=0, parent=None):
         super().__init__(parent)
@@ -158,6 +163,7 @@ class FormWidget(QWidget):
         for elem in texts:
             path += f'.FindFirstChild("{elem}")'
         print(path)
+        addToClipBoard(path)
         
 
     @pyqtSlot(QTreeWidgetItem, int)
