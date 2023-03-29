@@ -51,6 +51,12 @@ PyQt5 -> Optional , used for gui applications, just run `pip3 install pyqt5` to 
 
 `Exploit.DRP(address)` Reads a pointer in memory.
 
+## Memory.py
+### Simple file that holds memory tools
+`GetDataModel()` returns the address of the datamodel ( = game root) by performing an array of bytes scan
+`SetupOptimizations()` will allocate the functions that are required for get & set property , note that it is necessary to call it for now in order to be able to use that, meaning that you can't use multithreading for now
+`FreeOptimizations()` will free the memory of the functions , you should call this at the end of your program to clean up the memory
+
 ## Instance class
 ### What is an Instance ?
 #### Roblox Engineers made a base class named instance that represents every game object. Every object in game an instance that have properties and functions in common.
