@@ -3,7 +3,7 @@ import re
 import time
 from Exploit import roblox
 from Instance import Instance
-from Memory import GetDataModel,float_to_hex
+from Memory import GetDataModel,float_to_hex,SetupOptimizations, FreeOptimizations, getPropertyFuncs
 from funcdumper import dumper #useful if you are planning to dump every roblox funcs
 from Players import Players #useful to manipulate players instance
 
@@ -26,11 +26,9 @@ def Destroy(inst : Instance):
 
 DataModel = Instance(GetDataModel())
 workspace = DataModel.GetChildren()[0]
-
+    
 Players = Players(DataModel.FindFirstChild("Players"))
 
-print(Players.GetAllPlayers())
-
-Destroy(Players.GetAllPlayers())
-
-#BreakJoints(Players.GetAllPlayers(workspace))
+SetupOptimizations()
+print(workspace.GetProperty("Gravity"))
+FreeOptimizations() # free the memory

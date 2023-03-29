@@ -62,7 +62,7 @@ from PyQt5.QtCore import (
     )
 
 from PyQt5.QtGui import QKeySequence
-from PyQt5.QtWidgets import QApplication, QTreeWidget, QTreeWidgetItem, QMainWindow, QWidget, QVBoxLayout,QLabel, QLineEdit, QHBoxLayout, QComboBox
+from PyQt5.QtWidgets import QMenu, QApplication, QTreeWidget, QTreeWidgetItem, QMainWindow, QWidget, QVBoxLayout,QLabel, QLineEdit, QHBoxLayout, QComboBox
 
 from pyqtcore import QList
 from qtvariantproperty import QtVariantEditorFactory, QtVariantPropertyManager
@@ -70,12 +70,21 @@ from qttreepropertybrowser import QtTreePropertyBrowser
 from Instance import Instance, GetClassName
 from Exploit import roblox
 from Memory import GetDataModel
-from PyQt5.QtCore import pyqtSlot
+from PyQt5.QtCore import pyqtSlot, Qt
 class IndexedTreeWidgetItem(QTreeWidgetItem):
     def __init__(self, index=0, parent=None):
         super().__init__(parent)
         self.index = index
 
+
+class RightClickTreeWidget(QTreeWidget):
+    def __init__(self, parent = None):
+        super().__init__(parent)
+
+    def mousePressEvent (self, event):
+        if event.button() == Qt.RightButton:
+            print("right click !")
+        QTreeWidget.mousePressEvent(self, event)
 
 def GetDescendants(apple_item, instance):
     # Add the current instance to the tree widget
@@ -115,6 +124,27 @@ class FormWidget(QWidget):
 
     def datamodel(self):
         self.DataModel = Instance(GetDataModel())
+    def menuContextTree(self, point):
+        # Infos about the node selected.
+        index = self.tree_widget.indexAt(point)
+
+        if not index.isValid():
+            return
+
+        item = self.tree_widget.itemAt(point)
+        name = item.text(0)  # The text of the node.
+
+        # We build the menu.
+        menu = QMenu()
+        action = menu.addAction("Souris au-dessus de")
+        action = menu.addAction(name)
+        menu.addSeparator()
+        action_1 = menu.addAction("Choix 1")
+        action_2 = menu.addAction("Choix 2")
+        action_3 = menu.addAction("Choix 3")
+
+
+        menu.exec_(self.tree_widget.mapToGlobal(point))
 
     @pyqtSlot(QTreeWidgetItem, int)
     def on_item_clicked(self, item, column):
@@ -150,7 +180,9 @@ class FormWidget(QWidget):
                 self.topItem.removeSubProperty(added)
                 self.addedPropList.remove(added)
     def __controls(self):
-        self.tree_widget = QTreeWidget()
+        self.tree_widget = RightClickTreeWidget()
+        self.tree_widget.setContextMenuPolicy(Qt.CustomContextMenu)
+        self.tree_widget.customContextMenuRequested.connect(self.menuContextTree)
         self.tree_widget.itemClicked.connect(self.on_item_clicked)
         self.tree_widget.setHeaderLabels(['Fruits'])
         #apple_icon = QIcon('icon.png')
