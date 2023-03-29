@@ -1,9 +1,9 @@
+from __future__ import annotations
 from Exploit import roblox
 from PropertyDescriptor import PropertyDescriptor
 from BoundedFunc import BoundedFunc
 from EventDesc import EventDesc
 from Memory import float_to_hex, getPropertyFuncs
-from __future__ import annotations
 shared_prop = [
 	"Archivable",
 	"Attributes",

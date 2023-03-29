@@ -16,5 +16,5 @@ Players = Players(DataModel.FindFirstChild("Players"))
 
 SetupOptimizations()
 print(workspace.GetProperty("Gravity"))
-print(workspace.GetPropertyDescriptor())
+print(workspace.GetPropertyDescriptor("className").GetSet().Get())
 FreeOptimizations() # free the memory
