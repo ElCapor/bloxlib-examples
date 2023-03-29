@@ -88,7 +88,7 @@ class RightClickTreeWidget(QTreeWidget):
 
     def mousePressEvent (self, event):
         if event.button() == Qt.RightButton:
-            print("right click !")
+            pass
         QTreeWidget.mousePressEvent(self, event)
 
 def GetDescendants(apple_item, instance):
@@ -146,10 +146,9 @@ class FormWidget(QWidget):
         copy_path_action = menu.addAction("Copy Path")
         clone_action = menu.addAction("Clone")
         destroy_action = menu.addAction("Destroy")
-        copy_path_action.triggered.connect(self.triggerlmao)
+        copy_path_action.triggered.connect(self.copy_path)
         menu.exec_(self.tree_widget.mapToGlobal(point))
-    def triggerlmao(self, s):
-        local_instance = Instance(self.contextItem.index)
+    def copy_path(self, s):
         texts = []
         current_item = self.contextItem
         while current_item is not None:
@@ -162,13 +161,11 @@ class FormWidget(QWidget):
         path = "Game"
         for elem in texts:
             path += f'.FindFirstChild("{elem}")'
-        print(path)
         addToClipBoard(path)
         
 
     @pyqtSlot(QTreeWidgetItem, int)
     def on_item_clicked(self, item, column):
-        print(item.index)
         if item.index != 0:
             for added in self.addedPropList:
                 self.topItem.removeSubProperty(added)
