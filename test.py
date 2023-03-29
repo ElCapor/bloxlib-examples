@@ -179,7 +179,7 @@ class FormWidget(QWidget):
                 self.propDescriptorEnumList.append(prop.GetName())
                 new_item = self.variantManager.addProperty(QVariant.String, prop.GetName())
                 new_item.setAttribute("readOnly", True)
-                new_item.setValue("Not Implemented Yet")
+                new_item.setValue(prop.GetReturnValue())
                 self.addedPropList.append(new_item)
             for added in self.addedPropList:
                 self.topItem.addSubProperty(added)

@@ -3,6 +3,7 @@ from PropertyDescriptor import PropertyDescriptor
 from BoundedFunc import BoundedFunc
 from EventDesc import EventDesc
 from Memory import float_to_hex, getPropertyFuncs
+from __future__ import annotations
 shared_prop = [
 	"Archivable",
 	"Attributes",
@@ -64,15 +65,15 @@ class Instance:
 					children.append(Instance(current_instance))
 					child_begin = child_begin + 8
 		return children
-	def FindFirstChild(self, name):
+	def FindFirstChild(self, name) -> Instance:
 		for child in self.GetChildren():
 			if child.GetName() == name:
 				return child
 		return 0
-	def GetClassDescriptor(self) -> int:
+	def GetClassDescriptor(self) -> list[Instance]:
 		classDescriptor = roblox.DRP(self.addr + 0xC)
 		return classDescriptor
-	def GetPropertyDescriptors(self) -> list:
+	def GetPropertyDescriptors(self) -> list[PropertyDescriptor]:
 		prop_begin = roblox.DRP(self.GetClassDescriptor() + 0x18)
 		prop_end = roblox.DRP(self.GetClassDescriptor() + 0x18 + 0x4)
 		children = []
@@ -106,7 +107,7 @@ class Instance:
 			if prop.GetName() == name:
 				return prop
 		return 0
-	def GetBoundedFuncs(self) -> list:
+	def GetBoundedFuncs(self) -> list[BoundedFunc]:
 		prop_begin = roblox.DRP(self.GetClassDescriptor() + 0xD8)
 		prop_end = roblox.DRP(self.GetClassDescriptor() + 0xD8 + 0x4)
 		children = []
@@ -123,7 +124,7 @@ class Instance:
 			if func.GetName() == name:
 				return func
 		return 0
-	def GetClassName(self):
+	def GetClassName(self) -> str:
 		return roblox.ReadNormalString(roblox.DRP(self.GetClassDescriptor()) + 0xC)
 	def GetProperty(self,name):
 		propertyDescriptor = self.GetPropertyDescriptor(name)
@@ -157,7 +158,7 @@ class Instance:
 		#print(len(bytes.fromhex(HexArray)))
 		print(roblox.d2h(NewMemAddress))
 		roblox.Program.start_thread(NewMemAddress)
-	def GetDescendants(self):
+	def GetDescendants(self) -> list[Instance]:
 		descendants = []
 		for child in self.GetChildren():
 			descendants.append(child)
