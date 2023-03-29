@@ -140,7 +140,6 @@ Security Table
 
 # Quick Start
 #### This project is like a plug & play library , you can use it to rapidly develop exploit and/or test some features
-
 ##### Example n°1 - Getting local player
 ```python
 from Exploit import roblox
@@ -157,9 +156,10 @@ print("Hello " + localPlayer.GetName() + " !")
 ```
 
 ##### Example n°2 - Setting & Getting property
-
+### WARNING : MAJOR Change made to the memory module , you now need to import & run SetupOptimizations & FreeOptimizations , which are required for get & set properties
 ```python
 # use code from previous example
+from Memory import SetupOptimizations, FreeOptimizations
 Character = workspace.FindFirstChild(localPlayer.GetName()) # get player character
 Humanoid = Character.FindFirstChild("Humanoid")
 
