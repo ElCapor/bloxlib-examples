@@ -54,32 +54,3 @@ class Camera(Instance):
         return Vector3().fromMemory(roblox.DRP(roblox.DRP(self.w2s_addr + 0x30)) + 0x8)
     def free_w2s(self):
         roblox.Program.free(self.w2s_addr)
-
-def World2Screen(camera, function):
-        NewMemoryRegion = roblox.Program.allocate(100)
-        NewMemAddress = NewMemoryRegion
-        
-        InstanceAddress = camera.getAddress() #Change This
-        FunctionAddress = function
-        returnStruct = roblox.Program.allocate(4)
-        testx = 3.0
-        testy = 4.0
-        testz = 5.0
-        HexArray = ''
-        MovIntoEcxOp = 'B9' + roblox.hex2le(roblox.d2h(InstanceAddress))
-        PushOPX = '68' +  roblox.hex2le(roblox.d2h(int(float_to_hex(testx), 16)))
-        PushOPY = '68' +  roblox.hex2le(roblox.d2h(int(float_to_hex(testy), 16)))
-        PushOPZ = '68' +  roblox.hex2le(roblox.d2h(int(float_to_hex(testz), 16)))
-        PushOP2 = '68' +  roblox.hex2le(roblox.d2h(returnStruct))
-        CallOp = 'E8' + roblox.hex2le(roblox.calcjmpop(roblox.d2h(FunctionAddress),roblox.d2h(NewMemAddress + 25)))
-        StoreOp = 'A3' + roblox.hex2le(roblox.d2h(NewMemAddress + 0x30))
-        RetOp = 'C3'
-        HexArray = MovIntoEcxOp + PushOPX + PushOPY + PushOPZ + PushOP2 + CallOp + StoreOp + RetOp
-        #print(StoreOp)
-        roblox.Program.write_bytes(NewMemAddress,bytes.fromhex(HexArray),roblox.gethexc(HexArray))
-        #print(len(bytes.fromhex(HexArray)))
-        print(roblox.d2h(NewMemAddress))
-        roblox.Program.start_thread(NewMemAddress)
-        returnValue = roblox.DRP(NewMemAddress + 0x30)
-        roblox.Program.free(NewMemAddress)
-        return returnValue
