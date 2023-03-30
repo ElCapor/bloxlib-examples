@@ -14,7 +14,8 @@ workspace = DataModel.GetChildren()[0]
     
 Players = Players(DataModel.FindFirstChild("Players"))
 
+
+
 SetupOptimizations()
-print(workspace.GetProperty("Gravity"))
-print(workspace.GetPropertyDescriptor("className").GetSet().Get())
+print(roblox.d2h(workspace.getAddress()))
 FreeOptimizations() # free the memory

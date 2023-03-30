@@ -147,6 +147,7 @@ class FormWidget(QWidget):
         clone_action = menu.addAction("Clone")
         destroy_action = menu.addAction("Destroy")
         copy_path_action.triggered.connect(self.copy_path)
+        destroy_action.triggered.connect(self.destroy_action)
         menu.exec_(self.tree_widget.mapToGlobal(point))
     def copy_path(self, s):
         texts = []
@@ -162,7 +163,10 @@ class FormWidget(QWidget):
         for elem in texts:
             path += f'.FindFirstChild("{elem}")'
         addToClipBoard(path)
-        
+    def destroy_action(self, s):
+        local_instance = Instance(self.contextItem.index)
+        local_instance.Destroy()
+        self.tree_widget.removeItemWidget(self.contextItem, 0)
 
     @pyqtSlot(QTreeWidgetItem, int)
     def on_item_clicked(self, item, column):
@@ -179,7 +183,7 @@ class FormWidget(QWidget):
                 self.propDescriptorEnumList.append(prop.GetName())
                 new_item = self.variantManager.addProperty(QVariant.String, prop.GetName())
                 new_item.setAttribute("readOnly", True)
-                new_item.setValue(prop.GetReturnValue())
+                new_item.setValue(prop.GetReturnValue()  + str(prop.GetSecurity()))
                 self.addedPropList.append(new_item)
             for added in self.addedPropList:
                 self.topItem.addSubProperty(added)

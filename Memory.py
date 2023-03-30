@@ -75,17 +75,22 @@ getPropertyFuncs = dict()
 # list of functions to get specific properties
 def SetupOptimizations():
      getFloat = Call0Arg("float")
-     getFloat.allocate()
      getNormal = Call0Arg("")
-     getNormal.allocate()
+     getString = Call0Arg("string")
+     
      getPropertyFuncs[""] = getNormal
      getPropertyFuncs["float"] = getFloat
+     getPropertyFuncs["string"]= getString
+     
+     for func in getPropertyFuncs:
+          getPropertyFuncs[func].allocate()
+          
      
      
 
 def FreeOptimizations():
-     for func in getPropertyFuncs():
-          func.free()
+     for func in getPropertyFuncs:
+          getPropertyFuncs[func].free()
 """
 shell code that allows to spoof GetWalkspeed & bypassing small anticheats
 #shellcode = b"\x55\x89\xE5\x51\x8B\x81\x24\x02\x00\x00\x2B\x00\xC7\x45\xFC\x00\x00\x80\x41\xD9\x45\xFC\x89\xEC\x5D\xC3"

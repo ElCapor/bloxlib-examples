@@ -51,7 +51,7 @@ class Instance:
 	def GetName(self) -> str:
 		addr = self.getAddress()
 		return roblox.ReadInstaceString(addr + 0x28)
-	def GetChildren(self) -> list:
+	def GetChildren(self) -> list[Instance]:
 		child_list = roblox.DRP(self.addr + 0x2C)
 		children = []
 		if child_list != 0:
@@ -129,7 +129,7 @@ class Instance:
 	def GetProperty(self,name):
 		propertyDescriptor = self.GetPropertyDescriptor(name)
 		ReturnType = roblox.ReadInstaceString(roblox.DRP(propertyDescriptor.GetAddress() + 0x24)+0x4)
-		if ReturnType in supported_returntypes and name not in disabled_props:
+		if ReturnType in getPropertyFuncs:
 			getfunc = getPropertyFuncs[ReturnType]
 			getfunc.write(self.addr, propertyDescriptor.GetSet().Get())
 			return getfunc.call()
