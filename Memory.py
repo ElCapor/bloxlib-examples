@@ -55,7 +55,7 @@ class Call0Arg:
         roblox.Program.write_bytes(self.addr,bytes.fromhex(HexArray),roblox.gethexc(HexArray))
     def write(self,instanceAddress : int, functionAddress : int):
         self.InstanceAddress = instanceAddress
-        print(roblox.d2h(self.InstanceAddress))
+        #print(roblox.d2h(self.InstanceAddress))
         self.FunctionAddress = functionAddress
         MovIntoEcxOp = roblox.hex2le(roblox.d2h(self.InstanceAddress))
         CallOp = roblox.hex2le(roblox.calcjmpop(roblox.d2h(self.FunctionAddress),roblox.d2h(self.addr + 5)))
@@ -77,10 +77,11 @@ def SetupOptimizations():
      getFloat = Call0Arg("float")
      getNormal = Call0Arg("")
      getString = Call0Arg("string")
-     
+     getVector3 = Call0Arg("Vector3")
      getPropertyFuncs[""] = getNormal
      getPropertyFuncs["float"] = getFloat
      getPropertyFuncs["string"]= getString
+     getPropertyFuncs["Vector3"] = getVector3
      
      for func in getPropertyFuncs:
           getPropertyFuncs[func].allocate()

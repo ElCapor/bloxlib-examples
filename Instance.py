@@ -43,8 +43,11 @@ disabled_props = [
 ]
 
 class Instance:
-	def __init__(self, Address = 0) -> None:
-		self.addr = Address
+	def __init__(self, otherType=0) -> None:
+		if type(otherType) == int:
+			self.addr = otherType
+		elif type(otherType) == Instance:
+			self.addr = otherType.getAddress()
 		
 	def getAddress(self):
 		return self.addr
@@ -181,3 +184,11 @@ class Instance:
 
 def GetClassName(instance) -> str:
 	return roblox.ReadInstaceString(instance.GetClassDescriptor() + 0x4)
+
+
+
+shared_instances = {
+	"Game" : 0,
+	"Workspace" : 0,
+	"Players" : 0
+}

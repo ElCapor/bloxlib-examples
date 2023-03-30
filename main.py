@@ -17,5 +17,5 @@ Players = Players(DataModel.FindFirstChild("Players"))
 
 
 SetupOptimizations()
-print(roblox.d2h(workspace.getAddress()))
+
 FreeOptimizations() # free the memory

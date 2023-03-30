@@ -5,7 +5,7 @@ This class is useful for players management
 from Exploit import roblox
 from Instance import Instance
 from Memory import GetDataModel, float_to_hex
-
+from Player import Player
 
 class Players(Instance):
     def __init__(self, instance : Instance) -> None:
@@ -18,7 +18,7 @@ class Players(Instance):
         else:
             LP = self.GetLocalPlayer()
             return workspace.FindFirstChild(LP.GetName())
-    def GetAllPlayers(self) -> list:
+    def GetAllPlayers(self) -> list[Player]:
         plrs = []
         for players in self.GetChildren():
             plrs.append(players)
