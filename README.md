@@ -1,6 +1,7 @@
 # lego-exploder
 A work in progress library to interact with the game called Roblox fully written with python.
 <br>
+#### NEW : discord server to ask for help & chat : [link](https://discord.gg/TeGK8zWSv8)
 ### Note : this library is note completed, and i think i am only at 10% of the features i want to add , it was made in 1 week to challenge myself and to learn more , as well as helping new people getting started in this and to prove that you can do anything in any language, so the code is not perfect , if you ever want to contribute feel free to send a pull request.
 
 
