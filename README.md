@@ -231,7 +231,7 @@ If you ever need any help or want to correct anything you can add me on discord 
 <br>
 [ ] - Document Exploit class
 <br>
-[ ] - Optimize Get & Set functions
+[ ] - Optimize Get & Set functions (50% done since get is fully optimized now)
 # Credits
 ElCapor -> Main Developer
 <br>
