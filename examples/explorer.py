@@ -1,13 +1,14 @@
+from __future__ import annotations
 import sys
 from PyQt5.QtWidgets import (
     QMainWindow, QApplication,
     QLabel, QToolBar, QAction, QStatusBar, QWidget, QHBoxLayout, QVBoxLayout, QTreeWidget, QTreeWidgetItem
 )
 from PyQt5.QtGui import QIcon
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import Qt, pyqtSignal, QObject
 sys.path.append("Instance")
 from Exploit import roblox
-from Instance import Instance
+from Instance import Instance, GetClassName
 from Memory import GetDataModel
 sys.path.append("icons")
 
@@ -35,22 +36,55 @@ class ExplorerToolBar(QToolBar):
         print("Settings clicked")
 
 
+class IndexedSignals(QObject):
+    childAdded = pyqtSignal(object)
+    childRemoved = pyqtSignal(object)
+
 
 class IndexedTreeWidgetItem(QTreeWidgetItem):
+    
     def __init__(self, index=0, parent=None):
         self.index = index # instance address
+        self.signals = IndexedSignals() 
+        self.signals.childAdded.connect(self.childNew)
         super().__init__(parent)
     
+    def addChild(self, child):
+        super(IndexedTreeWidgetItem, self).addChild(child)
+        child.setIcon(0, QIcon("icons/instance/" + GetClassName(Instance(child.index))))
+        self.signals.childAdded.emit(child)
+    def removeChild(self, child: 'QTreeWidgetItem'):
+        super().removeChild(child)
+        self.signals.childRemoved.emit(child)
+
+    def childNew(self, child : IndexedTreeWidgetItem):
+        local_instance = Instance(child.index)
+        child_list = roblox.Program.read_int(local_instance.getAddress() + 0x2C)
+        if child_list == 0:
+            child.setChildIndicatorPolicy(IndexedTreeWidgetItem.ChildIndicatorPolicy.DontShowIndicator)
+        else:
+            child.setChildIndicatorPolicy(IndexedTreeWidgetItem.ChildIndicatorPolicy.ShowIndicator)
+
+
+
+
 
 class ExplorerTree(QTreeWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.itemDoubleClicked.connect(self.double_click)
-    
-    def double_click(self, item, column):
-        print("Item double click at " + item.index)
-        local_instance = Instance(item.index)
-    
+        self.itemExpanded.connect(self.expand_item)
+        self.itemCollapsed.connect(self.collapse_item)
+
+    def expand_item(self, item : IndexedTreeWidgetItem):
+        if item.childCount() == 0:
+            local_instance = Instance(item.index)
+            for child in local_instance.GetChildren():
+                item.addChild(IndexedTreeWidgetItem(child.getAddress(), [child.GetName()]))
+                
+    def collapse_item(self, item : IndexedTreeWidgetItem):
+        for i in reversed(range(item.childCount())): # https://stackoverflow.com/questions/38098811/how-to-remove-children-of-qtreewidgetitem
+            item.removeChild(item.child(i))
+             
 class FormWidget(QWidget):
 
     def __init__(self, parent):
@@ -73,6 +107,7 @@ class FormWidget(QWidget):
 
         # Create an instance of QTreeWidgetItem class and specify the text for the item
         root_game = IndexedTreeWidgetItem(self.DataModel.getAddress(),['Game'])
+        root_game.setChildIndicatorPolicy(IndexedTreeWidgetItem.ChildIndicatorPolicy.ShowIndicator)
         #GetDescendants(apple_item, DModel)
 
         # Set the icon for the item using setIcon() method
@@ -91,18 +126,14 @@ class MainWindow(QMainWindow):
 
     def __init__(self):
         super(MainWindow, self).__init__()
-        self.setWindowTitle("My Awesome App")
+        self.setWindowTitle("External Explorer")
+        self.setWindowIcon(QIcon("icons/instance/Model.png"))
         self.form_widget = FormWidget(self)
         _widget = QWidget()
         _layout = QVBoxLayout(_widget)
         _layout.addWidget(self.form_widget)
         self.setCentralWidget(_widget)
         self.addToolBar(self.form_widget.toolbar)
-        
-        
-
-    def onMyToolBarButtonClick(self, s):
-        print("click", s)
 
 app = QApplication(sys.argv)
 w = MainWindow()
