@@ -19,7 +19,7 @@ from Exploit import roblox
 from Instance import Instance, GetClassName
 from Memory import GetDataModel
 sys.path.append("icons")
-
+#e
 def addToClipBoard(text):
     command = 'echo | set /p nul=' + text.strip() + '| clip'
     os.system(command)
