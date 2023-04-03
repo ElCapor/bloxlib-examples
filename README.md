@@ -73,7 +73,7 @@ Arguments : Address representing the memory address of the instance
 
 `Instance.GetChildren() -> list` returns a list containing child instances of a specified instance
 
-`Instance.GetChildren() -> list` returns a list containing descendants instances of a specified instance
+`Instance.GetDescendants() -> list` returns a list containing descendants instances of a specified instance
 
 `Instance.FindFirstChild(name : str) -> Instance ` returns the first found instance by a name
 
