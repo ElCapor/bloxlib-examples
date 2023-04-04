@@ -65,6 +65,8 @@ class Call0Arg:
         roblox.Program.start_thread(self.addr)
         if self.returnType == "float":
             returnValue = roblox.Program.read_float(self.addr + 0x30)
+        if self.returnType == "string":
+             returnValue = roblox.ReadInstaceString(self.addr + 0x30)
         else:
             returnValue = roblox.DRP(self.addr + 0x30)
         return returnValue
@@ -73,15 +75,34 @@ class Call0Arg:
 
 getPropertyFuncs = dict()
 # list of functions to get specific properties
+
+class NameMap():
+    def __init__(self):
+        self.addr = roblox.getAddressFromName("RobloxPlayerBeta.exe+3A31FB0")
+        self.namelist = {}
+        while roblox.Program.read_int(self.addr) != 0:
+            self.namelist[roblox.ReadInstaceString(self.addr)] = roblox.Program.read_int(self.addr)
+            self.addr +=4
+        
+    """
+    Returns the Address of a string from the NameMap
+    """
+    def get(self,text:str) -> int:
+        if text in self.namelist.keys():
+            return self.namelist[text]
+        else:
+            return 0
+        
+nameMap = NameMap()
 def SetupOptimizations():
      getFloat = Call0Arg("float")
      getNormal = Call0Arg("")
      getString = Call0Arg("string")
-     getVector3 = Call0Arg("Vector3")
+     #getVector3 = Call0Arg("Vector3")
      getPropertyFuncs[""] = getNormal
      getPropertyFuncs["float"] = getFloat
      getPropertyFuncs["string"]= getString
-     getPropertyFuncs["Vector3"] = getVector3
+     #getPropertyFuncs["Vector3"] = getVector3
      
      for func in getPropertyFuncs:
           getPropertyFuncs[func].allocate()

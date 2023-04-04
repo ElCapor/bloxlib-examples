@@ -3,7 +3,8 @@ from Exploit import roblox
 from PropertyDescriptor import PropertyDescriptor
 from BoundedFunc import BoundedFunc
 from EventDesc import EventDesc
-from Memory import float_to_hex, getPropertyFuncs
+from Memory import float_to_hex, getPropertyFuncs, nameMap
+from GetSetImpl import GetSetImpl
 shared_prop = [
 	"Archivable",
 	"Attributes",
@@ -54,9 +55,15 @@ class Instance:
 	def GetName(self) -> str:
 		addr = self.getAddress()
 		return roblox.ReadInstaceString(addr + 0x28)
-	def GetChildren(self) -> list[Instance]:
+	def HasChildren(self) -> bool:
 		child_list = roblox.DRP(self.addr + 0x2C)
+		if child_list == 0:
+			return False
+		else:
+			return True
+	def GetChildren(self) -> list[Instance]:
 		children = []
+		child_list = roblox.DRP(self.addr + 0x2C)
 		if child_list != 0:
 			child_begin = roblox.DRP(child_list)
 			end_child = roblox.DRP(child_list + 0x4)
@@ -143,15 +150,15 @@ class Instance:
 	def SetProperty(self,name, arg):
 		NewMemoryRegion = roblox.Program.allocate(100)
 		NewMemAddress = NewMemoryRegion
-		if type(arg) ==float:
-			arg = float_to_hex(arg)
-		else:
-			return 0
 		InstanceAddress = self.addr #Change This
-		FunctionAddress = self.GetPropertyDescriptor(name).GetSet().Set()
+		if name == "Parent":
+			FunctionAddress = roblox.DRP(roblox.DRP(self.GetPropertyDescriptor(name).GetAddress() + 0x34) + 0x10)
+		else:
+			FunctionAddress = self.GetPropertyDescriptor(name).GetSet().Set()
+		
 		HexArray = ''
 		MovIntoEcxOp = 'B9' + roblox.hex2le(roblox.d2h(InstanceAddress))
-		PushOP = '68' + roblox.hex2le(roblox.d2h(int(arg, 16)))
+		PushOP = '68' + roblox.hex2le(roblox.d2h(arg))
 		CallOp = 'E8' + roblox.hex2le(roblox.calcjmpop(roblox.d2h(FunctionAddress),roblox.d2h(NewMemAddress + 10)))
 		StoreOp = 'A3' + roblox.hex2le(roblox.d2h(NewMemAddress + 0x40))
 		RetOp = 'C3'
@@ -181,6 +188,45 @@ class Instance:
 		roblox.Program.write_bytes(NewMemAddress,bytes.fromhex(HexArray),roblox.gethexc(HexArray))
 		roblox.Program.start_thread(NewMemAddress)
 		roblox.Program.free(NewMemAddress)
+	def Clone(self):
+		NewMemoryRegion = roblox.Program.allocate(100)
+		NewMemAddress = NewMemoryRegion
+		InstanceAddress = self.getAddress() #Change This
+		FunctionAddress = self.GetBoundFunction("Clone").GetFunc()
+		HexArray = ''
+		MovIntoEcxOp = 'B9' + roblox.hex2le(roblox.d2h(InstanceAddress))
+		PushEcx = 'FF 71 08'
+		CallOp = 'E8' + roblox.hex2le(roblox.calcjmpop(roblox.d2h(FunctionAddress),roblox.d2h(NewMemAddress + 8)))
+		StoreOp = 'A3' + roblox.hex2le(roblox.d2h(NewMemAddress + 0x30))
+		RetOp = 'C3'
+		HexArray = MovIntoEcxOp + PushEcx +CallOp + StoreOp + RetOp
+		roblox.Program.write_bytes(NewMemAddress,bytes.fromhex(HexArray),roblox.gethexc(HexArray))
+		roblox.Program.start_thread(NewMemAddress)
+		returnValue = roblox.DRP(roblox.DRP(NewMemAddress + 0x30))
+		roblox.Program.free(NewMemAddress)
+		
+		return returnValue
+	def new(self,className : str) -> Instance:
+		FunctionToCall = roblox.getAddressFromName('RobloxPlayerBeta.exe+44CB20')
+		NewMemoryRegion = roblox.Program.allocate(100)
+		returnStruct = roblox.Program.allocate(4)
+		NewMemAddress = NewMemoryRegion
+		HexArray = ''
+		MovIntoEcxOp = 'B9' + roblox.hex2le(roblox.d2h(returnStruct))
+		print(roblox.d2h(nameMap.get(className)))
+		MovIntoEdxOp = 'BA' + roblox.hex2le(roblox.d2h(nameMap.get(className)))
+		PushOP = '6A 03'
+		CallOp = 'E8' + roblox.hex2le(roblox.calcjmpop(roblox.d2h(FunctionToCall),roblox.d2h(NewMemAddress + 12)))
+		StoreOp = 'A3' + roblox.hex2le(roblox.d2h(NewMemAddress + 0x30))
+		AddOp = '83 C4 04'
+		RetOp = 'C3'
+		HexArray = PushOP + MovIntoEcxOp + MovIntoEdxOp + CallOp  + AddOp + RetOp
+		roblox.Program.write_bytes(NewMemAddress,bytes.fromhex(HexArray),roblox.gethexc(HexArray))
+		roblox.Program.start_thread(NewMemAddress)
+		retInstance = Instance(roblox.DRP(returnStruct))
+		roblox.Program.free(NewMemAddress)
+		roblox.Program.free(returnStruct)
+		return retInstance
 
 def GetClassName(instance) -> str:
 	return roblox.ReadInstaceString(instance.GetClassDescriptor() + 0x4)
