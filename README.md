@@ -2,6 +2,7 @@
 A work in progress library to interact with the game called Roblox fully written with python.
 <br>
 #### NEW : discord server to ask for help & chat : [link](https://discord.gg/TeGK8zWSv8)
+#### HUGE UPDATE : Added Instance.New !!!
 #### ADDED ESP EXAMPLE !!! check ESP.py (note that it requires pyMeow module [here](https://github.com/qb-0/pyMeow))
 ![esp](https://cdn.discordapp.com/attachments/949027922436575315/1091107726307885138/image.png)
 ### Note : this library is note completed, and i think i am only at 10% of the features i want to add , it was made in 1 week to challenge myself and to learn more , as well as helping new people getting started in this and to prove that you can do anything in any language, so the code is not perfect , if you ever want to contribute feel free to send a pull request.
@@ -67,6 +68,7 @@ PyQt5 -> Optional , used for gui applications, just run `pip3 install pyqt5` to 
 `Instance(Address : int)` Specifies an instance in memory, returns an instance with address set to 0 when called without arguments.
 Arguments : Address representing the memory address of the instance
 
+`Instance().new(className : str) -> Instance` Creates a new instance given a class name , returns an instance with address 0 when class doesnt exist
 `Instance.getAddress() -> int` returns the address of the instance
 
 `Instance.GetName() -> str` returns the name of the instance
@@ -171,13 +173,14 @@ print("Hello " + localPlayer.GetName() + " !")
 from Memory import SetupOptimizations, FreeOptimizations
 Character = workspace.FindFirstChild(localPlayer.GetName()) # get player character
 Humanoid = Character.FindFirstChild("Humanoid")
-
+SetupOptimizations()
 current_walkspeed = Humanoid.GetProperty("WalkSpeed")
 
 print(current_walkspeed) #prints 16
 
 Humanoid.SetProperty("WalkSpeed", 100.0) # make sure 2nd arg is a float
 # Set property is highly instable
+FreeOptimizations()
 ```
 
 ##### Example n°3 - Calling BoundedFunction "Destroy"
@@ -223,7 +226,24 @@ roblox.Program.free(NewMemAddress)
 #free the memory and delete our function
 ```
 If you ever need any help or want to correct anything you can add me on discord mogus#2891 or make an issue
+##### Example n°3 - 15 lines esp 💀
+```python
+from Instance import Instance, shared_instances
+from Memory import GetDataModel,float_to_hex,SetupOptimizations, FreeOptimizations, getPropertyFuncs, write_str, nameMap
+from Players import Players #useful to manipulate players instance
+from Player import Player
+DataModel = Instance(GetDataModel())
+workspace = DataModel.GetChildren()[0]
+Players = Players(DataModel.FindFirstChild("Players"))
+shared_instances["Workspace"] = workspace
 
+SetupOptimizations()
+for p in Players.GetAllPlayers():
+    Highlight = Instance().new("Highlight")
+    Highlight.SetProperty("Parent", Player(p).GetCharacter().getAddress())
+FreeOptimizations() # free the memory
+
+```
 ### To-Do
 [ ] - Add more examples
 <br>
