@@ -3,8 +3,8 @@ A work in progress library to interact with the game called Roblox fully written
 <br>
 #### NEW : discord server to ask for help & chat : [link](https://discord.gg/TeGK8zWSv8)
 #### HUGE UPDATE : Added Instance.New !!!
-#### ADDED ESP EXAMPLE !!! check ESP.py (note that it requires pyMeow module [here](https://github.com/qb-0/pyMeow))
-![esp](https://cdn.discordapp.com/attachments/949027922436575315/1091107726307885138/image.png)
+#### ADDED ESP EXAMPLE !!! check ESP.py (overlay)  & example below (glow esp) (note that it requires pyMeow module [here](https://github.com/qb-0/pyMeow))
+![esp](https://cdn.discordapp.com/attachments/1086754445855039619/1092930508742197328/image.png)
 ### Note : this library is note completed, and i think i am only at 10% of the features i want to add , it was made in 1 week to challenge myself and to learn more , as well as helping new people getting started in this and to prove that you can do anything in any language, so the code is not perfect , if you ever want to contribute feel free to send a pull request.
 
 
