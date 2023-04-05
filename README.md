@@ -73,11 +73,17 @@ Arguments : Address representing the memory address of the instance
 
 `Instance.GetName() -> str` returns the name of the instance
 
+`Instance.GetClassName() -> str` returns class name of the current instance 
+
 `Instance.GetChildren() -> list` returns a list containing child instances of a specified instance
 
 `Instance.GetDescendants() -> list` returns a list containing descendants instances of a specified instance
 
 `Instance.FindFirstChild(name : str) -> Instance ` returns the first found instance by a name
+
+`Instance.isA(className : str) -> bool` checks if the instance is of the corresponding class
+
+`Instance.FindFirstChildOfClass(className : str) -> Instance` returns the first found instance with the specified class
 
 `Instance.GetClassDescriptor() ` -> returns the address of class descriptor for the given instance
 
@@ -226,7 +232,7 @@ roblox.Program.free(NewMemAddress)
 #free the memory and delete our function
 ```
 If you ever need any help or want to correct anything you can add me on discord mogus#2891 or make an issue
-##### Example n°3 - 15 lines esp 💀
+##### Example n°4 - 15 lines esp 💀
 ```python
 from Instance import Instance, shared_instances
 from Memory import GetDataModel,float_to_hex,SetupOptimizations, FreeOptimizations, getPropertyFuncs, write_str, nameMap
