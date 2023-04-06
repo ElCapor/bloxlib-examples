@@ -29,9 +29,9 @@ A work in progress library to interact with the game called Roblox fully written
 
 
 # Requirements
-PyMem -> Mandatory just run `pip3 install pymem` to install it
-<br>
-PyQt5 -> Optional , used for gui applications, just run `pip3 install pyqt5` to install it
+Python3 is required.<br>
+
+Run `pip install -r requirements.txt` to download every needed dependencies.
 
 # Exploit class
 ### Exploit class is just a wrapper around pymem that allow's to easily get processes and operate on them
