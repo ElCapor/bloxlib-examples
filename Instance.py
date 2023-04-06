@@ -49,37 +49,59 @@ class Instance:
 			self.addr = otherType
 		elif type(otherType) == Instance:
 			self.addr = otherType.getAddress()
-		
+	def __bool__(self) -> bool:
+		if self.addr > 0:
+			return True
+		return False
+	def __equal__(self, other) -> bool:
+		if type(other) == int:
+			return self.addr == int
+		if type(other) == Instance:
+			return self.addr == other.addr
 	def getAddress(self):
 		return self.addr
 	def GetName(self) -> str:
 		addr = self.getAddress()
-		return roblox.ReadInstaceString(addr + 0x28)
+		return roblox.ReadInstaceString(addr + 0x2C)
 	def HasChildren(self) -> bool:
-		child_list = roblox.DRP(self.addr + 0x2C)
+		child_list = roblox.DRP(self.addr + 0x30)
 		if child_list == 0:
 			return False
 		else:
 			return True
 	def GetChildren(self) -> list[Instance]:
 		children = []
-		child_list = roblox.DRP(self.addr + 0x2C)
-		if child_list != 0:
-			child_begin = roblox.DRP(child_list)
-			end_child = roblox.DRP(child_list + 0x4)
-			
-			
-			while child_begin != end_child:
-				current_instance = roblox.DRP(child_begin)
-				if current_instance !=0:
-					children.append(Instance(current_instance))
-					child_begin = child_begin + 8
+		if self.addr != 0:
+			child_list = roblox.DRP(self.addr + 0x30)
+			if child_list != 0:
+				child_begin = roblox.DRP(child_list)
+				end_child = roblox.DRP(child_list + 0x4)
+				
+				
+				while child_begin != end_child:
+					current_instance = roblox.DRP(child_begin)
+					if current_instance !=0:
+						children.append(Instance(current_instance))
+						child_begin = child_begin + 8
 		return children
+	def GetParent(self) -> Instance:
+		if roblox.DRP(self.addr + 0x3C) != 0:
+			return Instance(roblox.DRP(self.addr + 0x3C))
+		return Instance(0)
 	def FindFirstChild(self, name) -> Instance:
 		for child in self.GetChildren():
 			if child.GetName() == name:
 				return child
-		return 0
+		return Instance(0)
+	def isA(self,className : str) -> bool:
+		if self.GetClassName() == className:
+			return True
+		return False
+	def FindFirstChildOfClass(self, className : str) -> Instance:
+		for child in self.GetChildren():
+			if child.isA(className):
+				return child
+		return Instance(0)
 	def GetClassDescriptor(self) -> list[Instance]:
 		classDescriptor = roblox.DRP(self.addr + 0xC)
 		return classDescriptor
@@ -135,7 +157,7 @@ class Instance:
 				return func
 		return 0
 	def GetClassName(self) -> str:
-		return roblox.ReadNormalString(roblox.DRP(self.GetClassDescriptor()) + 0xC)
+		return roblox.ReadInstaceString(self.GetClassDescriptor() + 0x4)
 	def GetProperty(self,name):
 		propertyDescriptor = self.GetPropertyDescriptor(name)
 		ReturnType = roblox.ReadInstaceString(roblox.DRP(propertyDescriptor.GetAddress() + 0x24)+0x4)
@@ -166,7 +188,7 @@ class Instance:
 		#print(StoreOp)
 		roblox.Program.write_bytes(NewMemAddress,bytes.fromhex(HexArray),roblox.gethexc(HexArray))
 		#print(len(bytes.fromhex(HexArray)))
-		print(roblox.d2h(NewMemAddress))
+		#print(roblox.d2h(NewMemAddress))
 		roblox.Program.start_thread(NewMemAddress)
 	def GetDescendants(self) -> list[Instance]:
 		descendants = []
@@ -207,13 +229,12 @@ class Instance:
 		
 		return returnValue
 	def new(self,className : str) -> Instance:
-		FunctionToCall = roblox.getAddressFromName('RobloxPlayerBeta.exe+44CB20')
+		FunctionToCall = roblox.getAddressFromName('RobloxPlayerBeta.exe+451210')
 		NewMemoryRegion = roblox.Program.allocate(100)
 		returnStruct = roblox.Program.allocate(4)
 		NewMemAddress = NewMemoryRegion
 		HexArray = ''
 		MovIntoEcxOp = 'B9' + roblox.hex2le(roblox.d2h(returnStruct))
-		print(roblox.d2h(nameMap.get(className)))
 		MovIntoEdxOp = 'BA' + roblox.hex2le(roblox.d2h(nameMap.get(className)))
 		PushOP = '6A 03'
 		CallOp = 'E8' + roblox.hex2le(roblox.calcjmpop(roblox.d2h(FunctionToCall),roblox.d2h(NewMemAddress + 12)))
@@ -227,9 +248,6 @@ class Instance:
 		roblox.Program.free(NewMemAddress)
 		roblox.Program.free(returnStruct)
 		return retInstance
-
-def GetClassName(instance) -> str:
-	return roblox.ReadInstaceString(instance.GetClassDescriptor() + 0x4)
 
 
 

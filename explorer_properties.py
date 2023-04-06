@@ -7,7 +7,6 @@ from PyQt5.QtWidgets import (
 )
 from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import Qt, pyqtSignal, QObject, QVariant
-sys.path.append("Instance")
 sys.path.append('QT/QtProperty')
 sys.path.append('QT/libqt5')
 
@@ -16,7 +15,7 @@ from qtvariantproperty import QtVariantEditorFactory, QtVariantPropertyManager
 from qttreepropertybrowser import QtTreePropertyBrowser
 
 from Exploit import roblox
-from Instance import Instance, GetClassName
+from Instance import Instance
 from Memory import GetDataModel
 sys.path.append("icons")
 #e
@@ -62,7 +61,7 @@ class IndexedTreeWidgetItem(QTreeWidgetItem):
     
     def addChild(self, child):
         super(IndexedTreeWidgetItem, self).addChild(child)
-        child.setIcon(0, QIcon("icons/instance/" + GetClassName(Instance(child.index))))
+        child.setIcon(0, QIcon("icons/instance/" + Instance(child.index).GetClassName()))
         self.signals.childAdded.emit(child)
     def removeChild(self, child: 'QTreeWidgetItem'):
         super().removeChild(child)
@@ -194,7 +193,7 @@ class FormWidget(QWidget):
             if item.index != 0:
                 local_instance = Instance(item.index)
                 self.NameView.setValue(local_instance.GetName())
-                self.ClassView.setValue(GetClassName(local_instance))
+                self.ClassView.setValue(local_instance.GetClassName())
                 self.AddressView.setValue(roblox.d2h(local_instance.getAddress()))
             else:
                 self.NameView.setValue("None")

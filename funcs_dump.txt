@@ -1,66 +1,3172 @@
 Workspace
+Property -> AllowThirdPartySales
+Property -> ClientAnimatorThrottling
+Property -> CollisionGroupData
+Property -> CollisionGroups
+Property -> CurrentCamera
+Property -> DataModelPlaceVersion
+Property -> DistributedGameTime
+Property -> ExplicitAutoJoints
+Property -> FallenPartsDestroyHeight
+Property -> FilteringEnabled
+Property -> GlobalWind
+Property -> Gravity
+Property -> HumanoidOnlySetCollisionsOnStateChange
+Property -> InterpolationThrottling
+Property -> LevelOfDetail
+Property -> LodEntity
+Property -> MeshPartHeadsAndAccessories
+Property -> ModelMeshCFrame
+Property -> ModelMeshData
+Property -> ModelMeshSize
+Property -> ModelStreamingMode
+Property -> NeedsPivotMigration
+Property -> Origin
+Property -> PhysicsSteppingMethod
+Property -> Pivot Offset
+Property -> PrimaryPart
+Property -> RejectCharacterDeletions
+Property -> ReplicateInstanceDestroySetting
+Property -> Retargeting
+Property -> Scale
+Property -> ScaleFactor
+Property -> SignalBehavior
+Property -> StreamOutBehavior
+Property -> StreamingEnabled
+Property -> StreamingIntegrityMode
+Property -> StreamingMinRadius
+Property -> StreamingPauseMode
+Property -> StreamingTargetRadius
+Property -> Terrain
+Property -> TerrainWeldsFixed
+Property -> TouchesUseCollisionGroups
+Property -> WorldPivot
+Property -> WorldPivotData
+Function -> AddPersistentPlayer At address :014d9d90 Security 0 Security Name: None
+Function -> ArePartsTouchingOthers At address :014fe190 Security 0 Security Name: None
+Function -> Blockcast At address :014fd8e0 Security 0 Security Name: None
+Function -> BreakJoints At address :014b11f0 Security 1 Security Name: Plugin
+Function -> BulkMoveTo At address :014fdda0 Security 0 Security Name: None
+Function -> CacheCurrentTerrain At address :014fd7c0 Security 5 Security Name: LocalUser
+Function -> CalculateJumpDistance At address :014bbcd0 Security 5 Security Name: LocalUser
+Function -> CalculateJumpHeight At address :014bbc60 Security 5 Security Name: LocalUser
+Function -> CalculateJumpPower At address :014bbc20 Security 5 Security Name: LocalUser
+Function -> ClearCachedTerrain At address :014fd8c0 Security 5 Security Name: LocalUser
+Function -> ExperimentalSolverIsEnabled At address :0094e9d0 Security 3 Security Name: RobloxPlace
+Function -> FindPartOnRay At address :015061b0 Security 0 Security Name: None
+Function -> FindPartOnRayWithIgnoreList At address :01506260 Security 0 Security Name: None
+Function -> FindPartOnRayWithWhitelist At address :01506310 Security 0 Security Name: None
+Function -> FindPartsInRegion3 At address :014fc1e0 Security 0 Security Name: None
+Function -> FindPartsInRegion3WithIgnoreList At address :014fc650 Security 0 Security Name: None
+Function -> FindPartsInRegion3WithWhiteList At address :014fc580 Security 0 Security Name: None
+Function -> GetBoundingBox At address :014d8970 Security 0 Security Name: None
+Function -> GetExtentsSize At address :014d8e90 Security 0 Security Name: None
+Function -> GetModelCFrame At address :014d8c50 Security 0 Security Name: None
+Function -> GetModelSize At address :014d8e90 Security 0 Security Name: None
+Function -> GetNumAwakeParts At address :014b4db0 Security 0 Security Name: None
+Function -> GetPartBoundsInBox At address :014fcbc0 Security 0 Security Name: None
+Function -> GetPartBoundsInRadius At address :014fcdc0 Security 0 Security Name: None
+Function -> GetPartsInPart At address :014fcfc0 Security 0 Security Name: None
+Function -> GetPhysicsThrottling At address :014b4d30 Security 0 Security Name: None
+Function -> GetPivot At address :00bdaea0 Security 0 Security Name: None
+Function -> GetPrimaryPartCFrame At address :014d5720 Security 0 Security Name: None
+Function -> GetRealPhysicsFPS At address :014b4650 Security 0 Security Name: None
+Function -> GetScale At address :00a6a990 Security 0 Security Name: None
+Function -> GetServerTimeNow At address :014af4e0 Security 0 Security Name: None
+Function -> IKMoveTo At address :014fdfd0 Security 1 Security Name: Plugin
+Function -> IsRegion3Empty At address :014fc730 Security 0 Security Name: None
+Function -> IsRegion3EmptyWithIgnoreList At address :014fc890 Security 0 Security Name: None
+Function -> JoinToOutsiders At address :014aef50 Security 0 Security Name: None
+Function -> MakeJoints At address :014b0dd0 Security 1 Security Name: Plugin
+Function -> MoveTo At address :015bbaf0 Security 0 Security Name: None
+Function -> PGSIsEnabled At address :0094e9d0 Security 0 Security Name: None
+Function -> PivotTo At address :015bbeb0 Security 0 Security Name: None
+Function -> Raycast At address :014fd3a0 Security 0 Security Name: None
+Function -> RaycastCachedTerrain At address :014fd5e0 Security 5 Security Name: LocalUser
+Function -> RemovePersistentPlayer At address :014d9e80 Security 0 Security Name: None
+Function -> ResetOrientationToIdentity At address :009362e0 Security 0 Security Name: None
+Function -> ScaleTo At address :014d6550 Security 0 Security Name: None
+Function -> SetIdentityOrientation At address :009362e0 Security 0 Security Name: None
+Function -> SetInsertPoint At address :014fa210 Security 5 Security Name: LocalUser
+Function -> SetMeshPartHeadsAndAccessories At address :014afa30 Security 5 Security Name: LocalUser
+Function -> SetPhysicsThrottleEnabled At address :009362d0 Security 3 Security Name: RobloxPlace
+Function -> SetPrimaryPartCFrame At address :014d5a60 Security 0 Security Name: None
+Function -> Spherecast At address :014fd990 Security 0 Security Name: None
+Function -> TranslateBy At address :014d56c0 Security 0 Security Name: None
+Function -> UnjoinFromOutsiders At address :014af1c0 Security 0 Security Name: None
+Function -> ZoomToExtents At address :014b0b60 Security 1 Security Name: Plugin
+Function -> breakJoints At address :014d7cf0 Security 0 Security Name: None
+Function -> findPartOnRay At address :015061b0 Security 0 Security Name: None
+Function -> findPartsInRegion3 At address :014fc1e0 Security 0 Security Name: None
+Function -> makeJoints At address :014d7aa0 Security 0 Security Name: None
+Function -> move At address :015bba30 Security 0 Security Name: None
+Function -> moveTo At address :015bba30 Security 0 Security Name: None
 --------------------
 Camera
---------------------
-Folder
---------------------
-BoolValue
---------------------
-Configuration
---------------------
-Model
---------------------
-StringValue
---------------------
-NumberValue
---------------------
-Color3Value
+Property -> CFrame
+Property -> CameraSubject
+Property -> CameraType
+Property -> CoordinateFrame
+Property -> DiagonalFieldOfView
+Property -> FieldOfView
+Property -> FieldOfViewMode
+Property -> Focus
+Property -> HeadLocked
+Property -> HeadScale
+Property -> MaxAxisFieldOfView
+Property -> NearPlaneZ
+Property -> ViewportSize
+Property -> focus
+Function -> GetLargestCutoffDistance At address :01549d70 Security 0 Security Name: None
+Function -> GetPanSpeed At address :015437d0 Security 0 Security Name: None
+Function -> GetPartsObscuringTarget At address :0154a070 Security 0 Security Name: None
+Function -> GetRenderCFrame At address :01543790 Security 0 Security Name: None
+Function -> GetRoll At address :01546dd0 Security 0 Security Name: None
+Function -> GetTiltSpeed At address :015437e0 Security 0 Security Name: None
+Function -> Interpolate At address :01544df0 Security 0 Security Name: None
+Function -> PanUnits At address :01548280 Security 0 Security Name: None
+Function -> ScreenPointToRay At address :01548f70 Security 0 Security Name: None
+Function -> SetCameraPanMode At address :015480c0 Security 0 Security Name: None
+Function -> SetImageServerView At address :015483d0 Security 5 Security Name: LocalUser
+Function -> SetRoll At address :01546e50 Security 0 Security Name: None
+Function -> TiltUnits At address :015480d0 Security 0 Security Name: None
+Function -> ViewportPointToRay At address :015490b0 Security 0 Security Name: None
+Function -> WorldToScreenPoint At address :01548b10 Security 0 Security Name: None
+Function -> WorldToViewportPoint At address :01548d50 Security 0 Security Name: None
+Function -> Zoom At address :015470f0 Security 5 Security Name: LocalUser
+Function -> ZoomToExtents At address :01545c50 Security 0 Security Name: None
 --------------------
 Script
+Property -> CachedRemoteSource
+Property -> CachedRemoteSourceLoadState
+Property -> CurrentEditor
+Property -> Disabled
+Property -> Enabled
+Property -> HasAssociatedDrafts
+Property -> IsDifferentFromFileSystem
+Property -> LinkedSource
+Property -> OriginalScriptGuid
+Property -> RunContext
+Property -> SandboxedSource
+Property -> ScriptGuid
+Property -> Source
+Property -> SyncingEditorText
+Function -> GetHash At address :00ad51d0 Security 3 Security Name: RobloxPlace
 --------------------
-CFrameValue
+ModuleScript
+Property -> CachedRemoteSource
+Property -> CachedRemoteSourceLoadState
+Property -> Confidential
+Property -> CurrentEditor
+Property -> HasAssociatedDrafts
+Property -> IsDifferentFromFileSystem
+Property -> LinkedSource
+Property -> OriginalScriptGuid
+Property -> SandboxedSource
+Property -> ScriptGuid
+Property -> Source
+Property -> SyncingEditorText
 --------------------
-SpawnLocation
+Sound
+Property -> ChannelCount
+Property -> EmitterSize
+Property -> IsLoaded
+Property -> IsPaused
+Property -> IsPlaying
+Property -> IsSpatial
+Property -> LoopRegion
+Property -> Looped
+Property -> MaxDistance
+Property -> MinDistance
+Property -> Pitch
+Property -> PlayOnRemove
+Property -> PlaybackLoudness
+Property -> PlaybackRegion
+Property -> PlaybackRegionsEnabled
+Property -> PlaybackSpeed
+Property -> Playing
+Property -> PlayingReplicator
+Property -> RollOffGain
+Property -> RollOffMaxDistance
+Property -> RollOffMinDistance
+Property -> RollOffMode
+Property -> SoundGroup
+Property -> SoundId
+Property -> TimeLength
+Property -> TimePosition
+Property -> TimePositionReplicator
+Property -> UsageContextPermission
+Property -> Volume
+Property -> isPlaying
+Property -> xmlRead_MaxDistance_3
+Property -> xmlRead_MinDistance_3
+Function -> Pause At address :015387c0 Security 0 Security Name: None
+Function -> Play At address :015386c0 Security 0 Security Name: None
+Function -> Resume At address :01538780 Security 0 Security Name: None
+Function -> Stop At address :01538800 Security 0 Security Name: None
+Function -> pause At address :015387c0 Security 0 Security Name: None
+Function -> play At address :015386c0 Security 0 Security Name: None
+Function -> stop At address :01538800 Security 0 Security Name: None
+--------------------
+Model
+Property -> LevelOfDetail
+Property -> LodEntity
+Property -> ModelMeshCFrame
+Property -> ModelMeshData
+Property -> ModelMeshSize
+Property -> ModelStreamingMode
+Property -> NeedsPivotMigration
+Property -> Origin
+Property -> Pivot Offset
+Property -> PrimaryPart
+Property -> Scale
+Property -> ScaleFactor
+Property -> WorldPivot
+Property -> WorldPivotData
+Function -> AddPersistentPlayer At address :014d9d90 Security 0 Security Name: None
+Function -> BreakJoints At address :014d7cf0 Security 0 Security Name: None
+Function -> GetBoundingBox At address :014d8970 Security 0 Security Name: None
+Function -> GetExtentsSize At address :014d8e90 Security 0 Security Name: None
+Function -> GetModelCFrame At address :014d8c50 Security 0 Security Name: None
+Function -> GetModelSize At address :014d8e90 Security 0 Security Name: None
+Function -> GetPivot At address :00bdaea0 Security 0 Security Name: None
+Function -> GetPrimaryPartCFrame At address :014d5720 Security 0 Security Name: None
+Function -> GetScale At address :00a6a990 Security 0 Security Name: None
+Function -> MakeJoints At address :014d7aa0 Security 0 Security Name: None
+Function -> MoveTo At address :015bbaf0 Security 0 Security Name: None
+Function -> PivotTo At address :015bbeb0 Security 0 Security Name: None
+Function -> RemovePersistentPlayer At address :014d9e80 Security 0 Security Name: None
+Function -> ResetOrientationToIdentity At address :009362e0 Security 0 Security Name: None
+Function -> ScaleTo At address :014d6550 Security 0 Security Name: None
+Function -> SetIdentityOrientation At address :009362e0 Security 0 Security Name: None
+Function -> SetPrimaryPartCFrame At address :014d5a60 Security 0 Security Name: None
+Function -> TranslateBy At address :014d56c0 Security 0 Security Name: None
+Function -> breakJoints At address :014d7cf0 Security 0 Security Name: None
+Function -> makeJoints At address :014d7aa0 Security 0 Security Name: None
+Function -> move At address :015bba30 Security 0 Security Name: None
+Function -> moveTo At address :015bba30 Security 0 Security Name: None
+--------------------
+Humanoid
+Property -> AutoJumpEnabled
+Property -> AutoRotate
+Property -> AutomaticScalingEnabled
+Property -> BreakJointsOnDeath
+Property -> CameraMaxDistance
+Property -> CameraMinDistance
+Property -> CameraMode
+Property -> CameraOffset
+Property -> CollisionType
+Property -> DisplayDistanceType
+Property -> DisplayName
+Property -> EvaluateStateMachine
+Property -> FloorMaterial
+Property -> Health
+Property -> HealthDisplayDistance
+Property -> HealthDisplayType
+Property -> Health_XML
+Property -> HipHeight
+Property -> InternalBodyScale
+Property -> InternalHeadScale
+Property -> InternalOriginalHipHeight
+Property -> Jump
+Property -> JumpHeight
+Property -> JumpPower
+Property -> JumpReplicate
+Property -> LeftLeg
+Property -> MaxHealth
+Property -> MaxSlopeAngle
+Property -> MoveDirection
+Property -> MoveDirectionInternal
+Property -> NameDisplayDistance
+Property -> NameOcclusion
+Property -> NetworkHumanoidState
+Property -> PlatformStand
+Property -> RequiresNeck
+Property -> RigType
+Property -> RightLeg
+Property -> RootPart
+Property -> SeatPart
+Property -> Sit
+Property -> Strafe
+Property -> TargetPoint
+Property -> Torso
+Property -> UseJumpPower
+Property -> WalkAngleError
+Property -> WalkDirection
+Property -> WalkSpeed
+Property -> WalkToPart
+Property -> WalkToPoint
+Property -> maxHealth
+Function -> AddAccessory At address :00b46d50 Security 0 Security Name: None
+Function -> AddCustomStatus At address :00b28fd0 Security 0 Security Name: None
+Function -> AddStatus At address :00b290b0 Security 0 Security Name: None
+Function -> ApplyDescriptionBlocking At address :00b3f980 Security 5 Security Name: LocalUser
+Function -> BuildRigFromAttachments At address :00b2e180 Security 0 Security Name: None
+Function -> ChangeState At address :00b2f090 Security 0 Security Name: None
+Function -> EquipTool At address :00b2f1a0 Security 0 Security Name: None
+Function -> GetAccessories At address :00b46b00 Security 0 Security Name: None
+Function -> GetAccessoryHandleScale At address :00b45430 Security 5 Security Name: LocalUser
+Function -> GetAppliedDescription At address :00b3bc70 Security 0 Security Name: None
+Function -> GetBodyPartR15 At address :00b33ee0 Security 0 Security Name: None
+Function -> GetLimb At address :00b331b0 Security 0 Security Name: None
+Function -> GetPlayingAnimationTracks At address :00b3b940 Security 0 Security Name: None
+Function -> GetState At address :00b2efa0 Security 0 Security Name: None
+Function -> GetStateEnabled At address :00b41c90 Security 0 Security Name: None
+Function -> GetStatuses At address :00b28d10 Security 0 Security Name: None
+Function -> HasCustomStatus At address :00b28f60 Security 0 Security Name: None
+Function -> HasStatus At address :00b28e10 Security 0 Security Name: None
+Function -> LoadAnimation At address :00b3b960 Security 0 Security Name: None
+Function -> Move At address :00b319d0 Security 0 Security Name: None
+Function -> MoveTo At address :00b31690 Security 0 Security Name: None
+Function -> RemoveAccessories At address :00b46e80 Security 0 Security Name: None
+Function -> RemoveCustomStatus At address :00b29160 Security 0 Security Name: None
+Function -> RemoveStatus At address :00b291d0 Security 0 Security Name: None
+Function -> ReplaceBodyPartR15 At address :00b340e0 Security 0 Security Name: None
+Function -> SetClickToWalkEnabled At address :00b22600 Security 5 Security Name: LocalUser
+Function -> SetStateEnabled At address :00b41cc0 Security 0 Security Name: None
+Function -> TakeDamage At address :00b2a6c0 Security 0 Security Name: None
+Function -> UnequipTools At address :00b2f440 Security 0 Security Name: None
+Function -> loadAnimation At address :00b3b960 Security 0 Security Name: None
+Function -> takeDamage At address :00b2a6c0 Security 0 Security Name: None
+--------------------
+BodyColors
+Property -> HeadColor
+Property -> HeadColor3
+Property -> LeftArmColor
+Property -> LeftArmColor3
+Property -> LeftLegColor
+Property -> LeftLegColor3
+Property -> RightArmColor
+Property -> RightArmColor3
+Property -> RightLegColor
+Property -> RightLegColor3
+Property -> TorsoColor
+Property -> TorsoColor3
 --------------------
 Part
+Property -> Anchored
+Property -> AssemblyAngularVelocity
+Property -> AssemblyCenterOfMass
+Property -> AssemblyLinearVelocity
+Property -> AssemblyMass
+Property -> AssemblyRootPart
+Property -> BackParamA
+Property -> BackParamB
+Property -> BackSurface
+Property -> BackSurfaceInput
+Property -> BottomParamA
+Property -> BottomParamB
+Property -> BottomSurface
+Property -> BottomSurfaceInput
+Property -> BrickColor
+Property -> CFrame
+Property -> CanCollide
+Property -> CanQuery
+Property -> CanTouch
+Property -> CastShadow
+Property -> CenterOfMass
+Property -> CollisionGroup
+Property -> CollisionGroupId
+Property -> CollisionGroupReplicate
+Property -> Color
+Property -> Color3uint8
+Property -> CurrentPhysicalProperties
+Property -> CustomPhysicalProperties
+Property -> DraggingV1
+Property -> Elasticity
+Property -> ExtentsCFrame
+Property -> ExtentsSize
+Property -> FormFactor
+Property -> Friction
+Property -> FrontParamA
+Property -> FrontParamB
+Property -> FrontSurface
+Property -> FrontSurfaceInput
+Property -> LeftParamA
+Property -> LeftParamB
+Property -> LeftSurface
+Property -> LeftSurfaceInput
+Property -> LocalSimulationValidation
+Property -> LocalTransparencyModifier
+Property -> Locked
+Property -> Mass
+Property -> Massless
+Property -> Material
+Property -> MaterialVariant
+Property -> MaterialVariantSerialized
+Property -> NetworkIsSleeping
+Property -> NetworkOwnerV3
+Property -> NetworkOwnershipRule
+Property -> Orientation
+Property -> Origin
+Property -> Pivot Offset
+Property -> PivotOffset
+Property -> Position
+Property -> ReceiveAge
+Property -> Reflectance
+Property -> ResizeIncrement
+Property -> ResizeableFaces
+Property -> RightParamA
+Property -> RightParamB
+Property -> RightSurface
+Property -> RightSurfaceInput
+Property -> RootPriority
+Property -> RotVelocity
+Property -> Rotation
+Property -> Shape
+Property -> Size
+Property -> SpecificGravity
+Property -> TopParamA
+Property -> TopParamB
+Property -> TopSurface
+Property -> TopSurfaceInput
+Property -> Transparency
+Property -> Velocity
+Property -> brickColor
+Property -> formFactor
+Property -> formFactorRaw
+Property -> shap
+Property -> shape
+Property -> siz
+Property -> size
+Function -> ApplyAngularImpulse At address :014e9970 Security 0 Security Name: None
+Function -> ApplyImpulse At address :014e9830 Security 0 Security Name: None
+Function -> ApplyImpulseAtPosition At address :014e98d0 Security 0 Security Name: None
+Function -> BreakJoints At address :014f85bb Security 0 Security Name: None
+Function -> CanCollideWith At address :014ef860 Security 0 Security Name: None
+Function -> CanSetNetworkOwnership At address :014ec590 Security 0 Security Name: None
+Function -> GetConnectedParts At address :014eaae0 Security 0 Security Name: None
+Function -> GetJoints At address :014eb340 Security 0 Security Name: None
+Function -> GetMass At address :014e8610 Security 0 Security Name: None
+Function -> GetNetworkOwner At address :014ebf00 Security 0 Security Name: None
+Function -> GetNetworkOwnershipAuto At address :014ebc60 Security 0 Security Name: None
+Function -> GetPivot At address :00bdaea0 Security 0 Security Name: None
+Function -> GetRenderCFrame At address :014e0910 Security 0 Security Name: None
+Function -> GetRootPart At address :014eb200 Security 0 Security Name: None
+Function -> GetTouchingParts At address :014f85b3 Security 0 Security Name: None
+Function -> GetVelocityAtPosition At address :014e9680 Security 0 Security Name: None
+Function -> IsGrounded At address :014ea030 Security 0 Security Name: None
+Function -> MakeJoints At address :014e3ab0 Security 0 Security Name: None
+Function -> PivotTo At address :015bbeb0 Security 0 Security Name: None
+Function -> Resize At address :014f8543 Security 0 Security Name: None
+Function -> SetNetworkOwner At address :014ebd30 Security 0 Security Name: None
+Function -> SetNetworkOwnershipAuto At address :014ebb80 Security 0 Security Name: None
+Function -> breakJoints At address :014f85bb Security 0 Security Name: None
+Function -> getMass At address :014e8610 Security 0 Security Name: None
+Function -> makeJoints At address :014e3ab0 Security 0 Security Name: None
+Function -> resize At address :014f8543 Security 0 Security Name: None
+--------------------
+SpecialMesh
+Property -> MeshId
+Property -> MeshType
+Property -> Offset
+Property -> Scale
+Property -> TextureId
+Property -> VertexColor
+--------------------
+Attachment
+Property -> Axis
+Property -> CFrame
+Property -> Orientation
+Property -> Position
+Property -> Rotation
+Property -> SecondaryAxis
+Property -> Visible
+Property -> WorldAxis
+Property -> WorldCFrame
+Property -> WorldOrientation
+Property -> WorldPosition
+Property -> WorldRotation
+Property -> WorldSecondaryAxis
+Function -> GetAxis At address :00bcf090 Security 0 Security Name: None
+Function -> GetSecondaryAxis At address :00bced70 Security 0 Security Name: None
+Function -> SetAxis At address :00bdc800 Security 0 Security Name: None
+Function -> SetSecondaryAxis At address :00bdce70 Security 0 Security Name: None
+--------------------
+Decal
+Property -> Color3
+Property -> Face
+Property -> LocalTransparencyModifier
+Property -> Shiny
+Property -> Specular
+Property -> Texture
+Property -> Transparency
+Property -> ZIndex
+--------------------
+Motor6D
+Property -> Active
+Property -> C0
+Property -> C1
+Property -> ChildName
+Property -> CurrentAngle
+Property -> DesiredAngle
+Property -> Enabled
+Property -> MaxVelocity
+Property -> ParentName
+Property -> Part0
+Property -> Part1
+Property -> Transform
+Property -> part1
+Function -> SetDesiredAngle At address :00bdaee5 Security 0 Security Name: None
+--------------------
+Folder
+Property -> ReplicatedGuiInsertionOrder
+--------------------
+BoolValue
+Property -> Value
+--------------------
+BrickColorValue
+Property -> Value
+--------------------
+CFrameValue
+Property -> Value
+--------------------
+Color3Value
+Property -> Value
+--------------------
+IntValue
+Property -> Value
+--------------------
+NumberValue
+Property -> Value
+--------------------
+ObjectValue
+Property -> Value
+--------------------
+RayValue
+Property -> Value
+--------------------
+StringValue
+Property -> Value
+--------------------
+Vector3Value
+Property -> Value
 --------------------
 MeshPart
+Property -> AlternateMeshHash
+Property -> Anchored
+Property -> AssemblyAngularVelocity
+Property -> AssemblyCenterOfMass
+Property -> AssemblyLinearVelocity
+Property -> AssemblyMass
+Property -> AssemblyRootPart
+Property -> BackParamA
+Property -> BackParamB
+Property -> BackSurface
+Property -> BackSurfaceInput
+Property -> BottomParamA
+Property -> BottomParamB
+Property -> BottomSurface
+Property -> BottomSurfaceInput
+Property -> BrickColor
+Property -> CFrame
+Property -> CanCollide
+Property -> CanQuery
+Property -> CanTouch
+Property -> CastShadow
+Property -> CenterOfMass
+Property -> CollisionFidelity
+Property -> CollisionGroup
+Property -> CollisionGroupId
+Property -> CollisionGroupReplicate
+Property -> Color
+Property -> Color3uint8
+Property -> CurrentPhysicalProperties
+Property -> CustomPhysicalProperties
+Property -> DoubleSided
+Property -> DraggingV1
+Property -> Elasticity
+Property -> ExtentsCFrame
+Property -> ExtentsSize
+Property -> Friction
+Property -> FrontParamA
+Property -> FrontParamB
+Property -> FrontSurface
+Property -> FrontSurfaceInput
+Property -> HasJointOffset
+Property -> HasSkinnedMesh
+Property -> InitialSize
+Property -> JointOffset
+Property -> LeftParamA
+Property -> LeftParamB
+Property -> LeftSurface
+Property -> LeftSurfaceInput
+Property -> LocalSimulationValidation
+Property -> LocalTransparencyModifier
+Property -> Locked
+Property -> Mass
+Property -> Massless
+Property -> Material
+Property -> MaterialVariant
+Property -> MaterialVariantSerialized
+Property -> MeshID
+Property -> MeshId
+Property -> MeshSize
+Property -> NetworkIsSleeping
+Property -> NetworkOwnerV3
+Property -> NetworkOwnershipRule
+Property -> Orientation
+Property -> Origin
+Property -> PhysicalConfigData
+Property -> PhysicsData
+Property -> Pivot Offset
+Property -> PivotOffset
+Property -> Position
+Property -> ReceiveAge
+Property -> Reflectance
+Property -> RenderFidelity
+Property -> RenderFidelityReplicate
+Property -> ResizeIncrement
+Property -> ResizeableFaces
+Property -> RightParamA
+Property -> RightParamB
+Property -> RightSurface
+Property -> RightSurfaceInput
+Property -> RootPriority
+Property -> RotVelocity
+Property -> Rotation
+Property -> Size
+Property -> SpecificGravity
+Property -> TextureID
+Property -> TopParamA
+Property -> TopParamB
+Property -> TopSurface
+Property -> TopSurfaceInput
+Property -> Transparency
+Property -> Velocity
+Property -> VertexCount
+Property -> brickColor
+Property -> siz
+Property -> size
+Function -> ApplyAngularImpulse At address :014e9970 Security 0 Security Name: None
+Function -> ApplyImpulse At address :014e9830 Security 0 Security Name: None
+Function -> ApplyImpulseAtPosition At address :014e98d0 Security 0 Security Name: None
+Function -> ApplyMesh At address :0155a230 Security 0 Security Name: None
+Function -> BreakJoints At address :014f85bb Security 0 Security Name: None
+Function -> CanCollideWith At address :014ef860 Security 0 Security Name: None
+Function -> CanSetNetworkOwnership At address :014ec590 Security 0 Security Name: None
+Function -> GetConnectedParts At address :014eaae0 Security 0 Security Name: None
+Function -> GetJoints At address :014eb340 Security 0 Security Name: None
+Function -> GetMass At address :014e8610 Security 0 Security Name: None
+Function -> GetNetworkOwner At address :014ebf00 Security 0 Security Name: None
+Function -> GetNetworkOwnershipAuto At address :014ebc60 Security 0 Security Name: None
+Function -> GetPivot At address :00bdaea0 Security 0 Security Name: None
+Function -> GetRenderCFrame At address :014e0910 Security 0 Security Name: None
+Function -> GetRootPart At address :014eb200 Security 0 Security Name: None
+Function -> GetTouchingParts At address :014f85b3 Security 0 Security Name: None
+Function -> GetVelocityAtPosition At address :014e9680 Security 0 Security Name: None
+Function -> IsGrounded At address :014ea030 Security 0 Security Name: None
+Function -> MakeJoints At address :014e3ab0 Security 0 Security Name: None
+Function -> PivotTo At address :015bbeb0 Security 0 Security Name: None
+Function -> Resize At address :014f8543 Security 0 Security Name: None
+Function -> SetNetworkOwner At address :014ebd30 Security 0 Security Name: None
+Function -> SetNetworkOwnershipAuto At address :014ebb80 Security 0 Security Name: None
+Function -> breakJoints At address :014f85bb Security 0 Security Name: None
+Function -> getMass At address :014e8610 Security 0 Security Name: None
+Function -> makeJoints At address :014e3ab0 Security 0 Security Name: None
+Function -> resize At address :014f8543 Security 0 Security Name: None
 --------------------
-WedgePart
+Seat
+Property -> Anchored
+Property -> AssemblyAngularVelocity
+Property -> AssemblyCenterOfMass
+Property -> AssemblyLinearVelocity
+Property -> AssemblyMass
+Property -> AssemblyRootPart
+Property -> BackParamA
+Property -> BackParamB
+Property -> BackSurface
+Property -> BackSurfaceInput
+Property -> BottomParamA
+Property -> BottomParamB
+Property -> BottomSurface
+Property -> BottomSurfaceInput
+Property -> BrickColor
+Property -> CFrame
+Property -> CanCollide
+Property -> CanQuery
+Property -> CanTouch
+Property -> CastShadow
+Property -> CenterOfMass
+Property -> CollisionGroup
+Property -> CollisionGroupId
+Property -> CollisionGroupReplicate
+Property -> Color
+Property -> Color3uint8
+Property -> CurrentPhysicalProperties
+Property -> CustomPhysicalProperties
+Property -> Disabled
+Property -> DraggingV1
+Property -> Elasticity
+Property -> ExtentsCFrame
+Property -> ExtentsSize
+Property -> FormFactor
+Property -> Friction
+Property -> FrontParamA
+Property -> FrontParamB
+Property -> FrontSurface
+Property -> FrontSurfaceInput
+Property -> LeftParamA
+Property -> LeftParamB
+Property -> LeftSurface
+Property -> LeftSurfaceInput
+Property -> LocalSimulationValidation
+Property -> LocalTransparencyModifier
+Property -> Locked
+Property -> Mass
+Property -> Massless
+Property -> Material
+Property -> MaterialVariant
+Property -> MaterialVariantSerialized
+Property -> NetworkIsSleeping
+Property -> NetworkOwnerV3
+Property -> NetworkOwnershipRule
+Property -> Occupant
+Property -> Orientation
+Property -> Origin
+Property -> Pivot Offset
+Property -> PivotOffset
+Property -> Position
+Property -> ReceiveAge
+Property -> Reflectance
+Property -> ResizeIncrement
+Property -> ResizeableFaces
+Property -> RightParamA
+Property -> RightParamB
+Property -> RightSurface
+Property -> RightSurfaceInput
+Property -> RootPriority
+Property -> RotVelocity
+Property -> Rotation
+Property -> Shape
+Property -> Size
+Property -> SpecificGravity
+Property -> TopParamA
+Property -> TopParamB
+Property -> TopSurface
+Property -> TopSurfaceInput
+Property -> Transparency
+Property -> Velocity
+Property -> brickColor
+Property -> formFactor
+Property -> formFactorRaw
+Property -> shap
+Property -> shape
+Property -> siz
+Property -> size
+Function -> ApplyAngularImpulse At address :014e9970 Security 0 Security Name: None
+Function -> ApplyImpulse At address :014e9830 Security 0 Security Name: None
+Function -> ApplyImpulseAtPosition At address :014e98d0 Security 0 Security Name: None
+Function -> BreakJoints At address :014f85bb Security 0 Security Name: None
+Function -> CanCollideWith At address :014ef860 Security 0 Security Name: None
+Function -> CanSetNetworkOwnership At address :014ec590 Security 0 Security Name: None
+Function -> GetConnectedParts At address :014eaae0 Security 0 Security Name: None
+Function -> GetJoints At address :014eb340 Security 0 Security Name: None
+Function -> GetMass At address :014e8610 Security 0 Security Name: None
+Function -> GetNetworkOwner At address :014ebf00 Security 0 Security Name: None
+Function -> GetNetworkOwnershipAuto At address :014ebc60 Security 0 Security Name: None
+Function -> GetPivot At address :00bdaea0 Security 0 Security Name: None
+Function -> GetRenderCFrame At address :014e0910 Security 0 Security Name: None
+Function -> GetRootPart At address :014eb200 Security 0 Security Name: None
+Function -> GetTouchingParts At address :014f85b3 Security 0 Security Name: None
+Function -> GetVelocityAtPosition At address :014e9680 Security 0 Security Name: None
+Function -> IsGrounded At address :014ea030 Security 0 Security Name: None
+Function -> MakeJoints At address :014e3ab0 Security 0 Security Name: None
+Function -> PivotTo At address :015bbeb0 Security 0 Security Name: None
+Function -> Resize At address :014f8543 Security 0 Security Name: None
+Function -> SetNetworkOwner At address :014ebd30 Security 0 Security Name: None
+Function -> SetNetworkOwnershipAuto At address :014ebb80 Security 0 Security Name: None
+Function -> Sit At address :016ec640 Security 0 Security Name: None
+Function -> breakJoints At address :014f85bb Security 0 Security Name: None
+Function -> getMass At address :014e8610 Security 0 Security Name: None
+Function -> makeJoints At address :014e3ab0 Security 0 Security Name: None
+Function -> resize At address :014f8543 Security 0 Security Name: None
 --------------------
-SurfaceLight
+Weld
+Property -> Active
+Property -> C0
+Property -> C1
+Property -> Enabled
+Property -> Part0
+Property -> Part1
+Property -> part1
+--------------------
+Terrain
+Property -> AcquisitionMethod
+Property -> Anchored
+Property -> AssemblyAngularVelocity
+Property -> AssemblyCenterOfMass
+Property -> AssemblyLinearVelocity
+Property -> AssemblyMass
+Property -> AssemblyRootPart
+Property -> BackParamA
+Property -> BackParamB
+Property -> BackSurface
+Property -> BackSurfaceInput
+Property -> BottomParamA
+Property -> BottomParamB
+Property -> BottomSurface
+Property -> BottomSurfaceInput
+Property -> BrickColor
+Property -> CFrame
+Property -> CanCollide
+Property -> CanQuery
+Property -> CanTouch
+Property -> CastShadow
+Property -> CenterOfMass
+Property -> ClusterGrid
+Property -> ClusterGridV2
+Property -> ClusterGridV3
+Property -> CollisionGroup
+Property -> CollisionGroupId
+Property -> CollisionGroupReplicate
+Property -> Color
+Property -> Color3uint8
+Property -> CurrentPhysicalProperties
+Property -> CustomPhysicalProperties
+Property -> Decoration
+Property -> DraggingV1
+Property -> Elasticity
+Property -> ExtentsCFrame
+Property -> ExtentsSize
+Property -> Friction
+Property -> FrontParamA
+Property -> FrontParamB
+Property -> FrontSurface
+Property -> FrontSurfaceInput
+Property -> IsSmooth
+Property -> LastUsedModificationMethod
+Property -> LeftParamA
+Property -> LeftParamB
+Property -> LeftSurface
+Property -> LeftSurfaceInput
+Property -> LocalSimulationValidation
+Property -> LocalTransparencyModifier
+Property -> Locked
+Property -> Mass
+Property -> Massless
+Property -> Material
+Property -> MaterialColors
+Property -> MaterialVariant
+Property -> MaterialVariantSerialized
+Property -> MaxExtents
+Property -> NetworkIsSleeping
+Property -> NetworkOwnerV3
+Property -> NetworkOwnershipRule
+Property -> Orientation
+Property -> Origin
+Property -> PhysicsGrid
+Property -> Pivot Offset
+Property -> PivotOffset
+Property -> Position
+Property -> ReceiveAge
+Property -> Reflectance
+Property -> ResizeIncrement
+Property -> ResizeableFaces
+Property -> RightParamA
+Property -> RightParamB
+Property -> RightSurface
+Property -> RightSurfaceInput
+Property -> RootPriority
+Property -> RotVelocity
+Property -> Rotation
+Property -> ShorelinesUpgraded
+Property -> Size
+Property -> SmoothGrid
+Property -> SmoothVoxelsUpgraded
+Property -> SpecificGravity
+Property -> TopParamA
+Property -> TopParamB
+Property -> TopSurface
+Property -> TopSurfaceInput
+Property -> Transparency
+Property -> Velocity
+Property -> WaterColor
+Property -> WaterReflectance
+Property -> WaterTransparency
+Property -> WaterWaveSize
+Property -> WaterWaveSpeed
+Property -> brickColor
+Property -> siz
+Property -> size
+Function -> ApplyAngularImpulse At address :014e9970 Security 0 Security Name: None
+Function -> ApplyImpulse At address :014e9830 Security 0 Security Name: None
+Function -> ApplyImpulseAtPosition At address :014e98d0 Security 0 Security Name: None
+Function -> AutowedgeCell At address :00bf0c50 Security 0 Security Name: None
+Function -> AutowedgeCells At address :00967da0 Security 0 Security Name: None
+Function -> BreakJoints At address :014f85bb Security 0 Security Name: None
+Function -> CanCollideWith At address :014ef860 Security 0 Security Name: None
+Function -> CanSetNetworkOwnership At address :014ec590 Security 0 Security Name: None
+Function -> CanShorelinesBeUpgraded At address :01668790 Security 5 Security Name: LocalUser
+Function -> CanSmoothVoxelsBeUpgraded At address :016687f0 Security 5 Security Name: LocalUser
+Function -> CellCenterToWorld At address :0165a9c0 Security 0 Security Name: None
+Function -> CellCornerToWorld At address :01656dc0 Security 0 Security Name: None
+Function -> Clear At address :0165aa20 Security 0 Security Name: None
+Function -> ConvertToSmooth At address :0165b590 Security 1 Security Name: Plugin
+Function -> CopyRegion At address :0165adf0 Security 0 Security Name: None
+Function -> CountCells At address :0165ab50 Security 0 Security Name: None
+Function -> FillBall At address :01666960 Security 0 Security Name: None
+Function -> FillBlock At address :01665410 Security 0 Security Name: None
+Function -> FillCylinder At address :016663e0 Security 0 Security Name: None
+Function -> FillRegion At address :01665030 Security 0 Security Name: None
+Function -> FillWedge At address :01665bd0 Security 0 Security Name: None
+Function -> GetCell At address :01658f20 Security 0 Security Name: None
+Function -> GetConnectedParts At address :014eaae0 Security 0 Security Name: None
+Function -> GetJoints At address :014eb340 Security 0 Security Name: None
+Function -> GetMass At address :014e8610 Security 0 Security Name: None
+Function -> GetMaterialColor At address :01667e20 Security 0 Security Name: None
+Function -> GetNetworkOwner At address :014ebf00 Security 0 Security Name: None
+Function -> GetNetworkOwnershipAuto At address :014ebc60 Security 0 Security Name: None
+Function -> GetPivot At address :00bdaea0 Security 0 Security Name: None
+Function -> GetRenderCFrame At address :014e0910 Security 0 Security Name: None
+Function -> GetRootPart At address :014eb200 Security 0 Security Name: None
+Function -> GetTerrainWireframe At address :01659b90 Security 5 Security Name: LocalUser
+Function -> GetTouchingParts At address :014f85b3 Security 0 Security Name: None
+Function -> GetVelocityAtPosition At address :014e9680 Security 0 Security Name: None
+Function -> GetWaterCell At address :016598a0 Security 0 Security Name: None
+Function -> IsGrounded At address :014ea030 Security 0 Security Name: None
+Function -> MakeJoints At address :014e3ab0 Security 0 Security Name: None
+Function -> PasteRegion At address :0165ae20 Security 0 Security Name: None
+Function -> PivotTo At address :015bbeb0 Security 0 Security Name: None
+Function -> ReadVoxels At address :00000000 Security 0 Security Name: None
+Function -> ReplaceMaterial At address :01666dc0 Security 0 Security Name: None
+Function -> ReplaceMaterialInTransform At address :016672d0 Security 5 Security Name: LocalUser
+Function -> Resize At address :014f8543 Security 0 Security Name: None
+Function -> SetCell At address :01659a30 Security 0 Security Name: None
+Function -> SetCells At address :016591b0 Security 0 Security Name: None
+Function -> SetMaterialColor At address :01667ee0 Security 0 Security Name: None
+Function -> SetMaterialInTransform At address :01667330 Security 5 Security Name: LocalUser
+Function -> SetNetworkOwner At address :014ebd30 Security 0 Security Name: None
+Function -> SetNetworkOwnershipAuto At address :014ebb80 Security 0 Security Name: None
+Function -> SetWaterCell At address :016599c0 Security 0 Security Name: None
+Function -> SmoothRegion At address :00000000 Security 5 Security Name: LocalUser
+Function -> WorldToCell At address :01659b40 Security 0 Security Name: None
+Function -> WorldToCellPreferEmpty At address :01659af0 Security 0 Security Name: None
+Function -> WorldToCellPreferSolid At address :01659aa0 Security 0 Security Name: None
+Function -> WriteVoxels At address :00000000 Security 0 Security Name: None
+Function -> breakJoints At address :014f85bb Security 0 Security Name: None
+Function -> getMass At address :014e8610 Security 0 Security Name: None
+Function -> makeJoints At address :014e3ab0 Security 0 Security Name: None
+Function -> resize At address :014f8543 Security 0 Security Name: None
+--------------------
+SpawnLocation
+Property -> AllowTeamChangeOnTouch
+Property -> Anchored
+Property -> AssemblyAngularVelocity
+Property -> AssemblyCenterOfMass
+Property -> AssemblyLinearVelocity
+Property -> AssemblyMass
+Property -> AssemblyRootPart
+Property -> BackParamA
+Property -> BackParamB
+Property -> BackSurface
+Property -> BackSurfaceInput
+Property -> BottomParamA
+Property -> BottomParamB
+Property -> BottomSurface
+Property -> BottomSurfaceInput
+Property -> BrickColor
+Property -> CFrame
+Property -> CanCollide
+Property -> CanQuery
+Property -> CanTouch
+Property -> CastShadow
+Property -> CenterOfMass
+Property -> CollisionGroup
+Property -> CollisionGroupId
+Property -> CollisionGroupReplicate
+Property -> Color
+Property -> Color3uint8
+Property -> CurrentPhysicalProperties
+Property -> CustomPhysicalProperties
+Property -> DraggingV1
+Property -> Duration
+Property -> Elasticity
+Property -> Enabled
+Property -> ExtentsCFrame
+Property -> ExtentsSize
+Property -> FormFactor
+Property -> Friction
+Property -> FrontParamA
+Property -> FrontParamB
+Property -> FrontSurface
+Property -> FrontSurfaceInput
+Property -> LeftParamA
+Property -> LeftParamB
+Property -> LeftSurface
+Property -> LeftSurfaceInput
+Property -> LocalSimulationValidation
+Property -> LocalTransparencyModifier
+Property -> Locked
+Property -> Mass
+Property -> Massless
+Property -> Material
+Property -> MaterialVariant
+Property -> MaterialVariantSerialized
+Property -> NetworkIsSleeping
+Property -> NetworkOwnerV3
+Property -> NetworkOwnershipRule
+Property -> Neutral
+Property -> Orientation
+Property -> Origin
+Property -> Pivot Offset
+Property -> PivotOffset
+Property -> Position
+Property -> ReceiveAge
+Property -> Reflectance
+Property -> ResizeIncrement
+Property -> ResizeableFaces
+Property -> RightParamA
+Property -> RightParamB
+Property -> RightSurface
+Property -> RightSurfaceInput
+Property -> RootPriority
+Property -> RotVelocity
+Property -> Rotation
+Property -> Shape
+Property -> Size
+Property -> SpecificGravity
+Property -> TeamColor
+Property -> TopParamA
+Property -> TopParamB
+Property -> TopSurface
+Property -> TopSurfaceInput
+Property -> Transparency
+Property -> Velocity
+Property -> brickColor
+Property -> formFactor
+Property -> formFactorRaw
+Property -> shap
+Property -> shape
+Property -> siz
+Property -> size
+Function -> ApplyAngularImpulse At address :014e9970 Security 0 Security Name: None
+Function -> ApplyImpulse At address :014e9830 Security 0 Security Name: None
+Function -> ApplyImpulseAtPosition At address :014e98d0 Security 0 Security Name: None
+Function -> BreakJoints At address :014f85bb Security 0 Security Name: None
+Function -> CanCollideWith At address :014ef860 Security 0 Security Name: None
+Function -> CanSetNetworkOwnership At address :014ec590 Security 0 Security Name: None
+Function -> GetConnectedParts At address :014eaae0 Security 0 Security Name: None
+Function -> GetJoints At address :014eb340 Security 0 Security Name: None
+Function -> GetMass At address :014e8610 Security 0 Security Name: None
+Function -> GetNetworkOwner At address :014ebf00 Security 0 Security Name: None
+Function -> GetNetworkOwnershipAuto At address :014ebc60 Security 0 Security Name: None
+Function -> GetPivot At address :00bdaea0 Security 0 Security Name: None
+Function -> GetRenderCFrame At address :014e0910 Security 0 Security Name: None
+Function -> GetRootPart At address :014eb200 Security 0 Security Name: None
+Function -> GetTouchingParts At address :014f85b3 Security 0 Security Name: None
+Function -> GetVelocityAtPosition At address :014e9680 Security 0 Security Name: None
+Function -> IsGrounded At address :014ea030 Security 0 Security Name: None
+Function -> MakeJoints At address :014e3ab0 Security 0 Security Name: None
+Function -> PivotTo At address :015bbeb0 Security 0 Security Name: None
+Function -> Resize At address :014f8543 Security 0 Security Name: None
+Function -> SetNetworkOwner At address :014ebd30 Security 0 Security Name: None
+Function -> SetNetworkOwnershipAuto At address :014ebb80 Security 0 Security Name: None
+Function -> breakJoints At address :014f85bb Security 0 Security Name: None
+Function -> getMass At address :014e8610 Security 0 Security Name: None
+Function -> makeJoints At address :014e3ab0 Security 0 Security Name: None
+Function -> resize At address :014f8543 Security 0 Security Name: None
+--------------------
+RopeConstraint
+Property -> Active
+Property -> Attachment0
+Property -> Attachment1
+Property -> Color
+Property -> CurrentDistance
+Property -> Enabled
+Property -> Length
+Property -> Restitution
+Property -> Thickness
+Property -> Visible
+Property -> WinchEnabled
+Property -> WinchForce
+Property -> WinchResponsiveness
+Property -> WinchSpeed
+Property -> WinchTarget
+--------------------
+Status
+Property -> LevelOfDetail
+Property -> LodEntity
+Property -> ModelMeshCFrame
+Property -> ModelMeshData
+Property -> ModelMeshSize
+Property -> ModelStreamingMode
+Property -> NeedsPivotMigration
+Property -> Origin
+Property -> Pivot Offset
+Property -> PrimaryPart
+Property -> Scale
+Property -> ScaleFactor
+Property -> WorldPivot
+Property -> WorldPivotData
+Function -> AddPersistentPlayer At address :014d9d90 Security 0 Security Name: None
+Function -> BreakJoints At address :014d7cf0 Security 0 Security Name: None
+Function -> GetBoundingBox At address :014d8970 Security 0 Security Name: None
+Function -> GetExtentsSize At address :014d8e90 Security 0 Security Name: None
+Function -> GetModelCFrame At address :014d8c50 Security 0 Security Name: None
+Function -> GetModelSize At address :014d8e90 Security 0 Security Name: None
+Function -> GetPivot At address :00bdaea0 Security 0 Security Name: None
+Function -> GetPrimaryPartCFrame At address :014d5720 Security 0 Security Name: None
+Function -> GetScale At address :00a6a990 Security 0 Security Name: None
+Function -> MakeJoints At address :014d7aa0 Security 0 Security Name: None
+Function -> MoveTo At address :015bbaf0 Security 0 Security Name: None
+Function -> PivotTo At address :015bbeb0 Security 0 Security Name: None
+Function -> RemovePersistentPlayer At address :014d9e80 Security 0 Security Name: None
+Function -> ResetOrientationToIdentity At address :009362e0 Security 0 Security Name: None
+Function -> ScaleTo At address :014d6550 Security 0 Security Name: None
+Function -> SetIdentityOrientation At address :009362e0 Security 0 Security Name: None
+Function -> SetPrimaryPartCFrame At address :014d5a60 Security 0 Security Name: None
+Function -> TranslateBy At address :014d56c0 Security 0 Security Name: None
+Function -> breakJoints At address :014d7cf0 Security 0 Security Name: None
+Function -> makeJoints At address :014d7aa0 Security 0 Security Name: None
+Function -> move At address :015bba30 Security 0 Security Name: None
+Function -> moveTo At address :015bba30 Security 0 Security Name: None
+--------------------
+Animator
+Property -> EvaluationThrottled
+Property -> PreferLodEnabled
+Function -> ApplyJointVelocities At address :01221600 Security 0 Security Name: None
+Function -> GetPlayingAnimationTracks At address :01223b80 Security 0 Security Name: None
+Function -> GetPlayingAnimationTracksCoreScript At address :01223df0 Security 5 Security Name: LocalUser
+Function -> LoadAnimation At address :0121d700 Security 0 Security Name: None
+Function -> LoadAnimationCoreScript At address :0121d890 Security 5 Security Name: LocalUser
+Function -> LoadStreamAnimation At address :0121d930 Security 5 Security Name: LocalUser
+Function -> LoadStreamAnimationForSelfieView_deprecated At address :0121de00 Security 5 Security Name: LocalUser
+Function -> StepAnimations At address :01222680 Security 1 Security Name: Plugin
+--------------------
+HumanoidDescription
+Property -> AccessoryBlob
+Property -> BackAccessory
+Property -> BodyTypeScale
+Property -> ClimbAnimation
+Property -> DepthScale
+Property -> EmotesDataInternal
+Property -> EquippedEmotesDataInternal
+Property -> Face
+Property -> FaceAccessory
+Property -> FallAnimation
+Property -> FrontAccessory
+Property -> GraphicTShirt
+Property -> HairAccessory
+Property -> HatAccessory
+Property -> Head
+Property -> HeadColor
+Property -> HeadScale
+Property -> HeightScale
+Property -> IdleAnimation
+Property -> JumpAnimation
+Property -> LeftArm
+Property -> LeftArmColor
+Property -> LeftLeg
+Property -> LeftLegColor
+Property -> MoodAnimation
+Property -> NeckAccessory
+Property -> NumberEmotesLoaded
+Property -> Pants
+Property -> ProportionScale
+Property -> RightArm
+Property -> RightArmColor
+Property -> RightLeg
+Property -> RightLegColor
+Property -> RunAnimation
+Property -> Shirt
+Property -> ShouldersAccessory
+Property -> SwimAnimation
+Property -> Torso
+Property -> TorsoColor
+Property -> WaistAccessory
+Property -> WalkAnimation
+Property -> WidthScale
+Function -> AddEmote At address :00be4260 Security 0 Security Name: None
+Function -> GetAccessories At address :00be6a70 Security 0 Security Name: None
+Function -> GetEmotes At address :00be4460 Security 0 Security Name: None
+Function -> GetEquippedEmotes At address :00be4dd0 Security 0 Security Name: None
+Function -> RemoveEmote At address :00be4340 Security 0 Security Name: None
+Function -> SetAccessories At address :00be6ec0 Security 0 Security Name: None
+Function -> SetEmotes At address :00be4790 Security 0 Security Name: None
+Function -> SetEquippedEmotes At address :00be5660 Security 0 Security Name: None
+--------------------
+LocalScript
+Property -> CachedRemoteSource
+Property -> CachedRemoteSourceLoadState
+Property -> CurrentEditor
+Property -> Disabled
+Property -> Enabled
+Property -> HasAssociatedDrafts
+Property -> IsDifferentFromFileSystem
+Property -> LinkedSource
+Property -> OriginalScriptGuid
+Property -> RunContext
+Property -> SandboxedSource
+Property -> ScriptGuid
+Property -> Source
+Property -> SyncingEditorText
+Function -> GetHash At address :00ad51d0 Security 3 Security Name: RobloxPlace
+--------------------
+Animation
+Property -> AnimationId
+--------------------
+BindableFunction
+--------------------
+CharacterMesh
+Property -> BaseTextureId
+Property -> BodyPart
+Property -> MeshId
+Property -> OverlayTextureId
+--------------------
+Shirt
+Property -> Color3
+Property -> Outfit1
+Property -> Outfit2
+Property -> ShirtTemplate
+--------------------
+Pants
+Property -> Color3
+Property -> Outfit1
+Property -> Outfit2
+Property -> PantsTemplate
+--------------------
+Accessory
+Property -> AccessoryType
+Property -> AttachmentForward
+Property -> AttachmentPoint
+Property -> AttachmentPos
+Property -> AttachmentRight
+Property -> AttachmentUp
+Property -> BackendAccoutrementState
+--------------------
+RunService
+Property -> ClientGitHash
+Function -> BindToRenderStep At address :013af460 Security 0 Security Name: None
+Function -> GetCoreScriptVersion At address :013b0040 Security 5 Security Name: LocalUser
+Function -> GetRobloxClientChannel At address :013b0000 Security 5 Security Name: LocalUser
+Function -> GetRobloxVersion At address :013aff90 Security 5 Security Name: LocalUser
+Function -> IsClient At address :013afe10 Security 0 Security Name: None
+Function -> IsEdit At address :013afe80 Security 1 Security Name: Plugin
+Function -> IsRunMode At address :013afe20 Security 0 Security Name: None
+Function -> IsRunning At address :013ac820 Security 0 Security Name: None
+Function -> IsServer At address :013afe00 Security 0 Security Name: None
+Function -> IsStudio At address :009854b0 Security 0 Security Name: None
+Function -> Pause At address :00ad7810 Security 1 Security Name: Plugin
+Function -> Reset At address :013ac810 Security 1 Security Name: Plugin
+Function -> Run At address :00ad7800 Security 1 Security Name: Plugin
+Function -> Set3dRenderingEnabled At address :013ac830 Security 5 Security Name: LocalUser
+Function -> SetRobloxGuiFocused At address :013ac840 Security 5 Security Name: LocalUser
+Function -> Stop At address :013ac810 Security 1 Security Name: Plugin
+Function -> UnbindFromRenderStep At address :013af5e0 Security 0 Security Name: None
+Function -> setThrottleFramerateEnabled At address :013b0060 Security 5 Security Name: LocalUser
+--------------------
+GuiService
+Property -> AutoSelectGuiEnabled
+Property -> CoreEffectFolder
+Property -> CoreGuiFolder
+Property -> CoreGuiNavigationEnabled
+Property -> GuiNavigationEnabled
+Property -> IsModalDialog
+Property -> IsWindows
+Property -> MenuIsOpen
+Property -> SelectedCoreObject
+Property -> SelectedObject
+Property -> TouchControlsEnabled
+Function -> AddCenterDialog At address :01964b70 Security 5 Security Name: LocalUser
+Function -> AddKey At address :019660e0 Security 5 Security Name: LocalUser
+Function -> AddSelectionParent At address :01967710 Security 0 Security Name: None
+Function -> AddSelectionTuple At address :01967910 Security 0 Security Name: None
+Function -> AddSpecialKey At address :01966100 Security 5 Security Name: LocalUser
+Function -> BroadcastNotification At address :01966390 Security 5 Security Name: LocalUser
+Function -> ClearError At address :01966640 Security 5 Security Name: LocalUser
+Function -> CloseInspectMenu At address :0196aa90 Security 0 Security Name: None
+Function -> CloseStatsBasedOnInputString At address :01968900 Security 5 Security Name: LocalUser
+Function -> ForceTenFootInterface At address :019669c0 Security 5 Security Name: LocalUser
+Function -> GetBrickCount At address :019643d0 Security 5 Security Name: LocalUser
+Function -> GetClosestDialogToPosition At address :019683c0 Security 5 Security Name: LocalUser
+Function -> GetEmotesMenuOpen At address :01962400 Security 0 Security Name: None
+Function -> GetErrorCode At address :01854520 Security 5 Security Name: LocalUser
+Function -> GetErrorMessage At address :01966690 Security 5 Security Name: LocalUser
+Function -> GetErrorType At address :01962410 Security 5 Security Name: LocalUser
+Function -> GetGameplayPausedNotificationEnabled At address :0196ab40 Security 0 Security Name: None
+Function -> GetGuiInset At address :019658e0 Security 0 Security Name: None
+Function -> GetGuiIsVisible At address :00b22b30 Security 5 Security Name: LocalUser
+Function -> GetInspectMenuEnabled At address :0196a860 Security 0 Security Name: None
+Function -> GetNotificationTypeList At address :01966480 Security 5 Security Name: LocalUser
+Function -> GetResolutionScale At address :01964350 Security 5 Security Name: LocalUser
+Function -> GetSafeZoneOffsets At address :01965db0 Security 5 Security Name: LocalUser
+Function -> GetUiMessage At address :01929340 Security 5 Security Name: LocalUser
+Function -> InspectPlayerFromHumanoidDescription At address :0196a970 Security 0 Security Name: None
+Function -> InspectPlayerFromUserId At address :0196a890 Security 0 Security Name: None
+Function -> InspectPlayerFromUserIdWithCtx At address :0196aaa0 Security 5 Security Name: LocalUser
+Function -> IsMemoryTrackerEnabled At address :019669a0 Security 5 Security Name: LocalUser
+Function -> IsTenFootInterface At address :019669b0 Security 0 Security Name: None
+Function -> OpenBrowserWindow At address :019661e0 Security 5 Security Name: LocalUser
+Function -> OpenNativeOverlay At address :01966290 Security 5 Security Name: LocalUser
+Function -> RemoveCenterDialog At address :01965230 Security 5 Security Name: LocalUser
+Function -> RemoveKey At address :019660e0 Security 5 Security Name: LocalUser
+Function -> RemoveSelectionGroup At address :01967b30 Security 0 Security Name: None
+Function -> RemoveSpecialKey At address :01966160 Security 5 Security Name: LocalUser
+Function -> Select At address :01967a70 Security 0 Security Name: None
+Function -> SetEmotesMenuOpen At address :01963f80 Security 0 Security Name: None
+Function -> SetGameplayPausedNotificationEnabled At address :0196ab50 Security 0 Security Name: None
+Function -> SetGlobalGuiInset At address :019656f0 Security 5 Security Name: LocalUser
+Function -> SetHardwareSafeAreaInsets At address :0196afd0 Security 5 Security Name: LocalUser
+Function -> SetInspectMenuEnabled At address :0196a870 Security 0 Security Name: None
+Function -> SetMenuIsOpen At address :01963cc0 Security 5 Security Name: LocalUser
+Function -> SetPurchasePromptIsShown At address :01963f60 Security 5 Security Name: LocalUser
+Function -> SetSafeZoneOffsets At address :01965d20 Security 5 Security Name: LocalUser
+Function -> SetUiMessage At address :019666b0 Security 3 Security Name: RobloxPlace
+Function -> ShowStatsBasedOnInputString At address :01968690 Security 5 Security Name: LocalUser
+Function -> ToggleFullscreen At address :01966770 Security 5 Security Name: LocalUser
+Function -> ToggleGuiIsVisibleIfAllowed At address :01968ee0 Security 5 Security Name: LocalUser
+--------------------
+ScreenshotHud
+Property -> CameraButtonIcon
+Property -> CameraButtonPosition
+Property -> CloseButtonPosition
+Property -> CloseWhenScreenshotTaken
+Property -> ExperienceNameOverlayEnabled
+Property -> OverlayFont
+Property -> UsernameOverlayEnabled
+Property -> Visible
+--------------------
+Stats
+Property -> ContactsCount
+Property -> DataReceiveKbps
+Property -> DataSendKbps
+Property -> HeartbeatTimeMs
+Property -> InstanceCount
+Property -> MovingPrimitivesCount
+Property -> PhysicsReceiveKbps
+Property -> PhysicsSendKbps
+Property -> PhysicsStepTimeMs
+Property -> PrimitivesCount
+Function -> GetBrowserTrackerId At address :01438130 Security 5 Security Name: LocalUser
+Function -> GetMemoryUsageMbForTag At address :01438040 Security 0 Security Name: None
+Function -> GetTotalMemoryUsageMb At address :014380e0 Security 0 Security Name: None
+--------------------
+StatsItem
+Property -> DisplayName
+Function -> GetValue At address :010ed5f0 Security 1 Security Name: Plugin
+Function -> GetValueString At address :01436470 Security 1 Security Name: Plugin
+--------------------
+RunningAverageItemInt
+Property -> DisplayName
+Function -> GetValue At address :010ed5f0 Security 1 Security Name: Plugin
+Function -> GetValueString At address :01436470 Security 1 Security Name: Plugin
+--------------------
+TotalCountTimeIntervalItem
+Property -> DisplayName
+Function -> GetValue At address :010ed5f0 Security 1 Security Name: Plugin
+Function -> GetValueString At address :01436470 Security 1 Security Name: Plugin
+--------------------
+RunningAverageItemDouble
+Property -> DisplayName
+Function -> GetValue At address :010ed5f0 Security 1 Security Name: Plugin
+Function -> GetValueString At address :01436470 Security 1 Security Name: Plugin
+--------------------
+SoundService
+Property -> AmbientReverb
+Property -> DistanceFactor
+Property -> DopplerScale
+Property -> RespectFilteringEnabled
+Property -> RolloffScale
+Property -> VolumetricAudio
+Function -> BeginRecording At address :009854b0 Security 5 Security Name: LocalUser
+Function -> GetInputDevice At address :0149a760 Security 5 Security Name: LocalUser
+Function -> GetInputDevices At address :0149a9d0 Security 5 Security Name: LocalUser
+Function -> GetListener At address :0149b3a0 Security 0 Security Name: None
+Function -> GetOutputDevice At address :014999b0 Security 5 Security Name: LocalUser
+Function -> GetOutputDevices At address :01499c20 Security 5 Security Name: LocalUser
+Function -> GetSoundMemoryData At address :0149e120 Security 5 Security Name: LocalUser
+Function -> PlayLocalSound At address :0149b5d0 Security 0 Security Name: None
+Function -> SetInputDevice At address :0149a920 Security 5 Security Name: LocalUser
+Function -> SetListener At address :0149b0c0 Security 0 Security Name: None
+Function -> SetOutputDevice At address :01499b70 Security 5 Security Name: LocalUser
+Function -> SetRecordingDevice At address :00994280 Security 5 Security Name: LocalUser
+--------------------
+NonReplicatedCSGDictionaryService
+--------------------
+CSGDictionaryService
+--------------------
+LogService
+Function -> ExecuteScript At address :016a3100 Security 5 Security Name: LocalUser
+Function -> GetHttpResultHistory At address :016a28c0 Security 5 Security Name: LocalUser
+Function -> GetLogHistory At address :016a23c0 Security 0 Security Name: None
+Function -> RequestHttpResultApproved At address :016a2200 Security 5 Security Name: LocalUser
+Function -> RequestServerHttpResult At address :016a20a0 Security 5 Security Name: LocalUser
+Function -> RequestServerOutput At address :016a1f40 Security 5 Security Name: LocalUser
+--------------------
+ContentProvider
+Property -> BaseUrl
+Property -> RequestQueueSize
+Function -> CalculateNumTrianglesInMeshSync At address :01314c60 Security 5 Security Name: LocalUser
+Function -> GetAssetFetchStatus At address :01321760 Security 0 Security Name: None
+Function -> GetAssetFetchStatusChangedSignal At address :01321980 Security 0 Security Name: None
+Function -> GetDetailedFailedRequests At address :0130cbd0 Security 5 Security Name: LocalUser
+Function -> GetFailedRequests At address :0130cbb0 Security 5 Security Name: LocalUser
+Function -> ListEncryptedAssets At address :01318490 Security 0 Security Name: None
+Function -> Preload At address :0130f380 Security 0 Security Name: None
+Function -> RegisterDefaultEncryptionKey At address :01318090 Security 0 Security Name: None
+Function -> RegisterDefaultSessionKey At address :01318100 Security 0 Security Name: None
+Function -> RegisterEncryptedAsset At address :01317e00 Security 0 Security Name: None
+Function -> RegisterSessionEncryptedAsset At address :01317f20 Security 0 Security Name: None
+Function -> SetBaseUrl At address :0130ca30 Security 3 Security Name: RobloxPlace
+Function -> UnregisterDefaultEncryptionKey At address :01318170 Security 0 Security Name: None
+Function -> UnregisterEncryptedAsset At address :01317fd0 Security 0 Security Name: None
+--------------------
+KeyframeSequenceProvider
+Function -> GetKeyframeSequence At address :012855a0 Security 1 Security Name: Plugin
+Function -> GetKeyframeSequenceById At address :01285290 Security 1 Security Name: Plugin
+Function -> GetMemStats At address :0128a1f0 Security 5 Security Name: LocalUser
+Function -> RegisterActiveKeyframeSequence At address :01284fc0 Security 0 Security Name: None
+Function -> RegisterKeyframeSequence At address :01285180 Security 0 Security Name: None
+--------------------
+AnimationClipProvider
+Function -> GetAnimationClip At address :012715e0 Security 1 Security Name: Plugin
+Function -> GetAnimationClipById At address :01271360 Security 1 Security Name: Plugin
+Function -> GetMemStats At address :01274b00 Security 5 Security Name: LocalUser
+Function -> RegisterActiveAnimationClip At address :01271000 Security 0 Security Name: None
+Function -> RegisterAnimationClip At address :01271200 Security 0 Security Name: None
+--------------------
+Chat
+Property -> BubbleChatEnabled
+Property -> LoadDefaultChat
+Function -> Chat At address :016c9f30 Security 0 Security Name: None
+Function -> ChatLocal At address :016c9ff0 Security 5 Security Name: LocalUser
+Function -> GetShouldUseLuaChat At address :0094e9d0 Security 5 Security Name: LocalUser
+Function -> InvokeChatCallback At address :016c9930 Security 0 Security Name: None
+Function -> RegisterChatCallback At address :016c9670 Security 0 Security Name: None
+Function -> SetBubbleChatSettings At address :016ce210 Security 0 Security Name: None
+--------------------
+LocalizationTable
+Property -> Contents
+Property -> DevelopmentLanguage
+Property -> IsExemptFromUGCAnalytics
+Property -> Root
+Property -> SourceLocaleId
+Function -> GetContents At address :018d7260 Security 0 Security Name: None
+Function -> GetEntries At address :018d9010 Security 0 Security Name: None
+Function -> GetString At address :018d8e20 Security 0 Security Name: None
+Function -> GetTranslator At address :018d6b90 Security 0 Security Name: None
+Function -> RemoveEntry At address :018daf70 Security 0 Security Name: None
+Function -> RemoveEntryValue At address :018db030 Security 0 Security Name: None
+Function -> RemoveKey At address :018da770 Security 0 Security Name: None
+Function -> RemoveTargetLocale At address :018db7f0 Security 0 Security Name: None
+Function -> SetContents At address :018d72a0 Security 0 Security Name: None
+Function -> SetEntries At address :018d9810 Security 0 Security Name: None
+Function -> SetEntry At address :018da5c0 Security 0 Security Name: None
+Function -> SetEntryContext At address :018db5c0 Security 0 Security Name: None
+Function -> SetEntryExample At address :018db7d0 Security 0 Security Name: None
+Function -> SetEntryKey At address :018db130 Security 0 Security Name: None
+Function -> SetEntrySource At address :018db350 Security 0 Security Name: None
+Function -> SetEntryValue At address :018dad60 Security 0 Security Name: None
+Function -> SetIsExemptFromUGCAnalytics At address :018dded0 Security 5 Security Name: LocalUser
+--------------------
+MarketplaceService
+Function -> PlayerCanMakePurchases At address :0160ed50 Security 5 Security Name: LocalUser
+Function -> PromptBundlePurchase At address :01607060 Security 0 Security Name: None
+Function -> PromptGamePassPurchase At address :01607640 Security 0 Security Name: None
+Function -> PromptNativePurchase At address :01613460 Security 5 Security Name: LocalUser
+Function -> PromptNativePurchaseWithLocalPlayer At address :01613780 Security 5 Security Name: LocalUser
+Function -> PromptPremiumPurchase At address :01615120 Security 0 Security Name: None
+Function -> PromptProductPurchase At address :01607330 Security 0 Security Name: None
+Function -> PromptPurchase At address :01607920 Security 0 Security Name: None
+Function -> PromptRobloxPurchase At address :01607c10 Security 5 Security Name: LocalUser
+Function -> PromptSubscriptionCancellation At address :0160bf60 Security 0 Security Name: None
+Function -> PromptSubscriptionPurchase At address :0160bbd0 Security 0 Security Name: None
+Function -> PromptThirdPartyPurchase At address :016127b0 Security 3 Security Name: RobloxPlace
+Function -> ReportAssetSale At address :01614ec0 Security 5 Security Name: LocalUser
+Function -> ReportRobuxUpsellStarted At address :01614da0 Security 5 Security Name: LocalUser
+Function -> SignalAssetTypePurchased At address :01608200 Security 5 Security Name: LocalUser
+Function -> SignalClientPurchaseSuccess At address :0160f5d0 Security 5 Security Name: LocalUser
+Function -> SignalMockPurchasePremium At address :016153a0 Security 5 Security Name: LocalUser
+Function -> SignalPromptBundlePurchaseFinished At address :01607fd0 Security 5 Security Name: LocalUser
+Function -> SignalPromptGamePassPurchaseFinished At address :01607dd0 Security 5 Security Name: LocalUser
+Function -> SignalPromptPremiumPurchaseFinished At address :016153c0 Security 5 Security Name: LocalUser
+Function -> SignalPromptProductPurchaseFinished At address :01609ea0 Security 5 Security Name: LocalUser
+Function -> SignalPromptPurchaseFinished At address :01607c30 Security 5 Security Name: LocalUser
+Function -> SignalPromptSubscriptionCancellationFinished At address :0160c240 Security 5 Security Name: LocalUser
+Function -> SignalPromptSubscriptionPurchaseFinished At address :0160bec0 Security 5 Security Name: LocalUser
+Function -> SignalServerLuaDialogClosed At address :0160f840 Security 5 Security Name: LocalUser
+--------------------
+Players
+Property -> BubbleChat
+Property -> CharacterAutoLoads
+Property -> ClassicChat
+Property -> LocalPlayer
+Property -> MaxPlayers
+Property -> MaxPlayersInternal
+Property -> NumPlayers
+Property -> PreferredPlayers
+Property -> PreferredPlayersInternal
+Property -> RespawnTime
+Property -> ServerGitHash
+Property -> ServerLogPrefix
+Property -> UseStrafingAnimations
+Property -> localPlayer
+Property -> numPlayers
+Function -> Chat At address :0190efe0 Security 1 Security Name: Plugin
+Function -> CreateLocalPlayer At address :01908070 Security 3 Security Name: RobloxPlace
+Function -> GetPlayerByUserId At address :01911fa0 Security 0 Security Name: None
+Function -> GetPlayerFromCharacter At address :01911fc0 Security 0 Security Name: None
+Function -> GetPlayers At address :01436640 Security 0 Security Name: None
+Function -> ReportAbuse At address :0190db10 Security 3 Security Name: RobloxPlace
+Function -> ReportAbuseV3 At address :0190dc00 Security 5 Security Name: LocalUser
+Function -> ResetLocalPlayer At address :0190cc00 Security 3 Security Name: RobloxPlace
+Function -> SetChatStyle At address :01915b30 Security 1 Security Name: Plugin
+Function -> SetLocalPlayerInfo At address :01911dc0 Security 5 Security Name: LocalUser
+Function -> TeamChat At address :0190e8a0 Security 1 Security Name: Plugin
+Function -> WhisperChat At address :0190e070 Security 3 Security Name: RobloxPlace
+Function -> getPlayers At address :01436640 Security 0 Security Name: None
+Function -> playerFromCharacter At address :01911fc0 Security 0 Security Name: None
+Function -> players At address :01436640 Security 0 Security Name: None
+--------------------
+Player
+Property -> AccountAge
+Property -> AccountAgeReplicate
+Property -> AppearanceDidLoad
+Property -> AutoJumpEnabled
+Property -> CameraMaxZoomDistance
+Property -> CameraMinZoomDistance
+Property -> CameraMode
+Property -> CanLoadCharacterAppearance
+Property -> Character
+Property -> CharacterAppearance
+Property -> CharacterAppearanceId
+Property -> ChararacterRegionId
+Property -> ChatMode
+Property -> ChatPrivacyMode
+Property -> CloudEditCameraCoordinateFrame
+Property -> CloudEditPlayerActive
+Property -> CountryRegionCodeReplicate
+Property -> DataComplexity
+Property -> DataComplexityLimit
+Property -> DataReady
+Property -> DevCameraOcclusionMode
+Property -> DevComputerCameraMode
+Property -> DevComputerMovementMode
+Property -> DevEnableMouseLock
+Property -> DevTouchCameraMode
+Property -> DevTouchMovementMode
+Property -> DisplayName
+Property -> FollowUserId
+Property -> FollowUserIdReplicated
+Property -> GameplayPaused
+Property -> Guest
+Property -> HasVerifiedBadge
+Property -> HealthDisplayDistance
+Property -> InternalCharacterAppearanceLoaded
+Property -> LocaleId
+Property -> MaxSimulationRadius
+Property -> MaximumSimulationRadius
+Property -> MembershipType
+Property -> MembershipTypeReplicate
+Property -> NameDisplayDistance
+Property -> Neutral
+Property -> OsPlatform
+Property -> PlatformName
+Property -> RawJoinData
+Property -> ReplicatedLocaleId
+Property -> ReplicatedLocaleIdInternal
+Property -> ReplicationFocus
+Property -> RespawnLocation
+Property -> SimulationRadius
+Property -> SuperSafeChatReplicate
+Property -> Team
+Property -> TeamColor
+Property -> Teleported
+Property -> TeleportedIn
+Property -> UnfilteredChat
+Property -> UserId
+Property -> VRDevice
+Property -> VREnabled
+Property -> userId
+Function -> AddToBlockList At address :01949620 Security 5 Security Name: LocalUser
+Function -> ClearCharacterAppearance At address :01942a20 Security 0 Security Name: None
+Function -> DistanceFromCharacter At address :01942c20 Security 0 Security Name: None
+Function -> GetFriendStatus At address :01947130 Security 5 Security Name: LocalUser
+Function -> GetGameSessionID At address :0114d6f0 Security 6 Security Name: Roblox
+Function -> GetJoinData At address :019461d0 Security 0 Security Name: None
+Function -> GetMouse At address :01946f90 Security 0 Security Name: None
+Function -> GetNetworkPing At address :0193f560 Security 0 Security Name: None
+Function -> GetUnder13 At address :01941650 Security 5 Security Name: LocalUser
+Function -> HasAppearanceLoaded At address :0193b4c0 Security 0 Security Name: None
+Function -> Kick At address :01948280 Security 0 Security Name: None
+Function -> LoadBoolean At address :0193e8a0 Security 0 Security Name: None
+Function -> LoadCharacterAppearance At address :01942e80 Security 0 Security Name: None
+Function -> LoadData At address :0193e660 Security 3 Security Name: RobloxPlace
+Function -> LoadInstance At address :0193ea70 Security 0 Security Name: None
+Function -> LoadNumber At address :0193e7e0 Security 0 Security Name: None
+Function -> LoadString At address :0193e960 Security 0 Security Name: None
+Function -> Move At address :01942f90 Security 0 Security Name: None
+Function -> RemoveCharacter At address :01942f10 Security 3 Security Name: RobloxPlace
+Function -> RequestFriendship At address :01946280 Security 5 Security Name: LocalUser
+Function -> RevokeFriendship At address :01946730 Security 5 Security Name: LocalUser
+Function -> SaveBoolean At address :0193e900 Security 0 Security Name: None
+Function -> SaveData At address :0193e730 Security 3 Security Name: RobloxPlace
+Function -> SaveInstance At address :0193eaf0 Security 0 Security Name: None
+Function -> SaveNumber At address :0193e840 Security 0 Security Name: None
+Function -> SaveString At address :0193e9f0 Security 0 Security Name: None
+Function -> SetAccountAge At address :019457f0 Security 1 Security Name: Plugin
+Function -> SetCharacterAppearanceJson At address :01941830 Security 5 Security Name: LocalUser
+Function -> SetExperienceSettingsLocaleId At address :01941970 Security 5 Security Name: LocalUser
+Function -> SetMembershipType At address :019457b0 Security 5 Security Name: LocalUser
+Function -> SetModerationAccessKey At address :01941900 Security 5 Security Name: LocalUser
+Function -> SetSuperSafeChat At address :0193dfd0 Security 1 Security Name: Plugin
+Function -> SetUnder13 At address :01941630 Security 6 Security Name: Roblox
+Function -> UpdatePlayerBlocked At address :01949780 Security 5 Security Name: LocalUser
+Function -> loadBoolean At address :0193e8a0 Security 0 Security Name: None
+Function -> loadInstance At address :0193ea70 Security 0 Security Name: None
+Function -> loadNumber At address :0193e7e0 Security 0 Security Name: None
+Function -> loadString At address :0193e960 Security 0 Security Name: None
+Function -> saveBoolean At address :0193e900 Security 0 Security Name: None
+Function -> saveInstance At address :0193eaf0 Security 0 Security Name: None
+Function -> saveNumber At address :0193e840 Security 0 Security Name: None
+Function -> saveString At address :0193e9f0 Security 0 Security Name: None
+--------------------
+PlayerScripts
+Function -> ClearComputerCameraMovementModes At address :0195c7a0 Security 0 Security Name: None
+Function -> ClearComputerMovementModes At address :0195c720 Security 0 Security Name: None
+Function -> ClearTouchCameraMovementModes At address :0195c760 Security 0 Security Name: None
+Function -> ClearTouchMovementModes At address :0195c6f0 Security 0 Security Name: None
+Function -> GetRegisteredComputerCameraMovementModes At address :0195ce10 Security 5 Security Name: LocalUser
+Function -> GetRegisteredComputerMovementModes At address :0195cc00 Security 5 Security Name: LocalUser
+Function -> GetRegisteredTouchCameraMovementModes At address :0195c7e0 Security 5 Security Name: LocalUser
+Function -> GetRegisteredTouchMovementModes At address :0195c9f0 Security 5 Security Name: LocalUser
+Function -> RegisterComputerCameraMovementMode At address :0195c5e0 Security 0 Security Name: None
+Function -> RegisterComputerMovementMode At address :0195c4d0 Security 0 Security Name: None
+Function -> RegisterTouchCameraMovementMode At address :0195c3c0 Security 0 Security Name: None
+Function -> RegisterTouchMovementMode At address :0195c2b0 Security 0 Security Name: None
+--------------------
+PlayerGui
+Property -> CurrentScreenOrientation
+Property -> ScreenOrientation
+Property -> SelectionImageObject
+Function -> GetGuiObjectsAtPosition At address :0198c4d0 Security 0 Security Name: None
+Function -> GetGuiObjectsInCircle At address :0198c600 Security 5 Security Name: LocalUser
+Function -> GetTopbarTransparency At address :0198d4e0 Security 0 Security Name: None
+Function -> SetTopbarTransparency At address :0198d450 Security 0 Security Name: None
+--------------------
+ScreenGui
+Property -> AbsolutePosition
+Property -> AbsoluteRotation
+Property -> AbsoluteSize
+Property -> AutoLocalize
+Property -> ClipToDeviceSafeArea
+Property -> ClippedRect
+Property -> DisplayOrder
+Property -> Enabled
+Property -> IgnoreGuiInset
+Property -> IsNotOccluded
+Property -> Localize
+Property -> OnTopOfCoreBlur
+Property -> RawRect2D
+Property -> ReplicatedInsertionOrder
+Property -> ResetOnSpawn
+Property -> RootLocalizationTable
+Property -> SafeAreaCompatibility
+Property -> ScreenInsets
+Property -> SelectionBehaviorDown
+Property -> SelectionBehaviorLeft
+Property -> SelectionBehaviorRight
+Property -> SelectionBehaviorUp
+Property -> SelectionGroup
+Property -> TotalGroupScale
+Property -> ZIndexBehavior
+Function -> GetLayoutNodeTree At address :019a3d90 Security 0 Security Name: None
+--------------------
+Frame
+Property -> AbsolutePosition
+Property -> AbsoluteRotation
+Property -> AbsoluteSize
+Property -> Active
+Property -> AnchorPoint
+Property -> AutoLocalize
+Property -> AutomaticSize
+Property -> BackgroundColor
+Property -> BackgroundColor3
+Property -> BackgroundTransparency
+Property -> BorderColor
+Property -> BorderColor3
+Property -> BorderMode
+Property -> BorderSizePixel
+Property -> ClippedRect
+Property -> ClipsDescendants
+Property -> DragBeginConnectionCount
+Property -> DragStoppedConnectionCount
+Property -> Draggable
+Property -> IsNotOccluded
+Property -> LayoutOrder
+Property -> Localize
+Property -> MouseEnterConnectionCount
+Property -> MouseLeaveConnectionCount
+Property -> MouseMovedConnectionCount
+Property -> MouseWheelBackwardConnectionCount
+Property -> MouseWheelForwardConnectionCount
+Property -> NextSelectionDown
+Property -> NextSelectionLeft
+Property -> NextSelectionRight
+Property -> NextSelectionUp
+Property -> Position
+Property -> RawRect2D
+Property -> ReplicatedInsertionOrder
+Property -> RootLocalizationTable
+Property -> Rotation
+Property -> Selectable
+Property -> SelectionBehaviorDown
+Property -> SelectionBehaviorLeft
+Property -> SelectionBehaviorRight
+Property -> SelectionBehaviorUp
+Property -> SelectionGroup
+Property -> SelectionImageObject
+Property -> SelectionOrder
+Property -> Size
+Property -> SizeConstraint
+Property -> Style
+Property -> TotalGroupScale
+Property -> Transparency
+Property -> Visible
+Property -> ZIndex
+Function -> TweenPosition At address :019b1100 Security 0 Security Name: None
+Function -> TweenSize At address :019b12b0 Security 0 Security Name: None
+Function -> TweenSizeAndPosition At address :019b13d0 Security 0 Security Name: None
+--------------------
+TextBox
+Property -> AbsolutePosition
+Property -> AbsoluteRotation
+Property -> AbsoluteSize
+Property -> Active
+Property -> AnchorPoint
+Property -> AutoLocalize
+Property -> AutomaticSize
+Property -> BackgroundColor
+Property -> BackgroundColor3
+Property -> BackgroundTransparency
+Property -> BorderColor
+Property -> BorderColor3
+Property -> BorderMode
+Property -> BorderSizePixel
+Property -> ClearTextOnFocus
+Property -> ClippedRect
+Property -> ClipsDescendants
+Property -> Confidential
+Property -> ContentText
+Property -> CursorPosition
+Property -> DragBeginConnectionCount
+Property -> DragStoppedConnectionCount
+Property -> Draggable
+Property -> Font
+Property -> FontFace
+Property -> FontSize
+Property -> IsNotOccluded
+Property -> LayoutOrder
+Property -> LineHeight
+Property -> Localize
+Property -> ManualFocusRelease
+Property -> MaxVisibleGraphemes
+Property -> MouseEnterConnectionCount
+Property -> MouseLeaveConnectionCount
+Property -> MouseMovedConnectionCount
+Property -> MouseWheelBackwardConnectionCount
+Property -> MouseWheelForwardConnectionCount
+Property -> MultiLine
+Property -> NextSelectionDown
+Property -> NextSelectionLeft
+Property -> NextSelectionRight
+Property -> NextSelectionUp
+Property -> OverlayNativeInput
+Property -> PlaceholderColor3
+Property -> PlaceholderText
+Property -> Position
+Property -> RawRect2D
+Property -> ReplicatedInsertionOrder
+Property -> ReturnKeyType
+Property -> RichText
+Property -> RootLocalizationTable
+Property -> Rotation
+Property -> Selectable
+Property -> SelectionBehaviorDown
+Property -> SelectionBehaviorLeft
+Property -> SelectionBehaviorRight
+Property -> SelectionBehaviorUp
+Property -> SelectionGroup
+Property -> SelectionImageObject
+Property -> SelectionOrder
+Property -> SelectionStart
+Property -> ShowNativeInput
+Property -> Size
+Property -> SizeConstraint
+Property -> Text
+Property -> TextBounds
+Property -> TextColor
+Property -> TextColor3
+Property -> TextEditable
+Property -> TextFits
+Property -> TextInputType
+Property -> TextScaled
+Property -> TextSize
+Property -> TextStrokeColor3
+Property -> TextStrokeTransparency
+Property -> TextTransparency
+Property -> TextTruncate
+Property -> TextWrap
+Property -> TextWrapped
+Property -> TextXAlignment
+Property -> TextYAlignment
+Property -> TotalGroupScale
+Property -> Transparency
+Property -> Visible
+Property -> ZIndex
+Function -> CaptureFocus At address :019c1920 Security 0 Security Name: None
+Function -> IsFocused At address :019c1e80 Security 0 Security Name: None
+Function -> ReleaseFocus At address :019c1e00 Security 0 Security Name: None
+Function -> ResetKeyboardMode At address :019c3910 Security 5 Security Name: LocalUser
+Function -> SetTextFromInput At address :01a1b940 Security 5 Security Name: LocalUser
+Function -> TweenPosition At address :019b1100 Security 0 Security Name: None
+Function -> TweenSize At address :019b12b0 Security 0 Security Name: None
+Function -> TweenSizeAndPosition At address :019b13d0 Security 0 Security Name: None
+--------------------
+TextButton
+Property -> AbsolutePosition
+Property -> AbsoluteRotation
+Property -> AbsoluteSize
+Property -> Active
+Property -> AnchorPoint
+Property -> AutoButtonColor
+Property -> AutoLocalize
+Property -> AutomaticSize
+Property -> BackgroundColor
+Property -> BackgroundColor3
+Property -> BackgroundTransparency
+Property -> BorderColor
+Property -> BorderColor3
+Property -> BorderMode
+Property -> BorderSizePixel
+Property -> ClippedRect
+Property -> ClipsDescendants
+Property -> Confidential
+Property -> ContentText
+Property -> DragBeginConnectionCount
+Property -> DragStoppedConnectionCount
+Property -> Draggable
+Property -> Font
+Property -> FontFace
+Property -> FontSize
+Property -> IsNotOccluded
+Property -> LayoutOrder
+Property -> LineHeight
+Property -> Localize
+Property -> LocalizedText
+Property -> MaxVisibleGraphemes
+Property -> Modal
+Property -> MouseButton1ClickConnectionCount
+Property -> MouseButton1DownConnectionCount
+Property -> MouseButton1UpConnectionCount
+Property -> MouseButton2ClickConnectionCount
+Property -> MouseButton2DownConnectionCount
+Property -> MouseButton2UpConnectionCount
+Property -> MouseEnterConnectionCount
+Property -> MouseLeaveConnectionCount
+Property -> MouseMovedConnectionCount
+Property -> MouseWheelBackwardConnectionCount
+Property -> MouseWheelForwardConnectionCount
+Property -> NextSelectionDown
+Property -> NextSelectionLeft
+Property -> NextSelectionRight
+Property -> NextSelectionUp
+Property -> Position
+Property -> RawRect2D
+Property -> ReplicatedInsertionOrder
+Property -> RichText
+Property -> RootLocalizationTable
+Property -> Rotation
+Property -> Selectable
+Property -> Selected
+Property -> SelectionBehaviorDown
+Property -> SelectionBehaviorLeft
+Property -> SelectionBehaviorRight
+Property -> SelectionBehaviorUp
+Property -> SelectionGroup
+Property -> SelectionImageObject
+Property -> SelectionOrder
+Property -> Size
+Property -> SizeConstraint
+Property -> Style
+Property -> Text
+Property -> TextBounds
+Property -> TextColor
+Property -> TextColor3
+Property -> TextFits
+Property -> TextScaled
+Property -> TextSize
+Property -> TextStrokeColor3
+Property -> TextStrokeTransparency
+Property -> TextTransparency
+Property -> TextTruncate
+Property -> TextWrap
+Property -> TextWrapped
+Property -> TextXAlignment
+Property -> TextYAlignment
+Property -> TotalGroupScale
+Property -> Transparency
+Property -> Visible
+Property -> ZIndex
+Function -> SetTextFromInput At address :01a177a0 Security 5 Security Name: LocalUser
+Function -> TweenPosition At address :019b1100 Security 0 Security Name: None
+Function -> TweenSize At address :019b12b0 Security 0 Security Name: None
+Function -> TweenSizeAndPosition At address :019b13d0 Security 0 Security Name: None
+--------------------
+TextLabel
+Property -> AbsolutePosition
+Property -> AbsoluteRotation
+Property -> AbsoluteSize
+Property -> Active
+Property -> AnchorPoint
+Property -> AutoLocalize
+Property -> AutomaticSize
+Property -> BackgroundColor
+Property -> BackgroundColor3
+Property -> BackgroundTransparency
+Property -> BorderColor
+Property -> BorderColor3
+Property -> BorderMode
+Property -> BorderSizePixel
+Property -> ClippedRect
+Property -> ClipsDescendants
+Property -> Confidential
+Property -> ContentText
+Property -> DragBeginConnectionCount
+Property -> DragStoppedConnectionCount
+Property -> Draggable
+Property -> Font
+Property -> FontFace
+Property -> FontSize
+Property -> IsNotOccluded
+Property -> LayoutOrder
+Property -> LineHeight
+Property -> Localize
+Property -> LocalizedText
+Property -> MaxVisibleGraphemes
+Property -> MouseEnterConnectionCount
+Property -> MouseLeaveConnectionCount
+Property -> MouseMovedConnectionCount
+Property -> MouseWheelBackwardConnectionCount
+Property -> MouseWheelForwardConnectionCount
+Property -> NextSelectionDown
+Property -> NextSelectionLeft
+Property -> NextSelectionRight
+Property -> NextSelectionUp
+Property -> Position
+Property -> RawRect2D
+Property -> ReplicatedInsertionOrder
+Property -> RichText
+Property -> RootLocalizationTable
+Property -> Rotation
+Property -> Selectable
+Property -> SelectionBehaviorDown
+Property -> SelectionBehaviorLeft
+Property -> SelectionBehaviorRight
+Property -> SelectionBehaviorUp
+Property -> SelectionGroup
+Property -> SelectionImageObject
+Property -> SelectionOrder
+Property -> Size
+Property -> SizeConstraint
+Property -> Text
+Property -> TextBounds
+Property -> TextColor
+Property -> TextColor3
+Property -> TextFits
+Property -> TextScaled
+Property -> TextSize
+Property -> TextStrokeColor3
+Property -> TextStrokeTransparency
+Property -> TextTransparency
+Property -> TextTruncate
+Property -> TextWrap
+Property -> TextWrapped
+Property -> TextXAlignment
+Property -> TextYAlignment
+Property -> TotalGroupScale
+Property -> Transparency
+Property -> Visible
+Property -> ZIndex
+Function -> SetTextFromInput At address :01a13400 Security 5 Security Name: LocalUser
+Function -> TweenPosition At address :019b1100 Security 0 Security Name: None
+Function -> TweenSize At address :019b12b0 Security 0 Security Name: None
+Function -> TweenSizeAndPosition At address :019b13d0 Security 0 Security Name: None
+--------------------
+ImageLabel
+Property -> AbsolutePosition
+Property -> AbsoluteRotation
+Property -> AbsoluteSize
+Property -> Active
+Property -> AnchorPoint
+Property -> AutoLocalize
+Property -> AutomaticSize
+Property -> BackgroundColor
+Property -> BackgroundColor3
+Property -> BackgroundTransparency
+Property -> BorderColor
+Property -> BorderColor3
+Property -> BorderMode
+Property -> BorderSizePixel
+Property -> ClippedRect
+Property -> ClipsDescendants
+Property -> ContentImageSize
+Property -> DragBeginConnectionCount
+Property -> DragStoppedConnectionCount
+Property -> Draggable
+Property -> Image
+Property -> ImageColor3
+Property -> ImageRectOffset
+Property -> ImageRectSize
+Property -> ImageTransparency
+Property -> IsLoaded
+Property -> IsNotOccluded
+Property -> LayoutOrder
+Property -> Localize
+Property -> MouseEnterConnectionCount
+Property -> MouseLeaveConnectionCount
+Property -> MouseMovedConnectionCount
+Property -> MouseWheelBackwardConnectionCount
+Property -> MouseWheelForwardConnectionCount
+Property -> NextSelectionDown
+Property -> NextSelectionLeft
+Property -> NextSelectionRight
+Property -> NextSelectionUp
+Property -> Position
+Property -> RawRect2D
+Property -> ReplicatedInsertionOrder
+Property -> ResampleMode
+Property -> RootLocalizationTable
+Property -> Rotation
+Property -> ScaleType
+Property -> Selectable
+Property -> SelectionBehaviorDown
+Property -> SelectionBehaviorLeft
+Property -> SelectionBehaviorRight
+Property -> SelectionBehaviorUp
+Property -> SelectionGroup
+Property -> SelectionImageObject
+Property -> SelectionOrder
+Property -> Size
+Property -> SizeConstraint
+Property -> SliceCenter
+Property -> SliceScale
+Property -> TileSize
+Property -> TotalGroupScale
+Property -> Transparency
+Property -> Visible
+Property -> ZIndex
+Function -> SetEnableContentImageSizeChangedEvents At address :019cd950 Security 5 Security Name: LocalUser
+Function -> TweenPosition At address :019b1100 Security 0 Security Name: None
+Function -> TweenSize At address :019b12b0 Security 0 Security Name: None
+Function -> TweenSizeAndPosition At address :019b13d0 Security 0 Security Name: None
+--------------------
+ImageButton
+Property -> AbsolutePosition
+Property -> AbsoluteRotation
+Property -> AbsoluteSize
+Property -> Active
+Property -> AnchorPoint
+Property -> AutoButtonColor
+Property -> AutoLocalize
+Property -> AutomaticSize
+Property -> BackgroundColor
+Property -> BackgroundColor3
+Property -> BackgroundTransparency
+Property -> BorderColor
+Property -> BorderColor3
+Property -> BorderMode
+Property -> BorderSizePixel
+Property -> ClippedRect
+Property -> ClipsDescendants
+Property -> ContentImageSize
+Property -> DragBeginConnectionCount
+Property -> DragStoppedConnectionCount
+Property -> Draggable
+Property -> HoverImage
+Property -> Image
+Property -> ImageColor3
+Property -> ImageRectOffset
+Property -> ImageRectSize
+Property -> ImageTransparency
+Property -> IsLoaded
+Property -> IsNotOccluded
+Property -> LayoutOrder
+Property -> Localize
+Property -> Modal
+Property -> MouseButton1ClickConnectionCount
+Property -> MouseButton1DownConnectionCount
+Property -> MouseButton1UpConnectionCount
+Property -> MouseButton2ClickConnectionCount
+Property -> MouseButton2DownConnectionCount
+Property -> MouseButton2UpConnectionCount
+Property -> MouseEnterConnectionCount
+Property -> MouseLeaveConnectionCount
+Property -> MouseMovedConnectionCount
+Property -> MouseWheelBackwardConnectionCount
+Property -> MouseWheelForwardConnectionCount
+Property -> NextSelectionDown
+Property -> NextSelectionLeft
+Property -> NextSelectionRight
+Property -> NextSelectionUp
+Property -> Position
+Property -> PressedImage
+Property -> RawRect2D
+Property -> ReplicatedInsertionOrder
+Property -> ResampleMode
+Property -> RootLocalizationTable
+Property -> Rotation
+Property -> ScaleType
+Property -> Selectable
+Property -> Selected
+Property -> SelectionBehaviorDown
+Property -> SelectionBehaviorLeft
+Property -> SelectionBehaviorRight
+Property -> SelectionBehaviorUp
+Property -> SelectionGroup
+Property -> SelectionImageObject
+Property -> SelectionOrder
+Property -> Size
+Property -> SizeConstraint
+Property -> SliceCenter
+Property -> SliceScale
+Property -> Style
+Property -> TileSize
+Property -> TotalGroupScale
+Property -> Transparency
+Property -> Visible
+Property -> ZIndex
+Function -> SetEnableContentImageSizeChangedEvents At address :019cc3d0 Security 5 Security Name: LocalUser
+Function -> TweenPosition At address :019b1100 Security 0 Security Name: None
+Function -> TweenSize At address :019b12b0 Security 0 Security Name: None
+Function -> TweenSizeAndPosition At address :019b13d0 Security 0 Security Name: None
+--------------------
+ScrollingFrame
+Property -> AbsoluteCanvasSize
+Property -> AbsolutePosition
+Property -> AbsoluteRotation
+Property -> AbsoluteSize
+Property -> AbsoluteWindowSize
+Property -> Active
+Property -> AnchorPoint
+Property -> AutoLocalize
+Property -> AutomaticCanvasSize
+Property -> AutomaticSize
+Property -> BackgroundColor
+Property -> BackgroundColor3
+Property -> BackgroundTransparency
+Property -> BorderColor
+Property -> BorderColor3
+Property -> BorderMode
+Property -> BorderSizePixel
+Property -> BottomImage
+Property -> CanvasPosition
+Property -> CanvasSize
+Property -> ClippedRect
+Property -> ClipsDescendants
+Property -> DragBeginConnectionCount
+Property -> DragStoppedConnectionCount
+Property -> Draggable
+Property -> ElasticBehavior
+Property -> HorizontalBarRect
+Property -> HorizontalScrollBarInset
+Property -> IsNotOccluded
+Property -> LayoutOrder
+Property -> Localize
+Property -> MaxCanvasPosition
+Property -> MidImage
+Property -> MouseEnterConnectionCount
+Property -> MouseLeaveConnectionCount
+Property -> MouseMovedConnectionCount
+Property -> MouseWheelBackwardConnectionCount
+Property -> MouseWheelForwardConnectionCount
+Property -> NextSelectionDown
+Property -> NextSelectionLeft
+Property -> NextSelectionRight
+Property -> NextSelectionUp
+Property -> Position
+Property -> RawRect2D
+Property -> ReplicatedInsertionOrder
+Property -> RootLocalizationTable
+Property -> Rotation
+Property -> ScrollBarImageColor3
+Property -> ScrollBarImageTransparency
+Property -> ScrollBarThickness
+Property -> ScrollVelocity
+Property -> ScrollingDirection
+Property -> ScrollingEnabled
+Property -> Selectable
+Property -> SelectionBehaviorDown
+Property -> SelectionBehaviorLeft
+Property -> SelectionBehaviorRight
+Property -> SelectionBehaviorUp
+Property -> SelectionGroup
+Property -> SelectionImageObject
+Property -> SelectionOrder
+Property -> Size
+Property -> SizeConstraint
+Property -> TopImage
+Property -> TotalGroupScale
+Property -> Transparency
+Property -> VerticalBarRect
+Property -> VerticalScrollBarInset
+Property -> VerticalScrollBarPosition
+Property -> Visible
+Property -> ZIndex
+Function -> ClearInertialScrolling At address :0099746c Security 5 Security Name: LocalUser
+Function -> GetSampledInertialVelocity At address :01a29c00 Security 5 Security Name: LocalUser
+Function -> ScrollToTop At address :01a291b0 Security 5 Security Name: LocalUser
+Function -> TweenPosition At address :019b1100 Security 0 Security Name: None
+Function -> TweenSize At address :019b12b0 Security 0 Security Name: None
+Function -> TweenSizeAndPosition At address :019b13d0 Security 0 Security Name: None
+--------------------
+UIListLayout
+Property -> AbsoluteContentSize
+Property -> FillDirection
+Property -> HorizontalAlignment
+Property -> Padding
+Property -> SortOrder
+Property -> VerticalAlignment
+Function -> ApplyLayout At address :01a02050 Security 0 Security Name: None
+Function -> SetCustomSortFunction At address :01a01e40 Security 0 Security Name: None
+--------------------
+UIAspectRatioConstraint
+Property -> AspectRatio
+Property -> AspectType
+Property -> DominantAxis
+--------------------
+StarterGear
+--------------------
+Backpack
+--------------------
+Tool
+Property -> CanBeDropped
+Property -> Enabled
+Property -> Grip
+Property -> GripForward
+Property -> GripPos
+Property -> GripRight
+Property -> GripUp
+Property -> LevelOfDetail
+Property -> LodEntity
+Property -> ManualActivationOnly
+Property -> ModelMeshCFrame
+Property -> ModelMeshData
+Property -> ModelMeshSize
+Property -> ModelStreamingMode
+Property -> NeedsPivotMigration
+Property -> Origin
+Property -> Pivot Offset
+Property -> PrimaryPart
+Property -> RequiresHandle
+Property -> Scale
+Property -> ScaleFactor
+Property -> TextureId
+Property -> ToolTip
+Property -> WorldPivot
+Property -> WorldPivotData
+Function -> Activate At address :01562ad0 Security 0 Security Name: None
+Function -> AddPersistentPlayer At address :014d9d90 Security 0 Security Name: None
+Function -> BreakJoints At address :014d7cf0 Security 0 Security Name: None
+Function -> Deactivate At address :01562b50 Security 0 Security Name: None
+Function -> GetBoundingBox At address :014d8970 Security 0 Security Name: None
+Function -> GetExtentsSize At address :014d8e90 Security 0 Security Name: None
+Function -> GetModelCFrame At address :014d8c50 Security 0 Security Name: None
+Function -> GetModelSize At address :014d8e90 Security 0 Security Name: None
+Function -> GetPivot At address :00bdaea0 Security 0 Security Name: None
+Function -> GetPrimaryPartCFrame At address :014d5720 Security 0 Security Name: None
+Function -> GetScale At address :00a6a990 Security 0 Security Name: None
+Function -> MakeJoints At address :014d7aa0 Security 0 Security Name: None
+Function -> MoveTo At address :015bbaf0 Security 0 Security Name: None
+Function -> PivotTo At address :015bbeb0 Security 0 Security Name: None
+Function -> RemovePersistentPlayer At address :014d9e80 Security 0 Security Name: None
+Function -> ResetOrientationToIdentity At address :009362e0 Security 0 Security Name: None
+Function -> ScaleTo At address :014d6550 Security 0 Security Name: None
+Function -> SetIdentityOrientation At address :009362e0 Security 0 Security Name: None
+Function -> SetPrimaryPartCFrame At address :014d5a60 Security 0 Security Name: None
+Function -> TranslateBy At address :014d56c0 Security 0 Security Name: None
+Function -> breakJoints At address :014d7cf0 Security 0 Security Name: None
+Function -> makeJoints At address :014d7aa0 Security 0 Security Name: None
+Function -> move At address :015bba30 Security 0 Security Name: None
+Function -> moveTo At address :015bba30 Security 0 Security Name: None
+--------------------
+RemoteFunction
 --------------------
 TouchTransmitter
 --------------------
-SpecialMesh
+PointsService
+Function -> GetAwardablePoints At address :0096c5b0 Security 0 Security Name: None
 --------------------
-SurfaceGui
+AdService
+Function -> GetAdTeleportInfo At address :01842950 Security 5 Security Name: LocalUser
+Function -> ReturnToPublisherExperience At address :01842ab0 Security 5 Security Name: LocalUser
+Function -> ShowVideoAd At address :01842810 Security 0 Security Name: None
 --------------------
-Frame
+HttpRbxApiService
+Function -> GetDocumentationUrl At address :01591df0 Security 5 Security Name: LocalUser
 --------------------
-ImageLabel
+NotificationService
+Property -> IsConnected
+Property -> IsLuaChatEnabled
+Property -> IsLuaGameDetailsEnabled
+Property -> SelectedTheme
+Function -> ActionEnabled At address :01641750 Security 5 Security Name: LocalUser
+Function -> ActionTaken At address :016416f0 Security 5 Security Name: LocalUser
+Function -> CancelAllNotification At address :016411b0 Security 3 Security Name: RobloxPlace
+Function -> CancelNotification At address :016411a0 Security 3 Security Name: RobloxPlace
+Function -> ScheduleNotification At address :01641150 Security 3 Security Name: RobloxPlace
+Function -> SwitchedToAppShellFeature At address :016417b0 Security 5 Security Name: LocalUser
 --------------------
-TextLabel
+ReplicatedFirst
+Function -> IsDefaultLoadingGuiRemoved At address :0102bb70 Security 5 Security Name: LocalUser
+Function -> IsFinishedReplicating At address :00b1fb30 Security 5 Security Name: LocalUser
+Function -> RemoveDefaultLoadingScreen At address :015425c0 Security 0 Security Name: None
+Function -> SetDefaultLoadingGuiRemoved At address :01542850 Security 5 Security Name: LocalUser
 --------------------
-ManualWeld
+TweenService
+Function -> Create At address :0176ab70 Security 0 Security Name: None
+Function -> GetValue At address :0176c120 Security 0 Security Name: None
 --------------------
-Weld
+MaterialService
+Property -> AsphaltName
+Property -> BasaltName
+Property -> BrickName
+Property -> CobblestoneName
+Property -> ConcreteName
+Property -> CorrodedMetalName
+Property -> CrackedLavaName
+Property -> DiamondPlateName
+Property -> FabricName
+Property -> FoilName
+Property -> GlacierName
+Property -> GraniteName
+Property -> GrassName
+Property -> GroundName
+Property -> IceName
+Property -> LeafyGrassName
+Property -> LimestoneName
+Property -> MarbleName
+Property -> MetalName
+Property -> MudName
+Property -> PavementName
+Property -> PebbleName
+Property -> PlasticName
+Property -> RockName
+Property -> SaltName
+Property -> SandName
+Property -> SandstoneName
+Property -> SlateName
+Property -> SmoothPlasticName
+Property -> SnowName
+Property -> Use2022Materials
+Property -> Use2022MaterialsXml
+Property -> WoodName
+Property -> WoodPlanksName
+Function -> GetBaseMaterialOverride At address :01676080 Security 0 Security Name: None
+Function -> GetMaterialOverrideChanged At address :01676260 Security 5 Security Name: LocalUser
+Function -> GetMaterialVariant At address :01676120 Security 0 Security Name: None
+Function -> GetOverrideStatus At address :01677f80 Security 5 Security Name: LocalUser
+Function -> SetBaseMaterialOverride At address :01675ff0 Security 0 Security Name: None
 --------------------
-Texture
+TextService
+Function -> GetFontMemoryData At address :0197a370 Security 5 Security Name: LocalUser
+Function -> GetTextSize At address :01978c30 Security 0 Security Name: None
+Function -> SetResolutionScale At address :01978a80 Security 5 Security Name: LocalUser
 --------------------
-UnionOperation
+PlayerEmulatorService
+Property -> CustomPoliciesEnabled
+Property -> EmulatedCountryCode
+Property -> EmulatedGameLocale
+Property -> PlayerEmulationEnabled
+Property -> SerializedEmulatedPolicyInfo
+Function -> GetEmulatedPolicyInfo At address :018e4600 Security 5 Security Name: LocalUser
+Function -> RegionCodeWillHaveAutomaticNonCustomPolicies At address :018e40b0 Security 5 Security Name: LocalUser
+Function -> SetEmulatedPolicyInfo At address :018e4640 Security 5 Security Name: LocalUser
 --------------------
-SpotLight
+CorePackages
 --------------------
-Decal
+StudioData
+Property -> EnableScriptCollabByDefaultOnLoad
 --------------------
-TrussPart
+StarterPlayer
+Property -> AllowCustomAnimations
+Property -> AutoJumpEnabled
+Property -> CameraMaxZoomDistance
+Property -> CameraMinZoomDistance
+Property -> CameraMode
+Property -> CharacterJumpHeight
+Property -> CharacterJumpPower
+Property -> CharacterMaxSlopeAngle
+Property -> CharacterUseJumpPower
+Property -> CharacterWalkSpeed
+Property -> DevCameraOcclusionMode
+Property -> DevComputerCameraMovementMode
+Property -> DevComputerMovementMode
+Property -> DevTouchCameraMovementMode
+Property -> DevTouchMovementMode
+Property -> EnableDynamicHeads
+Property -> EnableMouseLockOption
+Property -> GameSettingsAssetIDFace
+Property -> GameSettingsAssetIDHead
+Property -> GameSettingsAssetIDLeftArm
+Property -> GameSettingsAssetIDLeftLeg
+Property -> GameSettingsAssetIDPants
+Property -> GameSettingsAssetIDRightArm
+Property -> GameSettingsAssetIDRightLeg
+Property -> GameSettingsAssetIDShirt
+Property -> GameSettingsAssetIDTeeShirt
+Property -> GameSettingsAssetIDTorso
+Property -> GameSettingsAvatar
+Property -> GameSettingsR15Collision
+Property -> GameSettingsScaleRangeBodyType
+Property -> GameSettingsScaleRangeHead
+Property -> GameSettingsScaleRangeHeight
+Property -> GameSettingsScaleRangeProportion
+Property -> GameSettingsScaleRangeWidth
+Property -> HealthDisplayDistance
+Property -> HumanoidStateMachineMode
+Property -> LoadCharacterAppearance
+Property -> LoadCharacterLayeredClothing
+Property -> LoadCharacterLayeredClothing 
+Property -> NameDisplayDistance
+Property -> UserEmotesEnabled
 --------------------
-Sky
+StarterPlayerScripts
 --------------------
-BloomEffect
+StarterCharacterScripts
 --------------------
-ColorCorrectionEffect
+StarterPack
 --------------------
-PointLight
+StarterGui
+Property -> ProcessUserInput
+Property -> ResetPlayerGuiOnSpawn
+Property -> RtlTextSupport
+Property -> ScreenOrientation
+Property -> ShowDevelopmentGui
+Property -> VirtualCursorMode
+Function -> GetCoreGuiEnabled At address :0198e040 Security 0 Security Name: None
+Function -> GetGuiObjectsAtPosition At address :0198c4d0 Security 0 Security Name: None
+Function -> GetGuiObjectsInCircle At address :0198c600 Security 5 Security Name: LocalUser
+Function -> RegisterGetCore At address :0198e170 Security 5 Security Name: LocalUser
+Function -> RegisterSetCore At address :0198e0c0 Security 5 Security Name: LocalUser
+Function -> SetCore At address :0198e220 Security 0 Security Name: None
+Function -> SetCoreGuiEnabled At address :0198df20 Security 0 Security Name: None
+--------------------
+CoreGui
+Property -> SelectionImageObject
+Function -> GetGuiObjectsAtPosition At address :0198c4d0 Security 0 Security Name: None
+Function -> GetGuiObjectsInCircle At address :0198c600 Security 5 Security Name: LocalUser
+Function -> SetUserGuiRendering At address :0198f630 Security 5 Security Name: LocalUser
+Function -> TakeScreenshot At address :0198f470 Security 5 Security Name: LocalUser
+Function -> ToggleRecording At address :0198f5c0 Security 5 Security Name: LocalUser
+--------------------
+CoreScript
+Property -> CachedRemoteSource
+Property -> CachedRemoteSourceLoadState
+Property -> CurrentEditor
+Property -> Disabled
+Property -> Enabled
+Property -> HasAssociatedDrafts
+Property -> IsDifferentFromFileSystem
+Property -> LinkedSource
+Property -> OriginalScriptGuid
+Property -> RunContext
+Property -> SandboxedSource
+Property -> ScriptGuid
+Property -> SyncingEditorText
+--------------------
+BindableEvent
+Function -> Fire At address :01581730 Security 0 Security Name: None
+--------------------
+UIGridLayout
+Property -> AbsoluteCellCount
+Property -> AbsoluteCellSize
+Property -> AbsoluteContentSize
+Property -> CellPadding
+Property -> CellSize
+Property -> FillDirection
+Property -> FillDirectionMaxCells
+Property -> HorizontalAlignment
+Property -> SortOrder
+Property -> StartCorner
+Property -> VerticalAlignment
+Function -> ApplyLayout At address :01a02050 Security 0 Security Name: None
+Function -> SetCustomSortFunction At address :01a01e40 Security 0 Security Name: None
+--------------------
+UITextSizeConstraint
+Property -> MaxTextSize
+Property -> MinTextSize
+--------------------
+UIScale
+Property -> Scale
+--------------------
+UIPadding
+Property -> PaddingBottom
+Property -> PaddingLeft
+Property -> PaddingRight
+Property -> PaddingTop
+--------------------
+UISizeConstraint
+Property -> MaxSize
+Property -> MinSize
+--------------------
+UICorner
+Property -> CornerRadius
+--------------------
+UIStroke
+Property -> ApplyStrokeMode
+Property -> Color
+Property -> Enabled
+Property -> LineJoinMode
+Property -> Thickness
+Property -> Transparency
+--------------------
+UIGradient
+Property -> Color
+Property -> Enabled
+Property -> Offset
+Property -> Rotation
+Property -> Transparency
+--------------------
+LocalizationService
+Property -> ForcePlayModeGameLocaleId
+Property -> ForcePlayModeRobloxLocaleId
+Property -> GameSourceLanguageId
+Property -> IsTextScraperRunning
+Property -> LocaleManifest
+Property -> RobloxForcePlayModeGameLocaleId
+Property -> RobloxForcePlayModeRobloxLocaleId
+Property -> RobloxLocaleId
+Property -> ShouldUseCloudTable
+Property -> SystemLocaleId
+Function -> GetCorescriptLocalizations At address :018b29e0 Security 0 Security Name: None
+Function -> GetTableEntries At address :018b3c40 Security 0 Security Name: None
+Function -> GetTranslatorForPlayer At address :018b3220 Security 0 Security Name: None
+Function -> SetRobloxLocaleId At address :018af720 Security 5 Security Name: LocalUser
+Function -> StartTextScraper At address :018b7fb0 Security 5 Security Name: LocalUser
+Function -> StopTextScraper At address :018bb2b0 Security 5 Security Name: LocalUser
+--------------------
+CloudLocalizationTable
+Property -> Contents
+Property -> DevelopmentLanguage
+Property -> IsExemptFromUGCAnalytics
+Property -> Root
+Property -> SourceLocaleId
+Function -> GetContents At address :018d7260 Security 0 Security Name: None
+Function -> GetEntries At address :018d9010 Security 0 Security Name: None
+Function -> GetString At address :018d8e20 Security 0 Security Name: None
+Function -> GetTranslator At address :018d6b90 Security 0 Security Name: None
+Function -> RemoveEntry At address :018daf70 Security 0 Security Name: None
+Function -> RemoveEntryValue At address :018db030 Security 0 Security Name: None
+Function -> RemoveKey At address :018da770 Security 0 Security Name: None
+Function -> RemoveTargetLocale At address :018db7f0 Security 0 Security Name: None
+Function -> SetContents At address :018d72a0 Security 0 Security Name: None
+Function -> SetEntries At address :018d9810 Security 0 Security Name: None
+Function -> SetEntry At address :018da5c0 Security 0 Security Name: None
+Function -> SetEntryContext At address :018db5c0 Security 0 Security Name: None
+Function -> SetEntryExample At address :018db7d0 Security 0 Security Name: None
+Function -> SetEntryKey At address :018db130 Security 0 Security Name: None
+Function -> SetEntrySource At address :018db350 Security 0 Security Name: None
+Function -> SetEntryValue At address :018dad60 Security 0 Security Name: None
+Function -> SetIsExemptFromUGCAnalytics At address :018dded0 Security 5 Security Name: LocalUser
+--------------------
+PolicyService
+Property -> IsLuobuServer
+Property -> LuobuWhitelisted
+--------------------
+TeleportService
+Property -> CustomizedTeleportUI
+Function -> Block At address :015eec80 Security 5 Security Name: LocalUser
+Function -> GetArrivingTeleportGui At address :015eda60 Security 0 Security Name: None
+Function -> GetLocalPlayerTeleportData At address :015eec30 Security 0 Security Name: None
+Function -> GetTeleportSetting At address :015edc50 Security 0 Security Name: None
+Function -> SetTeleportGui At address :015edab0 Security 0 Security Name: None
+Function -> SetTeleportSetting At address :015edb80 Security 0 Security Name: None
+Function -> Teleport At address :015df180 Security 0 Security Name: None
+Function -> TeleportCancel At address :015daec0 Security 5 Security Name: LocalUser
+Function -> TeleportToPlaceInstance At address :015e1540 Security 0 Security Name: None
+Function -> TeleportToPrivateServer At address :015e2380 Security 0 Security Name: None
+Function -> TeleportToSpawnByName At address :015dfe20 Security 0 Security Name: None
+--------------------
+JointsService
+Function -> ClearJoinAfterMoveJoints At address :015b0ee0 Security 0 Security Name: None
+Function -> CreateJoinAfterMoveJoints At address :015b0d90 Security 0 Security Name: None
+Function -> SetJoinAfterMoveInstance At address :015b0b10 Security 0 Security Name: None
+Function -> SetJoinAfterMoveTarget At address :015b0be0 Security 0 Security Name: None
+Function -> ShowPermissibleJoints At address :015b0cb0 Security 0 Security Name: None
+--------------------
+CollectionService
+Function -> AddTag At address :015b2fe0 Security 0 Security Name: None
+Function -> GetAllTags At address :015b3e90 Security 0 Security Name: None
+Function -> GetCollection At address :015b1de0 Security 0 Security Name: None
+Function -> GetInstanceAddedSignal At address :015b4460 Security 0 Security Name: None
+Function -> GetInstanceRemovedSignal At address :015b4780 Security 0 Security Name: None
+Function -> GetTagged At address :015b2230 Security 0 Security Name: None
+Function -> GetTags At address :015b3b20 Security 0 Security Name: None
+Function -> HasTag At address :015b4260 Security 0 Security Name: None
+Function -> RemoveTag At address :015b32f0 Security 0 Security Name: None
+--------------------
+PhysicsService
+Function -> CollisionGroupContainsPart At address :016c45a0 Security 0 Security Name: None
+Function -> CollisionGroupSetCollidable At address :016c47f0 Security 0 Security Name: None
+Function -> CollisionGroupsAreCollidable At address :016c48e0 Security 0 Security Name: None
+Function -> CreateCollisionGroup At address :016c40c0 Security 0 Security Name: None
+Function -> GetCollisionGroupId At address :016c49a0 Security 0 Security Name: None
+Function -> GetCollisionGroupName At address :016c4a80 Security 0 Security Name: None
+Function -> GetCollisionGroups At address :016c4b20 Security 0 Security Name: None
+Function -> GetMaxCollisionGroups At address :00b21e40 Security 0 Security Name: None
+Function -> GetRegisteredCollisionGroups At address :016c50f0 Security 0 Security Name: None
+Function -> IkSolve At address :016c5520 Security 5 Security Name: LocalUser
+Function -> IsCollisionGroupRegistered At address :016c5080 Security 0 Security Name: None
+Function -> LocalIkSolve At address :016c5520 Security 3 Security Name: RobloxPlace
+Function -> RegisterCollisionGroup At address :016c41d0 Security 0 Security Name: None
+Function -> RemoveCollisionGroup At address :016c4280 Security 0 Security Name: None
+Function -> RenameCollisionGroup At address :016c43c0 Security 0 Security Name: None
+Function -> SetPartCollisionGroup At address :016c4480 Security 0 Security Name: None
+Function -> UnregisterCollisionGroup At address :016c4340 Security 0 Security Name: None
+--------------------
+BadgeService
+--------------------
+Geometry
+--------------------
+FriendService
+--------------------
+InsertService
+Property -> AllowClientInsertModels
+Property -> AllowInsertFreeModels
+Function -> ApproveAssetId At address :009362f0 Security 0 Security Name: None
+Function -> ApproveAssetVersionId At address :009362f0 Security 0 Security Name: None
+Function -> GetLocalFileContents At address :0169cef0 Security 5 Security Name: LocalUser
+Function -> Insert At address :0169dec0 Security 0 Security Name: None
+Function -> LoadLocalAsset At address :0169cc10 Security 5 Security Name: LocalUser
+--------------------
+GamePassService
+--------------------
+Debris
+Property -> MaxItems
+Function -> AddItem At address :01770e10 Security 0 Security Name: None
+Function -> SetLegacyMaxItems At address :01770fe0 Security 3 Security Name: RobloxPlace
+Function -> addItem At address :01770e10 Security 0 Security Name: None
+--------------------
+TimerService
+--------------------
+CookiesService
+--------------------
+UserInputService
+Property -> AccelerometerEnabled
+Property -> BottomBarSize
+Property -> GamepadEnabled
+Property -> GazeSelectionEnabled
+Property -> GyroscopeEnabled
+Property -> KeyboardEnabled
+Property -> LegacyInputEventsEnabled
+Property -> ModalEnabled
+Property -> MouseBehavior
+Property -> MouseDeltaSensitivity
+Property -> MouseEnabled
+Property -> MouseIcon
+Property -> MouseIconEnabled
+Property -> NavBarSize
+Property -> OnScreenKeyboardAnimationDuration
+Property -> OnScreenKeyboardPosition
+Property -> OnScreenKeyboardSize
+Property -> OnScreenKeyboardVisible
+Property -> OverrideMouseIconBehavior
+Property -> RightBarSize
+Property -> StatusBarSize
+Property -> TouchEnabled
+Property -> UserHeadCFrame
+Property -> VREnabled
+Function -> GamepadSupports At address :01573ac0 Security 0 Security Name: None
+Function -> GetConnectedGamepads At address :01573740 Security 0 Security Name: None
+Function -> GetDeviceAcceleration At address :01572310 Security 0 Security Name: None
+Function -> GetDeviceGravity At address :01572680 Security 0 Security Name: None
+Function -> GetDeviceRotation At address :01572420 Security 0 Security Name: None
+Function -> GetDeviceType At address :015705b0 Security 5 Security Name: LocalUser
+Function -> GetFocusedTextBox At address :015711f0 Security 0 Security Name: None
+Function -> GetGamepadConnected At address :01573890 Security 0 Security Name: None
+Function -> GetGamepadState At address :01573cc0 Security 0 Security Name: None
+Function -> GetKeysPressed At address :01573180 Security 0 Security Name: None
+Function -> GetLastInputType At address :01570db0 Security 0 Security Name: None
+Function -> GetMouseButtonsPressed At address :01572f90 Security 0 Security Name: None
+Function -> GetMouseDelta At address :01573120 Security 0 Security Name: None
+Function -> GetMouseLocation At address :01572fd0 Security 0 Security Name: None
+Function -> GetNavigationGamepads At address :01573f00 Security 0 Security Name: None
+Function -> GetPlatform At address :0156ebc0 Security 5 Security Name: LocalUser
+Function -> GetStringForKeyCode At address :015747a0 Security 0 Security Name: None
+Function -> GetSupportedGamepadKeyCodes At address :01573a60 Security 0 Security Name: None
+Function -> GetUserCFrame At address :01574390 Security 0 Security Name: None
+Function -> IsGamepadButtonDown At address :01573c40 Security 0 Security Name: None
+Function -> IsKeyDown At address :01572f60 Security 0 Security Name: None
+Function -> IsMouseButtonPressed At address :01572fb0 Security 0 Security Name: None
+Function -> IsNavigationGamepad At address :015741a0 Security 0 Security Name: None
+Function -> RecenterUserHeadCFrame At address :01574430 Security 0 Security Name: None
+Function -> SendAppUISizes At address :01574630 Security 5 Security Name: LocalUser
+Function -> SetNavigationGamepad At address :01574210 Security 0 Security Name: None
+--------------------
+KeyboardService
+--------------------
+MouseService
+--------------------
+VRService
+Property -> DidPointerHit
+Property -> FadeOutViewOnCollision
+Property -> GuiInputUserCFrame
+Property -> LaserDistance
+Property -> PointerHitCFrame
+Property -> VRDeviceAvailable
+Property -> VRDeviceName
+Property -> VREnabled
+Property -> VRSessionState
+Function -> GetTouchpadMode At address :015d38f0 Security 0 Security Name: None
+Function -> GetUserCFrame At address :0156eaf0 Security 0 Security Name: None
+Function -> GetUserCFrameEnabled At address :0156eb30 Security 0 Security Name: None
+Function -> IsMaquettes At address :009854b0 Security 5 Security Name: LocalUser
+Function -> IsVRAppBuild At address :009854b0 Security 5 Security Name: LocalUser
+Function -> RecenterUserHeadCFrame At address :015d37d0 Security 0 Security Name: None
+Function -> RequestNavigation At address :015d3890 Security 0 Security Name: None
+Function -> SetTouchpadMode At address :015d38c0 Security 0 Security Name: None
+--------------------
+ContextActionService
+Function -> BindAction At address :0175c680 Security 0 Security Name: None
+Function -> BindActionAtPriority At address :0175c790 Security 0 Security Name: None
+Function -> BindActionToInputTypes At address :0175c680 Security 0 Security Name: None
+Function -> BindActivate At address :0175a390 Security 0 Security Name: None
+Function -> BindCoreAction At address :0175c460 Security 5 Security Name: LocalUser
+Function -> BindCoreActionAtPriority At address :0175c570 Security 5 Security Name: LocalUser
+Function -> BindCoreActivate At address :0175a2d0 Security 5 Security Name: LocalUser
+Function -> CallFunction At address :01758450 Security 5 Security Name: LocalUser
+Function -> FireActionButtonFoundSignal At address :0175d8f0 Security 5 Security Name: LocalUser
+Function -> GetAllBoundActionInfo At address :0175daf0 Security 0 Security Name: None
+Function -> GetAllBoundCoreActionInfo At address :0175dd10 Security 5 Security Name: LocalUser
+Function -> GetBoundActionInfo At address :0175e090 Security 0 Security Name: None
+Function -> GetBoundCoreActionInfo At address :0175df30 Security 5 Security Name: LocalUser
+Function -> GetCurrentLocalToolIcon At address :01757110 Security 0 Security Name: None
+Function -> SetDescription At address :0175d270 Security 0 Security Name: None
+Function -> SetImage At address :0175d3e0 Security 0 Security Name: None
+Function -> SetPosition At address :0175d540 Security 0 Security Name: None
+Function -> SetTitle At address :0175d110 Security 0 Security Name: None
+Function -> UnbindAction At address :0175a050 Security 0 Security Name: None
+Function -> UnbindActivate At address :0175a430 Security 0 Security Name: None
+Function -> UnbindAllActions At address :0175a0d0 Security 0 Security Name: None
+Function -> UnbindCoreAction At address :01759fd0 Security 5 Security Name: LocalUser
+Function -> UnbindCoreActivate At address :0175a370 Security 5 Security Name: LocalUser
+--------------------
+ScriptService
+--------------------
+AssetService
+Function -> GetBundleDetailsSync At address :015a08b0 Security 5 Security Name: LocalUser
+--------------------
+TouchInputService
+--------------------
+BrowserService
+Function -> CloseBrowserWindow At address :01433d90 Security 5 Security Name: LocalUser
+Function -> CopyAuthCookieFromBrowserToEngine At address :01433fd0 Security 5 Security Name: LocalUser
+Function -> EmitHybridEvent At address :01434680 Security 5 Security Name: LocalUser
+Function -> ExecuteJavaScript At address :01434150 Security 5 Security Name: LocalUser
+Function -> OpenBrowserWindow At address :01433830 Security 5 Security Name: LocalUser
+Function -> OpenNativeOverlay At address :01433fe0 Security 5 Security Name: LocalUser
+Function -> OpenWeChatAuthWindow At address :01433680 Security 5 Security Name: LocalUser
+Function -> ReturnToJavaScript At address :01434350 Security 5 Security Name: LocalUser
+Function -> SendCommand At address :01433b90 Security 5 Security Name: LocalUser
+--------------------
+AppStorageService
+Function -> Flush At address :0164dff0 Security 5 Security Name: LocalUser
+Function -> GetItem At address :0164df80 Security 5 Security Name: LocalUser
+Function -> SetItem At address :0164def0 Security 5 Security Name: LocalUser
+Function -> WhenLoaded At address :0164e060 Security 5 Security Name: LocalUser
+--------------------
+AnalyticsService
+Property -> ApiKey
+Function -> FireCustomEvent At address :01746370 Security 0 Security Name: None
+Function -> FireEvent At address :01743f90 Security 0 Security Name: None
+Function -> FireInGameEconomyEvent At address :01744990 Security 0 Security Name: None
+Function -> FireLogEvent At address :017458a0 Security 0 Security Name: None
+Function -> FirePlayerProgressionEvent At address :01745190 Security 0 Security Name: None
+--------------------
+ScriptContext
+Property -> ScriptsDisabled
+Function -> AddCoreScriptLocal At address :00a258b0 Security 5 Security Name: LocalUser
+Function -> ClearScriptProfilingData At address :00a23bb0 Security 5 Security Name: LocalUser
+Function -> DeserializeScriptProfilerString At address :00000000 Security 5 Security Name: LocalUser
+Function -> GetCoverageStats At address :00a259f0 Security 5 Security Name: LocalUser
+Function -> SaveScriptProfilingData At address :00a23c50 Security 5 Security Name: LocalUser
+Function -> SetTimeout At address :00a0cc70 Security 1 Security Name: Plugin
+Function -> StartScriptProfiling At address :00a23910 Security 5 Security Name: LocalUser
+Function -> StopScriptProfiling At address :00a23a50 Security 5 Security Name: LocalUser
+--------------------
+RbxAnalyticsService
+Function -> AddGlobalPointsField At address :020d7b50 Security 5 Security Name: LocalUser
+Function -> AddGlobalPointsTag At address :020d7800 Security 5 Security Name: LocalUser
+Function -> DEPRECATED_TrackEvent At address :020d7100 Security 5 Security Name: LocalUser
+Function -> DEPRECATED_TrackEventWithArgs At address :020d7200 Security 5 Security Name: LocalUser
+Function -> GetClientId At address :020d7cd0 Security 5 Security Name: LocalUser
+Function -> GetPlaySessionId At address :020d7d10 Security 5 Security Name: LocalUser
+Function -> GetSessionId At address :020d7cf0 Security 5 Security Name: LocalUser
+Function -> ReleaseRBXEventStream At address :020d6e30 Security 5 Security Name: LocalUser
+Function -> RemoveGlobalPointsField At address :020d7c90 Security 5 Security Name: LocalUser
+Function -> RemoveGlobalPointsTag At address :020d7c50 Security 5 Security Name: LocalUser
+Function -> ReportCounter At address :020d7000 Security 5 Security Name: LocalUser
+Function -> ReportInfluxSeries At address :020d7510 Security 5 Security Name: LocalUser
+Function -> ReportStats At address :020d7060 Security 5 Security Name: LocalUser
+Function -> ReportToDiagByCountryCode At address :020d7740 Security 5 Security Name: LocalUser
+Function -> SendEventDeferred At address :020d6ba0 Security 5 Security Name: LocalUser
+Function -> SendEventImmediately At address :020d68d0 Security 5 Security Name: LocalUser
+Function -> SetRBXEvent At address :020d6330 Security 5 Security Name: LocalUser
+Function -> SetRBXEventStream At address :020d6600 Security 5 Security Name: LocalUser
+Function -> TrackEvent At address :020d7100 Security 5 Security Name: LocalUser
+Function -> TrackEventWithArgs At address :020d7200 Security 5 Security Name: LocalUser
+Function -> UpdateHeartbeatObject At address :020d6e90 Security 5 Security Name: LocalUser
+--------------------
+HttpService
+Property -> HttpEnabled
+Function -> GenerateGUID At address :01696340 Security 0 Security Name: None
+Function -> GetHttpEnabled At address :01694bc0 Security 5 Security Name: LocalUser
+Function -> GetUserAgent At address :016963c0 Security 5 Security Name: LocalUser
+Function -> JSONDecode At address :00000000 Security 0 Security Name: None
+Function -> JSONEncode At address :00000000 Security 0 Security Name: None
+Function -> RequestInternal At address :01699e70 Security 5 Security Name: LocalUser
+Function -> SetHttpEnabled At address :01694bd0 Security 5 Security Name: LocalUser
+Function -> UrlEncode At address :016962b0 Security 0 Security Name: None
+--------------------
+Lighting
+Property -> Ambient
+Property -> Brightness
+Property -> ClockTime
+Property -> ColorShift_Bottom
+Property -> ColorShift_Top
+Property -> EnvironmentDiffuseScale
+Property -> EnvironmentSpecularScale
+Property -> ExposureCompensation
+Property -> FogColor
+Property -> FogEnd
+Property -> FogStart
+Property -> GeographicLatitude
+Property -> GlobalShadows
+Property -> OutdoorAmbient
+Property -> Outlines
+Property -> ShadowColor
+Property -> ShadowSoftness
+Property -> Technology
+Property -> TempUseNewSkyRemovalBehaviour
+Property -> TimeOfDay
+Function -> GetMinutesAfterMidnight At address :0167bac0 Security 0 Security Name: None
+Function -> GetMoonDirection At address :00b77820 Security 0 Security Name: None
+Function -> GetMoonPhase At address :0167b3e0 Security 0 Security Name: None
+Function -> GetSunDirection At address :00b77800 Security 0 Security Name: None
+Function -> SetMinutesAfterMidnight At address :0167bb00 Security 0 Security Name: None
+Function -> getMinutesAfterMidnight At address :0167bac0 Security 0 Security Name: None
+Function -> setMinutesAfterMidnight At address :0167bb00 Security 0 Security Name: None
+--------------------
+Instance
+--------------------
+Selection
+Property -> ActiveInstance
+Property -> SelectionBoxThickness
+Property -> SelectionLineThickness
+Property -> SelectionThickness
+Property -> ShowBoundingBox
+Function -> Add At address :015898e0 Security 1 Security Name: Plugin
+Function -> ClearTerrainSelectionHack At address :0158a320 Security 5 Security Name: LocalUser
+Function -> Get At address :014f91e0 Security 1 Security Name: Plugin
+Function -> Set At address :01589e30 Security 1 Security Name: Plugin
+Function -> SetTerrainSelectionHack At address :0158a210 Security 5 Security Name: LocalUser
+--------------------
+ScriptRegistrationService
+Function -> GetSourceContainerByScriptGuid At address :00bb76a0 Security 5 Security Name: LocalUser
+--------------------
+RuntimeScriptService
+--------------------
+RobloxReplicatedStorage
+--------------------
+RemoteEvent
+Function -> FireAllClients At address :017d4d50 Security 0 Security Name: None
+Function -> FireClient At address :017d4ad0 Security 0 Security Name: None
+Function -> FireServer At address :017d48b0 Security 0 Security Name: None
+--------------------
+IXPService
+Function -> ClearUserLayers At address :01646bb0 Security 3 Security Name: RobloxPlace
+Function -> GetBrowserTrackerLayerLoadingStatus At address :01646bc0 Security 3 Security Name: RobloxPlace
+Function -> GetBrowserTrackerLayerVariables At address :01646ad0 Security 3 Security Name: RobloxPlace
+Function -> GetBrowserTrackerStatusForLayer At address :01646be0 Security 3 Security Name: RobloxPlace
+Function -> GetRegisteredUserLayersToStatus At address :016473a0 Security 3 Security Name: RobloxPlace
+Function -> GetUserLayerLoadingStatus At address :01646bd0 Security 3 Security Name: RobloxPlace
+Function -> GetUserLayerVariables At address :01646b40 Security 3 Security Name: RobloxPlace
+Function -> GetUserStatusForLayer At address :01646c00 Security 3 Security Name: RobloxPlace
+Function -> InitializeUserLayers At address :01646a70 Security 3 Security Name: RobloxPlace
+Function -> LogBrowserTrackerLayerExposure At address :01647360 Security 3 Security Name: RobloxPlace
+Function -> LogUserLayerExposure At address :01647380 Security 3 Security Name: RobloxPlace
+Function -> RegisterUserLayers At address :01646920 Security 3 Security Name: RobloxPlace
+--------------------
+MemStorageService
+Function -> Bind At address :015334b0 Security 5 Security Name: LocalUser
+Function -> BindAndFire At address :015335c0 Security 5 Security Name: LocalUser
+Function -> Call At address :015336c0 Security 5 Security Name: LocalUser
+Function -> Fire At address :01533120 Security 5 Security Name: LocalUser
+Function -> GetItem At address :01533260 Security 5 Security Name: LocalUser
+Function -> HasItem At address :01533310 Security 5 Security Name: LocalUser
+Function -> RemoveItem At address :015333e0 Security 5 Security Name: LocalUser
+Function -> SetItem At address :015331c0 Security 5 Security Name: LocalUser
+--------------------
+MessageBusService
+Function -> Call At address :0142a860 Security 5 Security Name: LocalUser
+Function -> GetLast At address :0142a690 Security 5 Security Name: LocalUser
+Function -> GetMessageId At address :01428870 Security 5 Security Name: LocalUser
+Function -> GetProtocolMethodRequestMessageId At address :014288b0 Security 5 Security Name: LocalUser
+Function -> GetProtocolMethodResponseMessageId At address :014288f0 Security 5 Security Name: LocalUser
+Function -> MakeRequest At address :0142aa20 Security 5 Security Name: LocalUser
+Function -> Publish At address :01428930 Security 5 Security Name: LocalUser
+Function -> PublishProtocolMethodRequest At address :01428a50 Security 5 Security Name: LocalUser
+Function -> PublishProtocolMethodResponse At address :01428c50 Security 5 Security Name: LocalUser
+Function -> SetRequestHandler At address :0142b120 Security 5 Security Name: LocalUser
+Function -> Subscribe At address :01428dd0 Security 5 Security Name: LocalUser
+Function -> SubscribeToProtocolMethodRequest At address :01428eb0 Security 5 Security Name: LocalUser
+Function -> SubscribeToProtocolMethodResponse At address :014299c0 Security 5 Security Name: LocalUser
+--------------------
+GamepadService
+Property -> GamepadCursorEnabled
+Function -> DisableGamepadCursor At address :016380a0 Security 0 Security Name: None
+Function -> EnableGamepadCursor At address :01637b70 Security 0 Security Name: None
+Function -> GetGamepadCursorPosition At address :01633c20 Security 5 Security Name: LocalUser
+Function -> SetGamepadCursorPosition At address :016378b0 Security 5 Security Name: LocalUser
+--------------------
+MeshContentProvider
+Function -> GetContentMemoryData At address :013df9e0 Security 5 Security Name: LocalUser
+--------------------
+SolidModelContentProvider
+--------------------
+HSRDataContentProvider
+--------------------
+LodDataService
+--------------------
+TextBoxService
+--------------------
+ControllerService
+--------------------
+HumanoidController
+Function -> BindButton At address :01784710 Security 0 Security Name: None
+Function -> GetButton At address :01784670 Security 0 Security Name: None
+Function -> UnbindButton At address :01784810 Security 0 Security Name: None
+Function -> bindButton At address :01784710 Security 0 Security Name: None
+Function -> getButton At address :01784670 Security 0 Security Name: None
+--------------------
+HapticService
+Function -> GetMotor At address :01631230 Security 0 Security Name: None
+Function -> IsMotorSupported At address :01631150 Security 0 Security Name: None
+Function -> IsVibrationSupported At address :01631010 Security 0 Security Name: None
+Function -> SetMotor At address :01631390 Security 0 Security Name: None
+--------------------
+NetworkClient
+Function -> SetOutgoingKBPSLimit At address :0114a480 Security 1 Security Name: Plugin
+--------------------
+ClientReplicator
+Function -> GetPlayer At address :0115fd10 Security 0 Security Name: None
+Function -> RequestRCCProfilerData At address :010e2f90 Security 5 Security Name: LocalUser
+Function -> RequestServerScriptProfiling At address :010e30e0 Security 5 Security Name: LocalUser
+Function -> RequestServerStats At address :010e2e30 Security 5 Security Name: LocalUser
+--------------------
+ChangeHistoryService
+Function -> GetCanRedo At address :015c6620 Security 1 Security Name: Plugin
+Function -> GetCanUndo At address :015c6460 Security 1 Security Name: Plugin
+Function -> Redo At address :015c88b0 Security 1 Security Name: Plugin
+Function -> ResetWaypoints At address :015c6830 Security 1 Security Name: Plugin
+Function -> SetEnabled At address :015c6420 Security 1 Security Name: Plugin
+Function -> SetWaypoint At address :015c4040 Security 1 Security Name: Plugin
+Function -> Undo At address :015c8a20 Security 1 Security Name: Plugin
+--------------------
+Visit
+--------------------
+GuidRegistryService
+--------------------
+PermissionsService
+Function -> GetIsThirdPartyAssetAllowed At address :00ad77f0 Security 5 Security Name: LocalUser
+Function -> GetIsThirdPartyPurchaseAllowed At address :0152f3a0 Security 5 Security Name: LocalUser
+Function -> GetIsThirdPartyTeleportAllowed At address :0152f3b0 Security 5 Security Name: LocalUser
+Function -> GetPermissions At address :0152f3c0 Security 5 Security Name: LocalUser
+Function -> SetPermissions At address :0152f3e0 Security 5 Security Name: LocalUser
+--------------------
+Teams
+Function -> GetTeams At address :012566c0 Security 0 Security Name: None
+Function -> RebalanceTeams At address :009362e0 Security 0 Security Name: None
+--------------------
+Team
+Property -> AutoAssignable
+Property -> AutoColorCharacters
+Property -> ChildOrder
+Property -> Score
+Property -> TeamColor
+Function -> GetPlayers At address :0177fdc0 Security 0 Security Name: None
+--------------------
+ReplicatedStorage
+--------------------
+TestService
+Property -> AutoRuns
+Property -> Description
+Property -> ErrorCount
+Property -> ExecuteWithStudioRun
+Property -> Is30FpsThrottleEnabled
+Property -> IsPhysicsEnvironmentalThrottled
+Property -> IsSleepAllowed
+Property -> NumberOfPlayers
+Property -> SimulateSecondsLag
+Property -> TestCount
+Property -> Timeout
+Property -> WarnCount
+Function -> Check At address :01719c20 Security 0 Security Name: None
+Function -> Checkpoint At address :017198e0 Security 0 Security Name: None
+Function -> Done At address :0171a540 Security 0 Security Name: None
+Function -> Error At address :01719fe0 Security 0 Security Name: None
+Function -> Fail At address :0171a350 Security 0 Security Name: None
+Function -> Message At address :01719410 Security 0 Security Name: None
+Function -> Require At address :0171a150 Security 0 Security Name: None
+Function -> ScopeTime At address :01719670 Security 0 Security Name: None
+Function -> Warn At address :01719a90 Security 0 Security Name: None
+--------------------
+SocialService
+Function -> InvokeGameInvitePromptClosed At address :01724ae0 Security 5 Security Name: LocalUser
+Function -> PromptGameInvite At address :01723760 Security 0 Security Name: None
+--------------------
+TextChatService
+Property -> ChatVersion
+Property -> CreateDefaultCommands
+Property -> CreateDefaultTextChannels
+--------------------
+ChatWindowConfiguration
+Property -> AbsolutePosition
+Property -> AbsolutePositionWrite
+Property -> AbsoluteSize
+Property -> AbsoluteSizeWrite
+Property -> BackgroundColor3
+Property -> BackgroundTransparency
+Property -> Enabled
+Property -> FontFace
+Property -> HeightScale
+Property -> HorizontalAlignment
+Property -> TextColor3
+Property -> TextSize
+Property -> TextStrokeColor3
+Property -> TextStrokeTransparency
+Property -> VerticalAlignment
+Property -> WidthScale
+--------------------
+ChatInputBarConfiguration
+Property -> AbsolutePosition
+Property -> AbsolutePositionWrite
+Property -> AbsoluteSize
+Property -> AbsoluteSizeWrite
+Property -> BackgroundColor3
+Property -> BackgroundTransparency
+Property -> Enabled
+Property -> FontFace
+Property -> PlaceholderColor3
+Property -> TargetTextChannel
+Property -> TextBox
+Property -> TextColor3
+Property -> TextSize
+Property -> TextStrokeColor3
+Property -> TextStrokeTransparency
+--------------------
+BubbleChatConfiguration
+Property -> AdorneeName
+Property -> BackgroundColor3
+Property -> BackgroundTransparency
+Property -> BubbleDuration
+Property -> BubblesSpacing
+Property -> Enabled
+Property -> Font
+Property -> FontFace
+Property -> LocalPlayerStudsOffset
+Property -> MaxDistance
+Property -> MinimizeDistance
+Property -> TextColor3
+Property -> TextSize
+Property -> VerticalStudsOffset
+--------------------
+ProximityPromptService
+Property -> Enabled
+Property -> MaxPromptsVisible
+--------------------
+VoiceChatService
+Property -> EnableDefaultVoice
+Property -> VoiceChatEnabledForPlaceOnRcc
+Property -> VoiceChatEnabledForUniverseOnRcc
+--------------------
+GroupService
+--------------------
+FaceAnimatorService
+Property -> AudioAnimationEnabled
+Property -> FlipHeadOrientation
+Property -> VideoAnimationEnabled
+Function -> GetTrackerLodController At address :01ee7520 Security 5 Security Name: LocalUser
+Function -> Init At address :01ee7170 Security 5 Security Name: LocalUser
+Function -> IsStarted At address :01ee7200 Security 5 Security Name: LocalUser
+Function -> Start At address :01ee71e0 Security 5 Security Name: LocalUser
+Function -> Step At address :009362e0 Security 5 Security Name: LocalUser
+Function -> Stop At address :01ee71f0 Security 5 Security Name: LocalUser
+--------------------
+VideoCaptureService
+Property -> Active
+Property -> CameraID
+Function -> GetCameraDevices At address :016010e0 Security 5 Security Name: LocalUser
+--------------------
+AvatarEditorService
+Function -> GetAccessoryType At address :00b93e80 Security 0 Security Name: None
+Function -> NoPromptCreateOutfit At address :00b88600 Security 5 Security Name: LocalUser
+Function -> NoPromptDeleteOutfit At address :00b923e0 Security 5 Security Name: LocalUser
+Function -> NoPromptRenameOutfit At address :00b91730 Security 5 Security Name: LocalUser
+Function -> NoPromptSaveAvatar At address :00b85610 Security 5 Security Name: LocalUser
+Function -> NoPromptSaveAvatarThumbnailCustomization At address :00b85570 Security 5 Security Name: LocalUser
+Function -> NoPromptSetFavorite At address :00b893b0 Security 5 Security Name: LocalUser
+Function -> NoPromptUpdateOutfit At address :00b93510 Security 5 Security Name: LocalUser
+Function -> PerformCreateOutfitWithDescription At address :00b88010 Security 5 Security Name: LocalUser
+Function -> PerformDeleteOutfit At address :00b92080 Security 5 Security Name: LocalUser
+Function -> PerformRenameOutfit At address :00b913d0 Security 5 Security Name: LocalUser
+Function -> PerformSaveAvatarWithDescription At address :00b85080 Security 5 Security Name: LocalUser
+Function -> PerformSetFavorite At address :00b89160 Security 5 Security Name: LocalUser
+Function -> PerformUpdateOutfit At address :00b93160 Security 5 Security Name: LocalUser
+Function -> PromptAllowInventoryReadAccess At address :00b89cb0 Security 0 Security Name: None
+Function -> PromptCreateOutfit At address :00b889f0 Security 0 Security Name: None
+Function -> PromptDeleteOutfit At address :00b91a00 Security 0 Security Name: None
+Function -> PromptRenameOutfit At address :00b90920 Security 0 Security Name: None
+Function -> PromptSaveAvatar At address :00b85ad0 Security 0 Security Name: None
+Function -> PromptSetFavorite At address :00b89400 Security 0 Security Name: None
+Function -> PromptUpdateOutfit At address :00b926b0 Security 0 Security Name: None
+Function -> SetAllowInventoryReadAccess At address :00b8a090 Security 5 Security Name: LocalUser
+Function -> SignalCreateOutfitFailed At address :00b886b0 Security 5 Security Name: LocalUser
+Function -> SignalCreateOutfitPermissionDenied At address :00b88750 Security 5 Security Name: LocalUser
+Function -> SignalDeleteOutfitFailed At address :00b92690 Security 5 Security Name: LocalUser
+Function -> SignalDeleteOutfitPermissionDenied At address :00b92420 Security 5 Security Name: LocalUser
+Function -> SignalRenameOutfitFailed At address :00b919e0 Security 5 Security Name: LocalUser
+Function -> SignalRenameOutfitPermissionDenied At address :00b91770 Security 5 Security Name: LocalUser
+Function -> SignalSaveAvatarFailed At address :00b85a80 Security 5 Security Name: LocalUser
+Function -> SignalSaveAvatarPermissionDenied At address :00b857e0 Security 5 Security Name: LocalUser
+Function -> SignalSetFavoriteFailed At address :00b89c90 Security 5 Security Name: LocalUser
+Function -> SignalSetFavoritePermissionDenied At address :00b89a10 Security 5 Security Name: LocalUser
+Function -> SignalUpdateOutfitFailed At address :00b93850 Security 5 Security Name: LocalUser
+Function -> SignalUpdateOutfitPermissionDenied At address :00b935e0 Security 5 Security Name: LocalUser
+--------------------
+SpawnerService
+--------------------
+PathfindingService
+Property -> EmptyCutoff
+Function -> CreatePath At address :015bcaa0 Security 0 Security Name: None
+--------------------
+EventIngestService
+Function -> SendEventDeferred At address :020db4e0 Security 5 Security Name: LocalUser
+Function -> SendEventImmediately At address :020db410 Security 5 Security Name: LocalUser
+Function -> SetRBXEvent At address :020db270 Security 5 Security Name: LocalUser
+Function -> SetRBXEventStream At address :020db340 Security 5 Security Name: LocalUser
+--------------------
+SessionService
+Function -> GetCreatedTimestampUtcMs At address :020dc180 Security 5 Security Name: LocalUser
+Function -> GetMetadata At address :020dc140 Security 5 Security Name: LocalUser
+Function -> GetRootSID At address :020dc0e0 Security 5 Security Name: LocalUser
+Function -> RemoveMetadata At address :020dc170 Security 5 Security Name: LocalUser
+Function -> RemoveSession At address :020dc120 Security 5 Security Name: LocalUser
+Function -> RemoveSessionsWithMetadataKey At address :020dc130 Security 5 Security Name: LocalUser
+Function -> ReplaceSession At address :020dc110 Security 5 Security Name: LocalUser
+Function -> SessionExists At address :020dc190 Security 5 Security Name: LocalUser
+Function -> SetMetadata At address :020dc160 Security 5 Security Name: LocalUser
+Function -> SetSession At address :020dc100 Security 5 Security Name: LocalUser
 --------------------

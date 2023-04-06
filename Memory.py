@@ -78,7 +78,7 @@ getPropertyFuncs = dict()
 
 class NameMap():
     def __init__(self):
-        self.addr = roblox.getAddressFromName("RobloxPlayerBeta.exe+3A31FB0")
+        self.addr = roblox.getAddressFromName("RobloxPlayerBeta.exe+3A66EC0")
         self.namelist = {}
         while roblox.Program.read_int(self.addr) != 0:
             self.namelist[roblox.ReadInstaceString(self.addr)] = roblox.Program.read_int(self.addr)
@@ -98,11 +98,11 @@ def SetupOptimizations():
      getFloat = Call0Arg("float")
      getNormal = Call0Arg("")
      getString = Call0Arg("string")
-     #getVector3 = Call0Arg("Vector3")
+     getVector3 = Call0Arg("Vector3")
      getPropertyFuncs[""] = getNormal
      getPropertyFuncs["float"] = getFloat
      getPropertyFuncs["string"]= getString
-     #getPropertyFuncs["Vector3"] = getVector3
+     getPropertyFuncs["Vector3"] = getVector3
      
      for func in getPropertyFuncs:
           getPropertyFuncs[func].allocate()
