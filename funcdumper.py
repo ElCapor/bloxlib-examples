@@ -4,7 +4,7 @@ you can take that as an exemple file
 """
 
 from Memory import GetDataModel
-from Instance import Instance
+from Instance import Instance, shared_prop
 from Exploit import roblox
 import pymem
 
@@ -21,7 +21,7 @@ class dumper:
 		for func in DModel.FindFirstChild("GroupService").GetBoundedFuncs():
 			shared_funcs.append(func.GetName())
 		for i in DModel.GetDescendants():
-			classname = GetClassName(i)
+			classname = i.GetClassName()
 			if classname not in dumped_classname:
 				dumped_classname.append(classname)
 				f.write(classname + "\n")
@@ -33,3 +33,6 @@ class dumper:
 						f.write("Function -> " +  func.GetName() + " At address :" + roblox.d2h(roblox.DRP(func.GetAddress() + 0x40)) + " Security " + str(func.GetSecurity()) + " Security Name: " + str(func.GetSecurityName()) + "\n")
 				f.write("--------------------" + "\n")		
 		f.close()
+
+
+dumper.dumpfuncs()

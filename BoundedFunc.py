@@ -1,3 +1,4 @@
+from __future__ import annotations
 from Exploit import roblox
 
 rbx_sec_enum = {
