@@ -3,9 +3,9 @@ This file is useful to dump every roblox funcs with their address, if you don't 
 you can take that as an exemple file
 """
 
-from Memory import GetDataModel
-from Instance import Instance, shared_prop
-from Exploit import roblox
+from bloxlib.Memory import GetDataModel
+from bloxlib.instance import Instance, shared_prop
+from bloxlib.Exploit import roblox
 import pymem
 
 class dumper:
