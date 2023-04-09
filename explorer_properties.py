@@ -127,7 +127,6 @@ class FormWidget(QWidget):
         destroy_action = menu.addAction("Destroy")
         copy_path_action.triggered.connect(self.copy_path)
         destroy_action.triggered.connect(self.destroy_action)
-        clone_action.triggered.connect(self.cloneAction)
 
         menu.exec_(self.tree_widget.mapToGlobal(point))
         
@@ -149,56 +148,19 @@ class FormWidget(QWidget):
         local_instance.Destroy()
         self.contextItem.parent().removeChild(self.contextItem)
 
-    def cloneAction(self, s):
-        msgBox = QMessageBox()
-        msg = msgBox.warning(self, 'Information',"Save Data")
-        
-        
-        
-        if msg.Ok:
-            self.itemToClone = self.current_item
-            self.select_parent = True
-            print("e")
-        
-    def clone_impl(self, item : IndexedTreeWidgetItem):
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-    
-        # setting message for Message Box
-        msg.setText("Selected : "+  item.text(0) + ". Do you really want to clone ?")
-        
-        # setting Message box window title
-        msg.setWindowTitle("Cloning")
-        
-        # declaring buttons on Message Box
-        msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
-        
-        # start the app
-        retval = msg.exec_()
-        if retval == 1024:
-            local_instance = Instance(self.itemToClone.index)
-            local_parent = item.index
-            new_instance = local_instance.Clone()
-            new_instance.SetProperty("Parent", local_parent)
-                
 
     def item_clicked(self, item : IndexedTreeWidgetItem):
         self.current_item = item
-        if self.select_parent == True:
-            self.selected_parent = self.current_item
-            self.clone_impl(self.selected_parent)
-            self.select_parent = False
+        self.selected_parent = 0
+        if item.index != 0:
+            local_instance = Instance(item.index)
+            self.NameView.setValue(local_instance.GetName())
+            self.ClassView.setValue(local_instance.GetClassName())
+            self.AddressView.setValue(roblox.d2h(local_instance.getAddress()))
         else:
-            self.selected_parent = 0
-            if item.index != 0:
-                local_instance = Instance(item.index)
-                self.NameView.setValue(local_instance.GetName())
-                self.ClassView.setValue(local_instance.GetClassName())
-                self.AddressView.setValue(roblox.d2h(local_instance.getAddress()))
-            else:
-                self.NameView.setValue("None")
-                self.ClassView.setValue("None")
-                self.AddressView.setValue("None")
+            self.NameView.setValue("None")
+            self.ClassView.setValue("None")
+            self.AddressView.setValue("None")
 
     def __controls(self):
         self.toolbar = ExplorerToolBar("MainToolbar")
