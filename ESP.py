@@ -1,14 +1,14 @@
 import pymem
 import re
 import time
-from Exploit import roblox
-from Instance import Instance, shared_instances
-from Memory import GetDataModel,float_to_hex,SetupOptimizations, FreeOptimizations, getPropertyFuncs
+from bloxlib.Exploit import roblox
+from bloxlib.instance import Instance, shared_instances
+from bloxlib.Memory import GetDataModel,float_to_hex,SetupOptimizations, FreeOptimizations, getPropertyFuncs
 from funcdumper import dumper #useful if you are planning to dump every roblox funcs
-from Players import Players #useful to manipulate players instance
-from Player import Player
+from bloxlib.Players import Players #useful to manipulate players instance
+from bloxlib.Player import Player
 import pyMeow as pm
-from Camera import Camera, Vector3
+from bloxlib.Camera import Camera, Vector3
 
 DataModel = Instance(GetDataModel())
 workspace = DataModel.GetChildren()[0]

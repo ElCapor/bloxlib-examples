@@ -14,9 +14,9 @@ from pyqtcore import QList
 from qtvariantproperty import QtVariantEditorFactory, QtVariantPropertyManager
 from qttreepropertybrowser import QtTreePropertyBrowser
 
-from Exploit import roblox
-from Instance import Instance
-from Memory import GetDataModel
+from bloxlib.Exploit import roblox
+from bloxlib.instance import Instance
+from bloxlib.Memory import GetDataModel
 sys.path.append("icons")
 #e
 def addToClipBoard(text):
