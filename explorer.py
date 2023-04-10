@@ -51,7 +51,8 @@ class IndexedTreeWidgetItem(QTreeWidgetItem):
     
     def addChild(self, child):
         super(IndexedTreeWidgetItem, self).addChild(child)
-        child.setIcon(0, QIcon("icons/instance/" + Instance.GetClassName(Instance(child.index))))
+        
+        child.setIcon(0, QIcon("icons/instance/" + Instance(child.index).GetClassName()))
         self.signals.childAdded.emit(child)
     def removeChild(self, child: 'QTreeWidgetItem'):
         super().removeChild(child)
