@@ -69,7 +69,7 @@ class IndexedTreeWidgetItem(QTreeWidgetItem):
 
     def childNew(self, child : IndexedTreeWidgetItem):
         local_instance = Instance(child.index)
-        child_list = roblox.Program.read_int(local_instance.getAddress() + 0x2C) # 0x30 don't work anymore, roblox edited offset?
+        child_list = roblox.Program.read_int(local_instance.getAddress() + 0x30)
         if child_list == 0:
             child.setChildIndicatorPolicy(IndexedTreeWidgetItem.ChildIndicatorPolicy.DontShowIndicator)
         else:
