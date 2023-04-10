@@ -7,9 +7,9 @@ from PyQt5.QtWidgets import (
 from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import Qt, pyqtSignal, QObject
 sys.path.append("Instance")
-from Exploit import roblox
-from Instance import Instance, GetClassName
-from Memory import GetDataModel
+from bloxlib.Exploit import roblox
+from bloxlib.instance import Instance, shared_instances
+from bloxlib.Memory import GetDataModel
 sys.path.append("icons")
 
 
@@ -51,7 +51,7 @@ class IndexedTreeWidgetItem(QTreeWidgetItem):
     
     def addChild(self, child):
         super(IndexedTreeWidgetItem, self).addChild(child)
-        child.setIcon(0, QIcon("icons/instance/" + GetClassName(Instance(child.index))))
+        child.setIcon(0, QIcon("icons/instance/" + Instance.GetClassName(Instance(child.index))))
         self.signals.childAdded.emit(child)
     def removeChild(self, child: 'QTreeWidgetItem'):
         super().removeChild(child)
@@ -59,7 +59,7 @@ class IndexedTreeWidgetItem(QTreeWidgetItem):
 
     def childNew(self, child : IndexedTreeWidgetItem):
         local_instance = Instance(child.index)
-        child_list = roblox.Program.read_int(local_instance.getAddress() + 0x2C)
+        child_list = roblox.Program.read_int(local_instance.getAddress() + 0x30)
         if child_list == 0:
             child.setChildIndicatorPolicy(IndexedTreeWidgetItem.ChildIndicatorPolicy.DontShowIndicator)
         else:
