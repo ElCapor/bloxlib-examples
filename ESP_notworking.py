@@ -1,10 +1,15 @@
+"""
+SIMPLE ESP WITH PYMEOW NOT WORKING , IDK WHAT's wrong ill fix it
+
+"""
+
+
 import pymem
 import re
 import time
 from bloxlib.Exploit import roblox
 from bloxlib.instance import Instance, shared_instances
 from bloxlib.Memory import GetDataModel,float_to_hex,SetupOptimizations, FreeOptimizations, getPropertyFuncs
-from funcdumper import dumper #useful if you are planning to dump every roblox funcs
 from bloxlib.Players import Players #useful to manipulate players instance
 from bloxlib.Player import Player
 import pyMeow as pm

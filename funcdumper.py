@@ -27,7 +27,7 @@ class dumper:
 				f.write(classname + "\n")
 				for j in i.GetPropertyDescriptors():
 					if (j.GetName() not in shared_prop):
-						f.write("Property -> " +  j.GetName() + "\n")
+						f.write("Property -> " +  j.GetName() + " Security : " + str(j.GetSecurity())+ "\n")
 				for func in i.GetBoundedFuncs():
 					if func.GetName() not in shared_funcs:
 						f.write("Function -> " +  func.GetName() + " At address :" + roblox.d2h(roblox.DRP(func.GetAddress() + 0x40)) + " Security " + str(func.GetSecurity()) + " Security Name: " + str(func.GetSecurityName()) + "\n")
