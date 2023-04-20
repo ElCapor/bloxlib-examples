@@ -55,7 +55,7 @@ Game = Instance(GetDataModel())
 Workspace = Game.FindFirstChild("Workspace")
 Players = Game.FindFirstChild("Players")
 localPlayer = Players.GetChildren()[0]
-Character = workspace.FindFirstChild(localPlayer.GetName())
+Character = Workspace.FindFirstChild(localPlayer.GetName())
 
 DestroyAddress = Character.GetBoundFunction("Destroy").GetFunc() # address of the destroy function , note that all instance addresses are static so you can dump them using funcdumper.py
 NewMemoryRegion = roblox.Program.allocate(100)
