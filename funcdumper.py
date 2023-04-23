@@ -31,8 +31,10 @@ class dumper:
 				for func in i.GetBoundedFuncs():
 					if func.GetName() not in shared_funcs:
 						f.write("Function -> " +  func.GetName() + " At address :" + roblox.d2h(roblox.DRP(func.GetAddress() + 0x40)) + " Security " + str(func.GetSecurity()) + " Security Name: " + str(func.GetSecurityName()) + "\n")
+				for event in i.GetEventDescs():
+					f.write("Event -> " + event.GetName() + " Security : " + str(roblox.Program.read_int(event.GetAddress() + 0x1C)) + "\n")
 				f.write("--------------------" + "\n")		
-		f.close()
+		f.close()	
 
 
 dumper.dumpfuncs()
