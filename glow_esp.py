@@ -19,10 +19,8 @@ shared_instances["Players"] = PlayersService
     
 if Game: # we got the game
     while True:
-        for player in PlayersService.GetAllPlayers():
-            player = Player(player)
-             #print("Found player : ", player.GetName())
-            Character = player.GetCharacter()#.FindFirstChild("Head")
-            if not Character.FindFirstChildOfClass("Highlight"):
-                newStuff = Instance().new("Highlight")
-                newStuff.SetProperty("Parent", Character.getAddress())
+            for player in Workspace.FindFirstChild("Players").FindFirstChild("Bright blue").GetChildren():
+                if player and player.HasChildren():
+                    if not player.FindFirstChildOfClass("Highlight"):
+                        newStuff = Instance().new("Highlight")
+                        newStuff.SetProperty("Parent", player.getAddress())
